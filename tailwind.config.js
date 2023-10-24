@@ -10,6 +10,10 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'sans-serif'],
+				montserrat: ['var(--font-montserrat)'],
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic':
@@ -85,7 +89,7 @@ module.exports = {
 					colors: {
 						background: '#f8f8f8',
 						foreground: '#0D001A',
-						secondary: '#404040',
+						secondary: '#f2b705',
 					}, // light theme colors
 				},
 				dark: {
