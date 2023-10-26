@@ -1,9 +1,12 @@
-import React from 'react';
+"use client"
+import React  from 'react';
 import Link from 'next/link';
 import EcomerceLogo from '@/components/icons/brand/EcomerceLogo';
+
+
 export default function SideBarEcomerce({ options }) {
-	return (
-		<aside className="fixed top-16 h-[calc(100vh-60px)] inset-y-0 left-0 flex flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700">
+	return (<>
+	 (<aside className="fixed top-16 h-[calc(100vh-60px)] inset-y-0 left-0 flex flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700">
 			<Link href="#" className="flex flex-col items-center justify-center">
 				<EcomerceLogo width={60} height={60} className="mx-auto" />
 				<div className="flex flex-row justify-center content-center">
@@ -32,6 +35,6 @@ export default function SideBarEcomerce({ options }) {
 					))}
 				</nav>
 			</div>
-		</aside>
-	);
+		</aside>)
+	</>);
 }

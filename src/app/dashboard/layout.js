@@ -16,7 +16,6 @@ import {
 	CreditCardIcon,
 	UserCircleIcon,
 } from '@heroicons/react/24/outline';
-import EcomerceLogo from '@/components/icons/brand/EcomerceLogo';
 
 export default function layout({ children }) {
 	const links = [
@@ -47,8 +46,7 @@ export default function layout({ children }) {
 					{
 						label: 'Transacciones',
 						path: '/dashboard/transacciones',
-						icon: <CreditCardIcon class="h-5 w-5"/>,
-
+						icon: <CreditCardIcon class="h-5 w-5" />,
 					},
 				],
 			},
@@ -90,7 +88,7 @@ export default function layout({ children }) {
 	];
 	return (
 		<div className="container-fluid h-scren">
-			<SideBarEcomerce options={links} />
+			<SideBarEcomerce options={links} isHidden={false} />
 			{children}
 		</div>
 	);

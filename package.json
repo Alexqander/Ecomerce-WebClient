@@ -9,15 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/material": "^5.14.15",
     "@nextui-org/react": "^2.1.13",
+    "@react-navigation/drawer": "^6.6.6",
     "@tremor/react": "^3.10.0",
     "framer-motion": "^10.16.4",
     "lightweight-charts": "^4.1.0",
     "next": "13.5.4",
     "next-themes": "^0.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-native-gesture-handler": "^2.13.4",
+    "react-native-reanimated": "^3.5.4"
   },
   "devDependencies": {
     "autoprefixer": "^10",
