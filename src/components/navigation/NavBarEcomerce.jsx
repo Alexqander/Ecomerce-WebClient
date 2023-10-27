@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	Navbar,
 	NavbarBrand,
@@ -13,21 +13,57 @@ import {
 	DropdownMenu,
 	Avatar,
 	Button,
+	NavbarMenuToggle,
+	NavbarMenu,
+	NavbarMenuItem,
 } from '@nextui-org/react';
 import { SearchIcon } from '../icons/SearchIcon';
 import EcomerceLogo from '../icons/brand/EcomerceLogo';
-import EcomerceTextLogo from '../icons/brand/EcomerceTextLogo';
 import ThemeSwitch from '../app/ThemeSwitch';
 import { useRouter } from 'next/navigation';
 export default function NavBarEcomerce() {
+	const menuItemsUser = ['Mi perfil', 'Configuracion', 'Compras', 'Ventas'];
+
+	const menuItemsAdmin = [
+		'Dashboard',
+		'Usuarios',
+		'Productos',
+		'Ventas',
+		'Vendedores',
+	];
+
+	const menuItemsVendor = [
+		'Mi perfil',
+		'Configuracion',
+		'Ventas',
+		'Productos',
+		'Envios',
+	];
+
+	const menuItemsGuest = ['Inicio', 'Productos', 'Vender', 'Iniciar sesion'];
+
+	const [menuItems, setMenuItems] = useState(menuItemsGuest);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
 	const router = useRouter();
 	const isLogged = false;
 	return (
-		<Navbar isBordered>
+		<Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
+			<NavbarContent className="sm:hidden" justify="start">
+				<NavbarMenuToggle
+					aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+				/>
+			</NavbarContent>
 			<NavbarContent justify="start">
 				<NavbarBrand className="mr-4 gap-2 py-2">
-					<EcomerceLogo width="8em" height="8em" />
-					<EcomerceTextLogo className="hidden sm:block " />
+					<EcomerceLogo width="50px" height="50px" />
+					<div className="flex flex-col justify-start">
+						<div className="flex flex-row">
+							<p className="font-montserrat font-semibold text-[16px]">Fast</p>
+							<p className="font-extralight text-[16px] ">Shop</p>
+						</div>
+						<p className="text-center text-xs">Fast and Easy</p>
+					</div>
 				</NavbarBrand>
 				<NavbarContent className="hidden sm:flex gap-3">
 					<NavbarItem>
@@ -108,6 +144,25 @@ export default function NavBarEcomerce() {
 
 				<ThemeSwitch />
 			</NavbarContent>
+			<NavbarMenu>
+				{menuItems.map((item, index) => (
+					<NavbarMenuItem key={`${item}-${index}`}>
+						<Link
+							className="w-full"
+							color={
+								index === 2
+									? 'warning'
+									: index === menuItems.length - 1
+									? 'danger'
+									: 'foreground'
+							}
+							href="#"
+							size="lg">
+							{item}
+						</Link>
+					</NavbarMenuItem>
+				))}
+			</NavbarMenu>
 		</Navbar>
 	);
 }
