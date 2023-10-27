@@ -9,11 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/next-js": "^2.1.5",
+    "@chakra-ui/react": "^2.8.1",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@heroicons/react": "^2.0.18",
+    "@mui/icons-material": "^5.14.15",
     "@mui/material": "^5.14.15",
+    "@nextui-org/button": "^2.0.21",
     "@nextui-org/react": "^2.1.13",
+    "@nextui-org/system": "^2.0.10",
+    "@nextui-org/theme": "^2.1.9",
     "@react-navigation/drawer": "^6.6.6",
     "@tremor/react": "^3.10.0",
     "framer-motion": "^10.16.4",
