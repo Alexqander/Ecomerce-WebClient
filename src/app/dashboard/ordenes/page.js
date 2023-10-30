@@ -5,7 +5,6 @@ async function getOrden() {
 	const data = await resp.json();
 	return data;
 }
-
 export default async function Ordenes() {
 	const users = await getOrden();
 	

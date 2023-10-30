@@ -45,7 +45,6 @@ export default function TableClientes() {
 			};
 		},
 	});
-
 	return (
 		<div className='w-9/12 ml-72 mt-6'>
 			<Table
