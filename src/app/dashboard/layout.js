@@ -13,14 +13,14 @@ import {
 	Cog6ToothIcon,
 	AdjustmentsHorizontalIcon,
 	ListBulletIcon,
+	WindowIcon,
 } from '@heroicons/react/24/outline';
-import EcomerceLogo from '@/components/icons/brand/EcomerceLogo';
 
 export default function layout({ children }) {
 	const links = [
 		{
 			grupo: {
-				name: 'Analiticas',
+				name: 'Dashboard',
 				routes: [
 					{
 						label: 'Dashboard',
@@ -107,10 +107,11 @@ export default function layout({ children }) {
 			},
 		},
 	];
+
 	return (
-		<div className="container-fluid h-scren">
+		<div className="flex h-scren">
 			<SideBarEcomerce options={links} />
-			{children}
+			<main className="container-fluid w-full ml-64 px-10">{children}</main>
 		</div>
 	);
 }
