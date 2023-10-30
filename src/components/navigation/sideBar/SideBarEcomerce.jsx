@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function SideBarEcomerce({ options }) {
 	return (<>
-	 (<aside className="fixed top-16 h-[calc(100vh-60px)] inset-y-0 left-0 flex flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700">
+	 <aside className="hidden md:fixed lg:fixed top-16 h-[calc(100vh-60px)] inset-y-0 left-0 sm:flex flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700">
 			<h2 className="font-montserrat font-semibold text-3xl">Mi cuenta</h2>
 			{/* <Link href="#" className="flex flex-col items-center justify-center">
 				<EcomerceLogo width={60} height={60} className="mx-auto" />
@@ -35,6 +35,6 @@ export default function SideBarEcomerce({ options }) {
 					))}
 				</nav>
 			</div>
-		</aside>)
+		</aside>
 	</>);
 }
