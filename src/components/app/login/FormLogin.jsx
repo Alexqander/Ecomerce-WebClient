@@ -64,7 +64,7 @@ export default function FormLogin() {
 						className="w-full"
 					/>
 					<Button variant="solid" size="lg" color="secondary">
-						Iniciar Sesion
+						Iniciar Sesión
 					</Button>
 				</div>
 			</form>
