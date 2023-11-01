@@ -1,5 +1,4 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/react';
