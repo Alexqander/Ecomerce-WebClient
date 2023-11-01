@@ -5,8 +5,6 @@ import { TailwindIcon } from '@/components/icons/landing/TailwindIcon';
 import { StripeIcon } from '@/components/icons/landing/StripeIcon';
 import landing from '../../../../public/images/Landing.png';
 import Image from 'next/image';
-import { useState } from 'react';
-
 
 import {
 	ComputerDesktopIcon,
@@ -16,10 +14,8 @@ import {
 	CalendarDaysIcon,
 	HandRaisedIcon,
 } from '@heroicons/react/24/outline';
-import { dark } from '@mui/material/styles/createPalette';
 
-
-	const features = [
+const features = [
 	{
 		name: 'Alimentos',
 		description:
@@ -58,14 +54,12 @@ const stats = [
 	{ name: 'Horario', value: '24/7' },
 ];
 export default function LandingPage() {
-
 	return (
 		<div className="bg-white dark:bg-gray-900">
 			<div className="relative isolate px-6 pt-14 lg:px-8">
 				<div
 					className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-					aria-hidden="true"
-				>
+					aria-hidden="true">
 					<div
 						className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f5e452] to-[#d2d4b0] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
 						style={{
@@ -88,14 +82,12 @@ export default function LandingPage() {
 						<div className="mt-10 flex items-center justify-center gap-x-6">
 							<a
 								href="#"
-								className="rounded-md bg-lightYellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-lightYellow-600"
-							>
+								className="rounded-md bg-lightYellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-lightYellow-600">
 								Empieza a comprar
 							</a>
 							<a
 								href="#"
-								className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300"
-							>
+								className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300">
 								Acerca de nosotros <span aria-hidden="true">→</span>
 							</a>
 						</div>
@@ -103,8 +95,7 @@ export default function LandingPage() {
 				</div>
 				<div
 					className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
-					aria-hidden="true"
-				>
+					aria-hidden="true">
 					<div
 						className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#f6ea49] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
 						style={{
@@ -118,12 +109,14 @@ export default function LandingPage() {
 
 			<div className="relative isolate overflow-hidden py-24 sm:py-32">
 				<div className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
-					<Image 
-					layout='fill'
-					objectFit='cover'
-					src={landing} alt="image landing" />
+					<Image
+						layout="fill"
+						objectFit="cover"
+						src={landing}
+						alt="image landing"
+					/>
 				</div>
-				
+
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:mx-0">
 						<h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -159,10 +152,9 @@ export default function LandingPage() {
 			</div>
 			{/* final de la información de la empresa */}
 			<div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
-			<div
+				<div
 					className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
-					aria-hidden="true"
-				>
+					aria-hidden="true">
 					<div
 						className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#f5e452] to-[#d2d4b0] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
 						style={{
@@ -175,12 +167,12 @@ export default function LandingPage() {
 					<h2 className="text-center text-lg font-semibold leading-8 text-gray-900 dark:text-gray-200">
 						Creado con las mejores tecnologías.
 					</h2>
-					
+
 					<div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-						<NextJsIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
-						<NodeJsIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
-						<TailwindIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] '/>
-						<StripeIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
+						<NextJsIcon className="md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
+						<NodeJsIcon className="md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
+						<TailwindIcon className="md:w-[90px] md:h-[90px] w-[60px] h-[60px] " />
+						<StripeIcon className="md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
 					</div>
 				</div>
 			</div>
@@ -192,13 +184,13 @@ export default function LandingPage() {
 							Descubre mas de nosotros.
 						</h2>
 						<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-200">
-						Todo lo que necesitas para comprar en línea.
+							Todo lo que necesitas para comprar en línea.
 						</p>
 						<p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-200">
 							En FastShop, nos esforzamos por brindar la mejor experiencia de
-							compra en línea a nuestros clientes. Nuestro objetivo es
-							permitir que los clientes encuentren y descubran fácilmente
-							artículos que desean comprar.
+							compra en línea a nuestros clientes. Nuestro objetivo es permitir
+							que los clientes encuentren y descubran fácilmente artículos que
+							desean comprar.
 						</p>
 					</div>
 					<div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -249,8 +241,7 @@ export default function LandingPage() {
 								/>
 								<button
 									type="submit"
-									className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-								>
+									className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
 									Subscribe
 								</button>
 							</div>
@@ -289,8 +280,7 @@ export default function LandingPage() {
 				</div>
 				<div
 					className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
-					aria-hidden="true"
-				>
+					aria-hidden="true">
 					<div
 						className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
 						style={{

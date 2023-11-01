@@ -68,17 +68,17 @@ export default function NavBarEcomerce() {
 				<NavbarContent className="hidden sm:flex gap-3">
 					<NavbarItem>
 						<Link color="foreground" href="#">
-							Actualizaciones
+							Inicio
 						</Link>
 					</NavbarItem>
 					<NavbarItem isActive>
 						<Link href="#" aria-current="page" className="text-refgold-600">
-							Clientes
+							Tienda
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
 						<Link color="foreground" href="#">
-							Provedores
+							Categorias
 						</Link>
 					</NavbarItem>
 				</NavbarContent>
@@ -98,6 +98,7 @@ export default function NavBarEcomerce() {
 					startContent={<SearchIcon size={18} />}
 					type="search"
 				/>
+				<ThemeSwitch />
 				{isLogged ? (
 					<>
 						<Dropdown placement="bottom-end">
@@ -134,15 +135,13 @@ export default function NavBarEcomerce() {
 				) : (
 					<>
 						<Button
-							variant="solid"
-							color="primary"
+							variant="bordered"
+							color="secondary"
 							onClick={() => router.push('/auth')}>
-							Login
+							Iniciar sesion
 						</Button>
 					</>
 				)}
-
-				<ThemeSwitch />
 			</NavbarContent>
 			<NavbarMenu>
 				{menuItems.map((item, index) => (

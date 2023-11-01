@@ -20,8 +20,6 @@ export default function ThemeSwitch() {
 			size="lg"
 			color="success"
 			startContent={<SunIcon />}
-			endContent={<MoonIcon />}>
-			{theme === 'dark' ? 'Dark' : 'Light'}
-		</Switch>
+			endContent={<MoonIcon />}></Switch>
 	);
 }

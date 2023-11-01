@@ -7,16 +7,10 @@ import { Button, Input } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import axios from 'axios';
+import Link from 'next/link';
 
 export default function FormLogin() {
 	const [isVisible, setIsVisible] = React.useState(false);
-	const [loading, setLoading] = React.useState(false);
-	const router = useRouter();
-	const handleLogin = async () => {
-		// * Redirect to google auth
-		window.location.href = 'http://localhost:3000/apiEcomerce/1.0/auth/google';
-		// ! comienzo de la autenticacion
-	};
 
 	const toggleVisibility = () => setIsVisible(!isVisible);
 	return (
@@ -31,19 +25,12 @@ export default function FormLogin() {
 						</div>
 						<p className="text-center text-base">Fast and Easy</p>
 					</div>
-					<div>
-						<Button
-							className="w-full py-10"
-							size="lg"
-							variant="bordered"
-							startContent={<GoogleIcon />}
-							onClick={handleLogin}>
-							<p className="font-montserrat font-normal md:text-base text-xs">
-								Iniciar con Google
-							</p>
-						</Button>
-						{loading && <p>Esperando autenticación...</p>}
+					<div className="flex justify-center">
+						<h2 className=" text-base font-montserrat font-normal text-gray-600 dark:text-gray-300 ">
+							Inicia Session para acceder a tu cuenta
+						</h2>
 					</div>
+
 					<form action="" className="flex flex-col gap-10 justify-center">
 						<Input
 							isClearable
@@ -75,10 +62,23 @@ export default function FormLogin() {
 							type={isVisible ? 'text' : 'password'}
 							className="w-full"
 						/>
+						<div className="flex gap-2 justify-end">
+							<Link href="/auth/recovery">
+								<p className="text-sm font-montserrat font-normal text-blue-500">
+									¿Olvidaste tu contraseña?
+								</p>
+							</Link>
+						</div>
 						<Button variant="solid" size="lg" color="secondary">
 							Iniciar Sesion
 						</Button>
 					</form>
+					<div className="flex justify-center gap-2">
+						<h4>Si aun no tienes cuenta</h4>
+						<Link href="/auth/register">
+							<p className="text-blue-500"> Registrarte aqui</p>
+						</Link>
+					</div>
 				</div>
 			</div>
 		</>
