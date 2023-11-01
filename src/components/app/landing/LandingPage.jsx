@@ -5,21 +5,18 @@ import { TailwindIcon } from '@/components/icons/landing/TailwindIcon';
 import { StripeIcon } from '@/components/icons/landing/StripeIcon';
 import landing from '../../../../public/images/Landing.png';
 import Image from 'next/image';
-import { useState } from 'react';
-
+import { FooterPage } from '../footer/FooterPage';
 
 import {
 	ComputerDesktopIcon,
 	FaceSmileIcon,
 	UserGroupIcon,
 	HeartIcon,
-	CalendarDaysIcon,
-	HandRaisedIcon,
+	
+	ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
-import { dark } from '@mui/material/styles/createPalette';
 
-
-	const features = [
+const features = [
 	{
 		name: 'Alimentos',
 		description:
@@ -58,7 +55,6 @@ const stats = [
 	{ name: 'Horario', value: '24/7' },
 ];
 export default function LandingPage() {
-
 	return (
 		<div className="bg-white dark:bg-gray-900">
 			<div className="relative isolate px-6 pt-14 lg:px-8">
@@ -118,12 +114,14 @@ export default function LandingPage() {
 
 			<div className="relative isolate overflow-hidden py-24 sm:py-32">
 				<div className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
-					<Image 
-					layout='fill'
-					objectFit='cover'
-					src={landing} alt="image landing" />
+					<Image
+						layout="fill"
+						objectFit="cover"
+						src={landing}
+						alt="image landing"
+					/>
 				</div>
-				
+
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto max-w-2xl lg:mx-0">
 						<h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
@@ -159,7 +157,7 @@ export default function LandingPage() {
 			</div>
 			{/* final de la información de la empresa */}
 			<div className="bg-white py-24 sm:py-32 dark:bg-gray-900">
-			<div
+				<div
 					className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 					aria-hidden="true"
 				>
@@ -175,12 +173,12 @@ export default function LandingPage() {
 					<h2 className="text-center text-lg font-semibold leading-8 text-gray-900 dark:text-gray-200">
 						Creado con las mejores tecnologías.
 					</h2>
-					
-					<div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
-						<NextJsIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
-						<NodeJsIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
-						<TailwindIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] '/>
-						<StripeIcon className='md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current'/>
+
+					<div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-4 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+						<NextJsIcon className="ml-6 md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
+						<NodeJsIcon className="ml-9 md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
+						<TailwindIcon className="ml-9 md:w-[90px] md:h-[90px] w-[60px] h-[60px] " />
+						<StripeIcon className="ml-9 md:w-[90px] md:h-[90px] w-[60px] h-[60px] fill-current" />
 					</div>
 				</div>
 			</div>
@@ -192,13 +190,13 @@ export default function LandingPage() {
 							Descubre mas de nosotros.
 						</h2>
 						<p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-gray-200">
-						Todo lo que necesitas para comprar en línea.
+							Todo lo que necesitas para comprar en línea.
 						</p>
 						<p className="mt-6 text-lg leading-8 text-gray-600 dark:text-gray-200">
 							En FastShop, nos esforzamos por brindar la mejor experiencia de
-							compra en línea a nuestros clientes. Nuestro objetivo es
-							permitir que los clientes encuentren y descubran fácilmente
-							artículos que desean comprar.
+							compra en línea a nuestros clientes. Nuestro objetivo es permitir
+							que los clientes encuentren y descubran fácilmente artículos que
+							desean comprar.
 						</p>
 					</div>
 					<div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -223,20 +221,21 @@ export default function LandingPage() {
 					</div>
 				</div>
 			</div>
-			<div className="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32">
+
+			<div className="relative isolate overflow-hidden bg-white py-16 sm:py-24 lg:py-32 dark:bg-gray-900">
 				<div className="mx-auto max-w-7xl px-6 lg:px-8">
 					<div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
 						<div className="max-w-xl lg:max-w-lg">
-							<h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-								Subscribe to our newsletter.
+							<h2 className="text-3xl font-bold tracking-tight text-black sm:text-4xl dark:text-gray-200">
+								Recibe las últimas novedades y ofertas exclusivas .
 							</h2>
-							<p className="mt-4 text-lg leading-8 text-gray-300">
-								Nostrud amet eu ullamco nisi aute in ad minim nostrud
-								adipisicing velit quis. Duis tempor incididunt dolore.
+							<p className="mt-4 text-lg leading-8 text-gray-900 dark:text-gray-300">
+								No te pierdas las mejores ofertas y promociones. ¡Subscribete a
+								nuestro boletín!
 							</p>
 							<div className="mt-6 flex max-w-md gap-x-4">
 								<label htmlFor="email-address" className="sr-only">
-									Email address
+									Email
 								</label>
 								<input
 									id="email-address"
@@ -244,62 +243,37 @@ export default function LandingPage() {
 									type="email"
 									autoComplete="email"
 									required
-									className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
-									placeholder="Enter your email"
+									className="min-w-0 flex-auto rounded-md border-0 dark:bg-white/5 px-3.5 py-2 dark:text-white shadow-sm ring-1 ring-inset ring-black/10 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+									placeholder="Ingresa tu dirección de correo electrónico"
 								/>
 								<button
 									type="submit"
-									className="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+									className="flex-none rounded-md bg-yellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
 								>
-									Subscribe
+									Subscribete
 								</button>
 							</div>
 						</div>
-						<dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-							<div className="flex flex-col items-start">
-								<div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-									<CalendarDaysIcon
-										className="h-6 w-6 text-white"
+						<dl className=" gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2 ">
+							
+							<div className="flex flex-col items-center">
+								<div className="rounded-md bg-black/10 ring-black/10 dark:bg-white/5 p-2 ring-1 dark:ring-white/10">
+									<ShieldCheckIcon
+										className="h-6 w-6 current-fill"
 										aria-hidden="true"
 									/>
 								</div>
-								<dt className="mt-4 font-semibold text-white">
-									Weekly articles
-								</dt>
-								<dd className="mt-2 leading-7 text-gray-400">
-									Non laboris consequat cupidatat laborum magna. Eiusmod non
-									irure cupidatat duis commodo amet.
-								</dd>
-							</div>
-							<div className="flex flex-col items-start">
-								<div className="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
-									<HandRaisedIcon
-										className="h-6 w-6 text-white"
-										aria-hidden="true"
-									/>
-								</div>
-								<dt className="mt-4 font-semibold text-white">No spam</dt>
-								<dd className="mt-2 leading-7 text-gray-400">
-									Officia excepteur ullamco ut sint duis proident non
-									adipisicing. Voluptate incididunt anim.
+								<dt className="mt-4 font-semibold text-gray-900 dark:text-white">No spam</dt>
+								<dd className="mt-2 leading-7 text-black dark:text-gray-400">
+								Al suscribirte, aceptas nuestra política de privacidad y el uso de tus datos para enviarte información relevante
 								</dd>
 							</div>
 						</dl>
 					</div>
 				</div>
-				<div
-					className="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
-					aria-hidden="true"
-				>
-					<div
-						className="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
-						style={{
-							clipPath:
-								'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-						}}
-					/>
-				</div>
 			</div>
+			<FooterPage/>
 		</div>
+		
 	);
 }

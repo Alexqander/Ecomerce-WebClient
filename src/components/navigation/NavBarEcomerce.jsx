@@ -22,7 +22,7 @@ import EcomerceLogo from '../icons/brand/EcomerceLogo';
 import ThemeSwitch from '../app/ThemeSwitch';
 import { useRouter } from 'next/navigation';
 export default function NavBarEcomerce() {
-	const menuItemsUser = ['Mi perfil', 'Configuracion', 'Compras', 'Ventas'];
+	const menuItemsUser = ['Mi perfil', 'Configuración', 'Compras', 'Ventas'];
 
 	const menuItemsAdmin = [
 		'Dashboard',
@@ -34,13 +34,13 @@ export default function NavBarEcomerce() {
 
 	const menuItemsVendor = [
 		'Mi perfil',
-		'Configuracion',
+		'Configuración',
 		'Ventas',
 		'Productos',
-		'Envios',
+		'Envíos',
 	];
 
-	const menuItemsGuest = ['Inicio', 'Productos', 'Vender', 'Iniciar sesion'];
+	const menuItemsGuest = ['Inicio', 'Productos', 'Vender', 'Iniciar sesión'];
 
 	const [menuItems, setMenuItems] = useState(menuItemsGuest);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,7 +78,7 @@ export default function NavBarEcomerce() {
 					</NavbarItem>
 					<NavbarItem>
 						<Link color="foreground" href="#">
-							Provedores
+							Proveedores
 						</Link>
 					</NavbarItem>
 				</NavbarContent>
@@ -114,12 +114,12 @@ export default function NavBarEcomerce() {
 							</DropdownTrigger>
 							<DropdownMenu aria-label="Profile Actions" variant="flat">
 								<DropdownItem key="profile" className="h-14 gap-2">
-									<p className="font-semibold">Sesion iniciada con</p>
+									<p className="font-semibold">Sesión iniciada con</p>
 									<p className="font-semibold">zoey@example.com</p>
 								</DropdownItem>
-								<DropdownItem key="settings">Configuracion</DropdownItem>
+								<DropdownItem key="settings">Configuración</DropdownItem>
 								<DropdownItem key="team_settings">Team Settings</DropdownItem>
-								<DropdownItem key="analytics">Analiticas</DropdownItem>
+								<DropdownItem key="analytics">Analíticas</DropdownItem>
 								<DropdownItem key="system">System</DropdownItem>
 								<DropdownItem key="configurations">Configurations</DropdownItem>
 								<DropdownItem key="help_and_feedback">
@@ -135,7 +135,7 @@ export default function NavBarEcomerce() {
 					<>
 						<Button
 							variant="solid"
-							color="primary"
+							color="warning"
 							onClick={() => router.push('/auth')}>
 							Login
 						</Button>
