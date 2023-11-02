@@ -6,7 +6,6 @@ import {
 	NavbarContent,
 	NavbarItem,
 	Link,
-	Input,
 	DropdownItem,
 	DropdownTrigger,
 	Dropdown,
@@ -17,10 +16,14 @@ import {
 	NavbarMenu,
 	NavbarMenuItem,
 } from '@nextui-org/react';
-import { SearchIcon } from '../icons/SearchIcon';
+
 import EcomerceLogo from '../icons/brand/EcomerceLogo';
 import ThemeSwitch from '../app/ThemeSwitch';
 import { useRouter } from 'next/navigation';
+import { useAuthContext } from '@/context/authContext';
+import { AuthService } from '@/services/auth.service';
+import Cookies from 'js-cookie';
+import { toast } from 'sonner';
 export default function NavBarEcomerce() {
 	const menuItemsUser = ['Mi perfil', 'Configuracion', 'Compras', 'Ventas'];
 
@@ -44,9 +47,28 @@ export default function NavBarEcomerce() {
 
 	const [menuItems, setMenuItems] = useState(menuItemsGuest);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+	const { isLogged, logout, user } = useAuthContext();
 	const router = useRouter();
-	const isLogged = false;
+	const handleLogOut = async () => {
+		try {
+			const authtoken = JSON.parse(Cookies.get('NEXT_JS_AUTH_TOKENS'));
+			const data = await AuthService.logOut(authtoken.token);
+			console.log(data);
+			logout();
+			toast.success('Sesion cerrada correctamente');
+			router.push('/auth');
+		} catch (error) {
+			if (error.response.status === 401) {
+				toast.error('Sesion expirada');
+				logout();
+				router.push('/auth');
+			} else {
+				console.log(error.response.status);
+				toast.error('Error al cerrar sesion');
+			}
+		}
+	};
+
 	return (
 		<Navbar isBordered isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}>
 			<NavbarContent className="sm:hidden" justify="start">
@@ -56,24 +78,28 @@ export default function NavBarEcomerce() {
 			</NavbarContent>
 			<NavbarContent justify="start">
 				<NavbarBrand className="mr-4 gap-2 py-2">
-					<EcomerceLogo width="50px" height="50px" />
-					<div className="flex flex-col justify-start">
-						<div className="flex flex-row">
-							<p className="font-montserrat font-semibold text-[16px]">Fast</p>
-							<p className="font-extralight text-[16px] ">Shop</p>
+					<Link color="foreground" href="/">
+						<EcomerceLogo width="50px" height="50px" />
+						<div className="flex flex-col justify-start">
+							<div className="flex flex-row">
+								<p className="font-montserrat font-semibold text-[16px]">
+									Fast
+								</p>
+								<p className="font-extralight text-[16px] ">Shop</p>
+							</div>
+							<p className="text-center text-xs">Fast and Easy</p>
 						</div>
-						<p className="text-center text-xs">Fast and Easy</p>
-					</div>
+					</Link>
 				</NavbarBrand>
 				<NavbarContent className="hidden sm:flex gap-3">
 					<NavbarItem>
-						<Link color="foreground" href="#">
+						<Link color="foreground" href="/">
 							Inicio
 						</Link>
 					</NavbarItem>
 					<NavbarItem isActive>
 						<Link href="#" aria-current="page" className="text-refgold-600">
-							Tienda
+							Tiendas
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
@@ -85,19 +111,6 @@ export default function NavBarEcomerce() {
 			</NavbarContent>
 
 			<NavbarContent as="div" className="items-center" justify="end">
-				<Input
-					classNames={{
-						base: 'max-w-full sm:max-w-[10rem] h-10',
-						mainWrapper: 'h-full',
-						input: 'text-small',
-						inputWrapper:
-							'h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20',
-					}}
-					placeholder="Type to search..."
-					size="sm"
-					startContent={<SearchIcon size={18} />}
-					type="search"
-				/>
 				<ThemeSwitch />
 				{isLogged ? (
 					<>
@@ -116,17 +129,23 @@ export default function NavBarEcomerce() {
 							<DropdownMenu aria-label="Profile Actions" variant="flat">
 								<DropdownItem key="profile" className="h-14 gap-2">
 									<p className="font-semibold">Sesion iniciada con</p>
-									<p className="font-semibold">zoey@example.com</p>
+									<p className="font-semibold">{user.email}</p>
 								</DropdownItem>
-								<DropdownItem key="settings">Configuracion</DropdownItem>
-								<DropdownItem key="team_settings">Team Settings</DropdownItem>
-								<DropdownItem key="analytics">Analiticas</DropdownItem>
-								<DropdownItem key="system">System</DropdownItem>
-								<DropdownItem key="configurations">Configurations</DropdownItem>
+								<DropdownItem key="perfil">
+									<Link href="/profile">Mi perfil</Link>
+								</DropdownItem>
+								<DropdownItem key="dashboard">
+									<Link href="/dashboard">Dashboard</Link>
+								</DropdownItem>
+								<DropdownItem key="analytics">Configuracion</DropdownItem>
+								<DropdownItem key="system">Analiticas</DropdownItem>
 								<DropdownItem key="help_and_feedback">
 									Help & Feedback
 								</DropdownItem>
-								<DropdownItem key="logout" color="danger">
+								<DropdownItem
+									key="logout"
+									color="danger"
+									onClick={handleLogOut}>
 									Log Out
 								</DropdownItem>
 							</DropdownMenu>

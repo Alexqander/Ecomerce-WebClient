@@ -1,5 +1,4 @@
 'use client';
-
 import {
 	Card,
 	Grid,
@@ -226,8 +225,7 @@ export default function DasboardPage() {
 									<Flex
 										className="space-x-0.5"
 										justifyContent="start"
-										alignItems="center"
-									>
+										alignItems="center">
 										<Title> Performance History </Title>
 									</Flex>
 								</div>
@@ -235,8 +233,7 @@ export default function DasboardPage() {
 									<MultiSelect
 										className="max-w-full sm:max-w-xs"
 										onValueChange={setSelectedNames}
-										placeholder="Select Salespeople..."
-									>
+										placeholder="Select Salespeople...">
 										{salesPeople.map((item) => (
 											<MultiSelectItem key={item.name} value={item.name}>
 												{item.name}
@@ -246,8 +243,7 @@ export default function DasboardPage() {
 									<Select
 										className="max-w-full sm:max-w-xs"
 										defaultValue="all"
-										onValueChange={setSelectedStatus}
-									>
+										onValueChange={setSelectedStatus}>
 										<SelectItem value="all">All Performances</SelectItem>
 										<SelectItem value="overperforming">
 											Overperforming
@@ -307,8 +303,7 @@ export default function DasboardPage() {
 													<TableCell className="text-right">
 														<BadgeDelta
 															deltaType={deltaTypes[item.status]}
-															size="xs"
-														>
+															size="xs">
 															{item.status}
 														</BadgeDelta>
 													</TableCell>

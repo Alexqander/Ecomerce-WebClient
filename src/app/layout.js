@@ -2,7 +2,8 @@ import './globals.css';
 import { Inter } from 'next/font/google';
 import Providers from './providers';
 import NavBarEcomerce from '@/components/navigation/NavBarEcomerce';
-/* import SessionAuthProvider from '@/context/SessionAuthProvider'; */
+import AuthContextProvider from '@/context/authContext';
+import { Toaster } from 'sonner';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,12 +16,13 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
 			<body className={inter.className}>
-				{/* <SessionAuthProvider> */}
-				<Providers>
-					<NavBarEcomerce />
-					{children}
-				</Providers>
-				{/* 	</SessionAuthProvider> */}
+				<AuthContextProvider>
+					<Providers>
+						<NavBarEcomerce />
+						{children}
+						<Toaster richColors position="top-center" />
+					</Providers>
+				</AuthContextProvider>
 			</body>
 		</html>
 	);

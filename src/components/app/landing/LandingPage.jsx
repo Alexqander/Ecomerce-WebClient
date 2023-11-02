@@ -110,8 +110,8 @@ export default function LandingPage() {
 			<div className="relative isolate overflow-hidden py-24 sm:py-32">
 				<div className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center">
 					<Image
-						layout="fill"
-						objectFit="cover"
+						fill
+						className="object-cover"
 						src={landing}
 						alt="image landing"
 					/>

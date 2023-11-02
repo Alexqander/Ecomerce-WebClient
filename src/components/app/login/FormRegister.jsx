@@ -1,6 +1,6 @@
 'use client';
 import { Button } from '@nextui-org/button';
-import React from 'react';
+import { useState } from 'react';
 import {
 	BuildingStorefrontIcon,
 	UserIcon,
@@ -9,8 +9,38 @@ import {
 import { EyeFilledIcon } from '@/components/icons/input/EyeFilledIcon';
 import { EyeSlashFilledIcon } from '@/components/icons/input/EyeSlashFilledIcon';
 import { Input } from '@nextui-org/react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { registerSchema } from '@/validations/loginSchema';
+import { AuthService } from '@/services/auth.service';
 export default function FormRegister() {
-	const [isVisible, setIsVisible] = React.useState(false);
+	const [isVisible, setIsVisible] = useState(false);
+	const [tipoCuenta, setTipoCuenta] = useState(null);
+	const [selected, setSelected] = useState(false);
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+	} = useForm({
+		resolver: yupResolver(registerSchema),
+	});
+	const handleSelected = (id) => {
+		setSelected(!selected);
+		setTipoCuenta(id);
+	};
+	const onSubmit = async (data) => {
+		const newUser = {
+			user: {
+				...data,
+			},
+			role: tipoCuenta,
+		};
+		try {
+			const data = await AuthService.register(newUser);
+		} catch (error) {}
+
+		console.log(newUser);
+	};
 
 	const toggleVisibility = () => setIsVisible(!isVisible);
 	return (
@@ -20,7 +50,7 @@ export default function FormRegister() {
 					<h1 className="text-2xl font-montserrat font-semibold tracking-wider text-yellow-400 capitalize">
 						Obten tu cuenta gratuita.
 					</h1>
-					<p class="my-4 text-gray-500 dark:text-gray-400">
+					<p class="my-4 text-gray-500 dark:text-gray-300">
 						Vamos a configurarlo todo para que pueda verificar su cuenta
 						personal y comenzar a configurar su perfil.
 					</p>
@@ -30,26 +60,49 @@ export default function FormRegister() {
 							<Button
 								size="lg"
 								color="secondary"
+								onClick={() => handleSelected(4)}
+								variant={selected ? 'solid' : 'bordered'}
 								startContent={<UserIcon className="w-5 h-5" />}>
 								Cliente
 							</Button>
 							<Button
 								size="lg"
 								color="secondary"
-								variant="bordered"
+								onClick={() => handleSelected(2)}
+								variant={selected ? 'bordered' : 'solid'}
 								startContent={<BuildingStorefrontIcon className="w-5 h-5" />}>
 								Empresa
 							</Button>
 						</div>
-						<form className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+						<form
+							onSubmit={handleSubmit(onSubmit)}
+							className="grid grid-cols-1 lg:grid-cols-2 gap-3">
 							<div className="flex flex-col w-full gap-3">
-								<Input type="text" variant="flat" label="Nombre" />
-								<Input type="email" variant="flat" label="Email" />
 								<Input
-									label="Contraseña"
-									variant="flat"
-									size="lg"
-									placeholder="Enter your password"
+									type="text"
+									variant="bordered"
+									label="Nombre *"
+									placeholder="Ingrese su nombre"
+									{...register('name')}
+									color={errors.name ? 'danger' : 'success'}
+									isInvalid={errors.name}
+									errorMessage={errors.name?.message}
+								/>
+								<Input
+									type="email"
+									variant="bordered"
+									label="Email *"
+									placeholder="Ingrese su email"
+									{...register('email')}
+									color={errors.email ? 'danger' : 'success'}
+									isInvalid={errors.email}
+									errorMessage={errors.email?.message}
+								/>
+								<Input
+									label="Contraseña *"
+									variant="bordered"
+									size="md"
+									placeholder="Ingrese su contraseña"
 									endContent={
 										<button
 											className="focus:outline-none"
@@ -64,16 +117,38 @@ export default function FormRegister() {
 									}
 									type={isVisible ? 'text' : 'password'}
 									className="w-full"
+									{...register('password')}
+									color={errors.password ? 'danger' : 'success'}
+									isInvalid={errors.password}
+									errorMessage={errors.password?.message}
 								/>
 							</div>
 							<div className="flex flex-col w-full gap-3">
-								<Input type="text" variant="flat" label="Apellidos" />
-								<Input type="text" variant="flat" label="Numero de telefono" />
 								<Input
-									label="Confirmar contraseña"
-									variant="flat"
-									size="lg"
-									placeholder="Enter your password"
+									type="text"
+									variant="bordered"
+									label="Apellidos *"
+									placeholder="Ingrese sus apellidos"
+									{...register('lastName')}
+									color={errors.lastName ? 'danger' : 'success'}
+									isInvalid={errors.lastName}
+									errorMessage={errors.lastName?.message}
+								/>
+								<Input
+									type="text"
+									variant="bordered"
+									label="Numero de telefono *"
+									placeholder="xxx-xxx-xxxx"
+									{...register('phone')}
+									color={errors.phone ? 'danger' : 'success'}
+									isInvalid={errors.phone}
+									errorMessage={errors.phone?.message}
+								/>
+								<Input
+									label="Confirmar contraseña *"
+									variant="bordered"
+									size="md"
+									placeholder="Confirme su contraseña"
 									endContent={
 										<button
 											className="focus:outline-none"
@@ -88,10 +163,15 @@ export default function FormRegister() {
 									}
 									type={isVisible ? 'text' : 'password'}
 									className="w-full"
+									{...register('confirmPassword')}
+									color={errors.confirmPassword ? 'danger' : 'success'}
+									isInvalid={errors.confirmPassword}
+									errorMessage={errors.confirmPassword?.message}
 								/>
 							</div>
 							<Button
 								variant="solid"
+								type="submit"
 								size="lg"
 								endContent={<ArrowRightIcon className="w-5 h-5" />}
 								className="bg-success text-white my-5">

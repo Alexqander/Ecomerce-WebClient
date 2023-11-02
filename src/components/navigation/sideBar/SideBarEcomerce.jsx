@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import { useState } from 'react';
 import Link from 'next/link';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/react';
@@ -22,14 +23,7 @@ export default function SideBarEcomerce({ options }) {
 						isMenuOpen ? 'hidden' : 'flex'
 					} flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700`}>
 					<h2 className="font-montserrat font-semibold text-3xl">Mi cuenta</h2>
-					{/* <Link href="#" className="flex flex-col items-center justify-center">
-				<EcomerceLogo width={60} height={60} className="mx-auto" />
-				<div className="flex flex-row justify-center content-center">
-					<p className="font-montserrat font-semibold text-[40px]">Fast</p>
-					<p className="font-extralight text-[40px]">Shop</p>
-				</div>
-				<p className="text-center text-base">Fast and Easy</p>
-			</Link> */}
+
 					<div className="flex flex-col justify-between flex-1 mt-6">
 						<nav className="-mx-3 space-y-6 ">
 							{options.map(({ grupo }) => (

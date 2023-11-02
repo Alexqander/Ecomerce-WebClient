@@ -1,17 +1,57 @@
 'use client';
 import EcomerceLogo from '@/components/icons/brand/EcomerceLogo';
-import { GoogleIcon } from '@/components/icons/google/GoogleIcon';
 import { EyeFilledIcon } from '@/components/icons/input/EyeFilledIcon';
 import { EyeSlashFilledIcon } from '@/components/icons/input/EyeSlashFilledIcon';
 import { Button, Input } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
-import axios from 'axios';
+import { useAuthContext } from '@/context/authContext';
 import Link from 'next/link';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { loginSchema } from '@/validations/loginSchema';
+import { AuthService } from '@/services/auth.service';
+import { toast } from 'sonner';
 
 export default function FormLogin() {
 	const [isVisible, setIsVisible] = React.useState(false);
+	const router = useRouter();
+	const { login } = useAuthContext();
+	const {
+		register,
+		handleSubmit,
+		formState: { errors, isSubmitting },
+	} = useForm({
+		resolver: yupResolver(loginSchema),
+	});
 
+	const onSubmit = async (data) => {
+		const { email, password } = data;
+		try {
+			const { data } = await AuthService.login({ email, password });
+			const { token } = data.data;
+			const authTokens = {
+				token: token.token,
+				expiresAt: token.expiresAt,
+				userId: token.userId,
+				tokenId: token.id,
+			};
+			const user = {
+				email: data.data.email,
+				roleId: data.data.roleId,
+				phoneNumber: data.data.phoneNumber,
+				userId: data.data.userId,
+				name: data.data.name,
+				lastName: data.data.lastName,
+			};
+			login({ authTokens, user });
+			router.push('/dashboard');
+			toast.success(`Bienvenido ${user.name} ${user.lastName}`);
+		} catch (error) {
+			toast.error('Usuario o contraseña incorrectos');
+			console.log(error);
+		}
+	};
 	const toggleVisibility = () => setIsVisible(!isVisible);
 	return (
 		<>
@@ -31,7 +71,9 @@ export default function FormLogin() {
 						</h2>
 					</div>
 
-					<form action="" className="flex flex-col gap-10 justify-center">
+					<form
+						onSubmit={handleSubmit(onSubmit)}
+						className="flex flex-col gap-10 justify-center">
 						<Input
 							isClearable
 							size="lg"
@@ -41,6 +83,10 @@ export default function FormLogin() {
 							placeholder="Enter your email"
 							onClear={() => console.log('input cleared')}
 							className="w-full"
+							{...register('email')}
+							color={errors.email ? 'danger' : 'success'}
+							isInvalid={errors.email}
+							errorMessage={errors.email?.message}
 						/>
 						<Input
 							label="Password"
@@ -61,6 +107,10 @@ export default function FormLogin() {
 							}
 							type={isVisible ? 'text' : 'password'}
 							className="w-full"
+							color={errors.password ? 'danger' : 'success'}
+							{...register('password')}
+							isInvalid={errors.password}
+							errorMessage={errors.password?.message}
 						/>
 						<div className="flex gap-2 justify-end">
 							<Link href="/auth/recovery">
@@ -69,7 +119,12 @@ export default function FormLogin() {
 								</p>
 							</Link>
 						</div>
-						<Button variant="solid" size="lg" color="secondary">
+						<Button
+							type="submit"
+							variant="solid"
+							size="lg"
+							color="secondary"
+							isLoading={isSubmitting}>
 							Iniciar Sesion
 						</Button>
 					</form>
