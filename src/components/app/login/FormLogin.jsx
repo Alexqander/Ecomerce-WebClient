@@ -13,6 +13,13 @@ import { loginSchema } from '@/validations/loginSchema';
 import { AuthService } from '@/services/auth.service';
 import { toast } from 'sonner';
 
+const directRoles = {
+	1: '/dashboard/admin',
+	2: '/dashboard/vendedor',
+	3: '/dashboard/repartidor',
+	4: '/dashboard/user',
+};
+
 export default function FormLogin() {
 	const [isVisible, setIsVisible] = React.useState(false);
 	const router = useRouter();
@@ -45,8 +52,9 @@ export default function FormLogin() {
 				lastName: data.data.lastName,
 			};
 			login({ authTokens, user });
-			router.push('/dashboard');
-			toast.success(`Bienvenido ${user.name} ${user.lastName}`);
+			console.log(user.roleId);
+			router.push(directRoles[user.roleId]);
+			toast.success(`Bienvenido ${user.name}`);
 		} catch (error) {
 			toast.error('Usuario o contraseña incorrectos');
 			console.log(error);

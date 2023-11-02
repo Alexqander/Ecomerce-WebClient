@@ -14,18 +14,13 @@ export const AuthService = {
 
 		return response;
 	},
-	register: async ({ name, email, phone, password }) => {
+	register: async (newUser) => {
 		const response = await axios.post(
-			`${config.development.api.auth}${config.development.api.auth.register}`,
-			{
-				name,
-				email,
-				phone,
-				password,
-			}
+			`${config.development.api.urlBase}${config.development.api.auth.register}`,
+			newUser
 		);
-		const data = await response.json();
-		return data;
+
+		return response;
 	},
 	logOut: async (token) => {
 		const response = await axios.get(

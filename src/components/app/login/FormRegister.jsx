@@ -13,10 +13,13 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registerSchema } from '@/validations/loginSchema';
 import { AuthService } from '@/services/auth.service';
+import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 export default function FormRegister() {
 	const [isVisible, setIsVisible] = useState(false);
 	const [tipoCuenta, setTipoCuenta] = useState(null);
 	const [selected, setSelected] = useState(false);
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -28,7 +31,10 @@ export default function FormRegister() {
 		setSelected(!selected);
 		setTipoCuenta(id);
 	};
+	console.log(errors);
 	const onSubmit = async (data) => {
+		console.log('Iniciando peticion');
+		localStorage.setItem('user', JSON.stringify(data));
 		const newUser = {
 			user: {
 				...data,
@@ -37,9 +43,12 @@ export default function FormRegister() {
 		};
 		try {
 			const data = await AuthService.register(newUser);
-		} catch (error) {}
-
-		console.log(newUser);
+			console.log(data);
+			router.push('/auth/register/initial');
+		} catch (error) {
+			toast.error('Error al crear el usuario', error);
+			console.log(error);
+		}
 	};
 
 	const toggleVisibility = () => setIsVisible(!isVisible);
@@ -50,7 +59,7 @@ export default function FormRegister() {
 					<h1 className="text-2xl font-montserrat font-semibold tracking-wider text-yellow-400 capitalize">
 						Obten tu cuenta gratuita.
 					</h1>
-					<p class="my-4 text-gray-500 dark:text-gray-300">
+					<p className="my-4 text-gray-500 dark:text-gray-300">
 						Vamos a configurarlo todo para que pueda verificar su cuenta
 						personal y comenzar a configurar su perfil.
 					</p>
@@ -139,10 +148,10 @@ export default function FormRegister() {
 									variant="bordered"
 									label="Numero de telefono *"
 									placeholder="xxx-xxx-xxxx"
-									{...register('phone')}
-									color={errors.phone ? 'danger' : 'success'}
-									isInvalid={errors.phone}
-									errorMessage={errors.phone?.message}
+									{...register('phoneNumber')}
+									color={errors.phoneNumber ? 'danger' : 'success'}
+									isInvalid={errors.phoneNumber}
+									errorMessage={errors.phoneNumber?.message}
 								/>
 								<Input
 									label="Confirmar contraseña *"
@@ -171,6 +180,7 @@ export default function FormRegister() {
 							</div>
 							<Button
 								variant="solid"
+								isLoading={isSubmitting}
 								type="submit"
 								size="lg"
 								endContent={<ArrowRightIcon className="w-5 h-5" />}

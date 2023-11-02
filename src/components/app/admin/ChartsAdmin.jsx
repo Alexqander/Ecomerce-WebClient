@@ -1,4 +1,5 @@
 'use client';
+import React from 'react';
 import {
 	Card,
 	Grid,
@@ -27,7 +28,6 @@ import {
 	ProgressBar,
 } from '@tremor/react';
 import { AreaChart } from '@tremor/react';
-import React from 'react';
 
 const Kpi = {
 	title: '',
@@ -168,10 +168,9 @@ const deltaTypes = {
 	underperforming: 'moderateDecrease',
 };
 
-export default function DasboardPage() {
+export default function ChartsAdmin() {
 	const [selectedStatus, setSelectedStatus] = useState('all');
 	const [selectedNames, setSelectedNames] = useState([]);
-
 	const isSalesPersonSelected = (salesPerson) =>
 		(salesPerson.status === selectedStatus || selectedStatus === 'all') &&
 		(selectedNames.includes(salesPerson.name) || selectedNames.length === 0);
