@@ -9,7 +9,9 @@ export default function DashboardLayout({ children }) {
 			<Suspense fallback={<Loading />}>
 				<SideBarEcomerce />
 			</Suspense>
-			<main className="container-fluid w-full ml-64 px-10">{children}</main>
+			<main className="container-fluid w-full ml-0 lg:ml-64 px-10">
+				{children}
+			</main>
 		</div>
 	);
 }
