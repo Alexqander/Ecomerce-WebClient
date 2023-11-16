@@ -10,12 +10,15 @@ export default {
 				logoutAllSessions: '/auth/logOutAll',
 			},
 			products: {
-				getProducts: '/products',
+				getProducts: '/products/',
+				findProducts: '/products/search',
 				getProduct: '/products/:id',
+				createProduct: '/products',
 			},
 			categories: {
-				getCategories: '/categories',
+				getCategories: '/categories/',
 				getCategory: '/categories/:id',
+				getSubcategories: '/categories/subcategories/',
 			},
 			orders: {
 				getOrders: '/orders',
@@ -25,9 +28,23 @@ export default {
 				getUsers: '/users',
 				getUser: '/users/:id',
 			},
+			profileSeller: {
+				getProfileSeller: '/profileSeller',
+				getProductsStore: '/profileSeller/profile/products/:id',
+				updateProfileSeller: '/profileSeller',
+				deleteProfileSeller: '/profileSeller',
+			},
 			carts: {
 				getCarts: '/carts',
 				getCart: '/carts/:id',
+			},
+			reviews: {
+				getReviews: '/reviews',
+				getReview: '/reviews/:id',
+			},
+			wishList: {
+				getWishList: '/wishList',
+				getWishListByUser: '/wishList/:id',
 			},
 		},
 	},

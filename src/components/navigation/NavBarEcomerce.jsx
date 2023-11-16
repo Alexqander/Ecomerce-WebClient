@@ -24,7 +24,12 @@ import { useAuthContext } from '@/context/authContext';
 import { AuthService } from '@/services/auth.service';
 import Cookies from 'js-cookie';
 import { toast } from 'sonner';
+import { directRoles } from '@/config/rolesRoutes';
+import ShoppingCart from '../app/shop/ShoppingCart/ShoppingCart';
+import { getInitials } from '@/utils/utils';
+import { useDashboardOptions } from './LinksDashboard';
 export default function NavBarEcomerce() {
+	const { menuLinks } = useDashboardOptions();
 	const menuItemsUser = ['Mi perfil', 'Configuracion', 'Compras', 'Ventas'];
 
 	const menuItemsAdmin = [
@@ -45,9 +50,11 @@ export default function NavBarEcomerce() {
 
 	const menuItemsGuest = ['Inicio', 'Productos', 'Vender', 'Iniciar sesion'];
 
-	const [menuItems, setMenuItems] = useState(menuItemsGuest);
+	const [menuItems, setMenuItems] = useState(menuLinks);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isLogged, logout, user } = useAuthContext();
+	console.log(user);
+	const { roleId } = user;
 	const router = useRouter();
 	const handleLogOut = async () => {
 		try {
@@ -98,12 +105,12 @@ export default function NavBarEcomerce() {
 						</Link>
 					</NavbarItem>
 					<NavbarItem isActive>
-						<Link href="#" aria-current="page" className="text-refgold-600">
-							Tiendas
+						<Link href="/shop" aria-current="page" className="text-refgold-600">
+							Tienda
 						</Link>
 					</NavbarItem>
 					<NavbarItem>
-						<Link color="foreground" href="#">
+						<Link color="foreground" href="/shop/categories">
 							Categorias
 						</Link>
 					</NavbarItem>
@@ -121,9 +128,9 @@ export default function NavBarEcomerce() {
 									as="button"
 									className="transition-transform"
 									color="secondary"
-									name="Jason Hughes"
+									src={user?.profilePicture}
+									name={getInitials(user?.name, user?.lastName)}
 									size="sm"
-									src="https://i.pravatar.cc/150?u=a042581f4e29026704d"
 								/>
 							</DropdownTrigger>
 							<DropdownMenu aria-label="Profile Actions" variant="flat">
@@ -132,15 +139,15 @@ export default function NavBarEcomerce() {
 									<p className="font-semibold">{user.email}</p>
 								</DropdownItem>
 								<DropdownItem key="perfil">
-									<Link href="/profile">Mi perfil</Link>
+									<Link href={`${directRoles[roleId]}/profile`}>Mi perfil</Link>
 								</DropdownItem>
 								<DropdownItem key="dashboard">
-									<Link href="/dashboard">Dashboard</Link>
+									<Link href={`${directRoles[roleId]}`}>Dashboard</Link>
 								</DropdownItem>
-								<DropdownItem key="analytics">Configuracion</DropdownItem>
-								<DropdownItem key="system">Analiticas</DropdownItem>
-								<DropdownItem key="help_and_feedback">
-									Help & Feedback
+								<DropdownItem key="settings">
+									<Link href={`${directRoles[roleId]}/settings`}>
+										Configuracion
+									</Link>
 								</DropdownItem>
 								<DropdownItem
 									key="logout"
@@ -161,6 +168,9 @@ export default function NavBarEcomerce() {
 						</Button>
 					</>
 				)}
+			</NavbarContent>
+			<NavbarContent className="flex flex-row gap-3" justify="end">
+				<ShoppingCart />
 			</NavbarContent>
 			<NavbarMenu>
 				{menuItems.map((item, index) => (

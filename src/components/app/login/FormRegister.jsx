@@ -5,6 +5,7 @@ import {
 	BuildingStorefrontIcon,
 	UserIcon,
 	ArrowRightIcon,
+	TruckIcon,
 } from '@heroicons/react/24/outline';
 import { EyeFilledIcon } from '@/components/icons/input/EyeFilledIcon';
 import { EyeSlashFilledIcon } from '@/components/icons/input/EyeSlashFilledIcon';
@@ -15,26 +16,32 @@ import { registerSchema } from '@/validations/loginSchema';
 import { AuthService } from '@/services/auth.service';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { useAuthContext } from '@/context/authContext';
 export default function FormRegister() {
 	const [isVisible, setIsVisible] = useState(false);
 	const [tipoCuenta, setTipoCuenta] = useState(null);
-	const [selected, setSelected] = useState(false);
+	const [selectedId, setSelectedId] = useState(4);
+	const { login } = useAuthContext();
+
 	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
 		formState: { errors, isSubmitting },
+		// ... otros hooks de useForm
 	} = useForm({
 		resolver: yupResolver(registerSchema),
+		context: { tipoCuenta }, // Aquí se pasa el contexto a useForm, no directamente a Yup
 	});
+	// Actualiza el contexto de validación cada vez que `tipoCuenta` cambie
 	const handleSelected = (id) => {
-		setSelected(!selected);
+		setSelectedId(id);
 		setTipoCuenta(id);
 	};
 	console.log(errors);
+
 	const onSubmit = async (data) => {
-		console.log('Iniciando peticion');
-		localStorage.setItem('user', JSON.stringify(data));
+		console.log(data);
 		const newUser = {
 			user: {
 				...data,
@@ -42,9 +49,24 @@ export default function FormRegister() {
 			role: tipoCuenta,
 		};
 		try {
-			const data = await AuthService.register(newUser);
+			const { data } = await AuthService.registerAndSign(newUser);
+			console.log(data.data);
+			const { token } = data.data;
+			const { userWithoutPassword } = data.data;
+			console.log(token);
+			const authTokens = {
+				token: token.token,
+				expiresAt: token.expiresAt,
+				userId: token.userId,
+				tokenId: token.id,
+			};
+			const user = {
+				...userWithoutPassword,
+			};
+			login({ authTokens, user });
 			console.log(data);
 			router.push('/auth/register/initial');
+			toast.success(`Usuario creado correctamente`);
 		} catch (error) {
 			toast.error('Error al crear el usuario', error);
 			console.log(error);
@@ -70,7 +92,7 @@ export default function FormRegister() {
 								size="lg"
 								color="secondary"
 								onClick={() => handleSelected(4)}
-								variant={selected ? 'solid' : 'bordered'}
+								variant={selectedId === 4 ? 'solid' : 'bordered'}
 								startContent={<UserIcon className="w-5 h-5" />}>
 								Cliente
 							</Button>
@@ -78,9 +100,17 @@ export default function FormRegister() {
 								size="lg"
 								color="secondary"
 								onClick={() => handleSelected(2)}
-								variant={selected ? 'bordered' : 'solid'}
+								variant={selectedId === 2 ? 'solid' : 'bordered'}
 								startContent={<BuildingStorefrontIcon className="w-5 h-5" />}>
 								Empresa
+							</Button>
+							<Button
+								size="lg"
+								color="secondary"
+								onClick={() => handleSelected(3)}
+								variant={selectedId === 3 ? 'solid' : 'bordered'}
+								startContent={<TruckIcon className="w-5 h-5" />}>
+								Repartidor
 							</Button>
 						</div>
 						<form
@@ -178,6 +208,20 @@ export default function FormRegister() {
 									errorMessage={errors.confirmPassword?.message}
 								/>
 							</div>
+							{selectedId === 2 && (
+								<Input
+									type="text"
+									variant="bordered"
+									label="Nombre del negocio *"
+									placeholder="Ingrese el nombre de su negocio"
+									{...register('storeName')}
+									color={errors.storeName ? 'danger' : 'success'}
+									isInvalid={errors.storeName}
+									errorMessage={errors.storeName?.message}
+									className="col-span-2"
+								/>
+							)}
+
 							<Button
 								variant="solid"
 								isLoading={isSubmitting}
