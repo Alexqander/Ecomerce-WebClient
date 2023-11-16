@@ -26,5 +26,10 @@ export const registerSchema = yup
 		confirmPassword: yup
 			.string()
 			.oneOf([yup.ref('password'), null], 'Las contraseñas no coinciden'),
+		storeName: yup.string().when('$tipoCuenta', (tipoCuenta, schema) => {
+			return tipoCuenta === 2
+				? schema.required('El nombre de la tienda es requerido')
+				: schema.notRequired();
+		}),
 	})
 	.required();

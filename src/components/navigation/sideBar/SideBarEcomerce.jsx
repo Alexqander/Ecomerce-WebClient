@@ -10,11 +10,11 @@ export default function SideBarEcomerce() {
 	const changeIsMenuOpen = () => {
 		setIsMenuOpen(!isMenuOpen);
 	};
-	const options = useDashboardOptions() || [];
+	const { links } = useDashboardOptions();
 
 	return (
 		<>
-			<div className="fixed top-16 h-[calc(100vh-60px)] inset-y-0 left-0">
+			<div className="fixed top-16 h-[calc(100vh-65px)] inset-y-0 left-0">
 				<div className="flex justify-end px-5 pt-5 sm:hidden">
 					<Button isIconOnly color="background" onClick={changeIsMenuOpen}>
 						<Bars3Icon className="h-8 w-8" />
@@ -23,6 +23,7 @@ export default function SideBarEcomerce() {
 				<aside
 					className={`
 					 md:flex
+					  h-[100%]
 					${
 						isMenuOpen ? 'hidden' : 'flex'
 					} flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700`}>
@@ -30,8 +31,8 @@ export default function SideBarEcomerce() {
 
 					<div className="flex flex-col justify-between flex-1 mt-6">
 						<nav className="-mx-3 space-y-6 ">
-							{options &&
-								options.map(({ grupo }) => (
+							{links &&
+								links.map(({ grupo }) => (
 									<div key={grupo.name} className="space-y-3 ">
 										<label className="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">
 											{grupo.name}

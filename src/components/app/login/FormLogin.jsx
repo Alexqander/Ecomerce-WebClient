@@ -4,7 +4,7 @@ import { EyeFilledIcon } from '@/components/icons/input/EyeFilledIcon';
 import { EyeSlashFilledIcon } from '@/components/icons/input/EyeSlashFilledIcon';
 import { Button, Input } from '@nextui-org/react';
 import { useRouter } from 'next/navigation';
-import React from 'react';
+import { useState } from 'react';
 import { useAuthContext } from '@/context/authContext';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
@@ -12,16 +12,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from '@/validations/loginSchema';
 import { AuthService } from '@/services/auth.service';
 import { toast } from 'sonner';
-
-const directRoles = {
-	1: '/dashboard/admin',
-	2: '/dashboard/vendedor',
-	3: '/dashboard/repartidor',
-	4: '/dashboard/user',
-};
+import { directRoles } from '@/config/rolesRoutes';
 
 export default function FormLogin() {
-	const [isVisible, setIsVisible] = React.useState(false);
+	const [isVisible, setIsVisible] = useState(false);
 	const router = useRouter();
 	const { login } = useAuthContext();
 	const {
@@ -36,6 +30,7 @@ export default function FormLogin() {
 		const { email, password } = data;
 		try {
 			const { data } = await AuthService.login({ email, password });
+			console.log(data);
 			const { token } = data.data;
 			const authTokens = {
 				token: token.token,
@@ -44,12 +39,7 @@ export default function FormLogin() {
 				tokenId: token.id,
 			};
 			const user = {
-				email: data.data.email,
-				roleId: data.data.roleId,
-				phoneNumber: data.data.phoneNumber,
-				userId: data.data.userId,
-				name: data.data.name,
-				lastName: data.data.lastName,
+				...data.data,
 			};
 			login({ authTokens, user });
 			console.log(user.roleId);

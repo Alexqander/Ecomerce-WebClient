@@ -1,5 +1,6 @@
 import axios from 'axios';
 import config from '@/config/index.js';
+
 export const AuthService = {
 	login: async ({ email, password }) => {
 		console.log({ email, password });
@@ -14,7 +15,7 @@ export const AuthService = {
 
 		return response;
 	},
-	register: async (newUser) => {
+	registerAndSign: async (newUser) => {
 		const response = await axios.post(
 			`${config.development.api.urlBase}${config.development.api.auth.register}`,
 			newUser
