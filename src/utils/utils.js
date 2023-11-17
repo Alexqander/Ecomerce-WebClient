@@ -7,3 +7,10 @@ export function getInitials(name) {
 	const initials = filteredParts.map((part) => part[0].toUpperCase()).join('');
 	return initials;
 }
+export function removeSubstringAndGetNumber(value, substring) {
+	// Reemplazar el substring con un string vacío
+	const cleanedValue = value.replace(substring, '');
+
+	// Convertir el resultado en número
+	return Number(cleanedValue);
+}

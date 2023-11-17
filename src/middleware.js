@@ -66,6 +66,18 @@ export function middleware(request) {
 		return response;
 	}
 
+	// proteger ruta de productos
+	if (
+		authTokens &&
+		request.nextUrl.pathname.startsWith('/shop') &&
+		userRole !== 4
+	) {
+		const response = NextResponse.redirect(
+			new URL(directRoles[userRole], request.url)
+		);
+		return response;
+	}
+
 	if (authTokens && request.nextUrl.pathname.startsWith('/auth')) {
 		const response = NextResponse.redirect(
 			new URL(directRoles[userRole], request.url)
@@ -82,5 +94,6 @@ export const config = {
 		'/dashboard/vendedor(.*)',
 		'/dashboard/repartidor(.*)',
 		'/auth',
+		'/shop(.*)',
 	],
 };

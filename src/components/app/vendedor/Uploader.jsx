@@ -1,7 +1,6 @@
 'use client';
 import { useCallback, useEffect, useState } from 'react';
 import {
-	ArrowUpTrayIcon,
 	CloudArrowUpIcon,
 	TrashIcon,
 	XMarkIcon,
@@ -9,18 +8,36 @@ import {
 import Image from 'next/image';
 import { useDropzone } from 'react-dropzone';
 import { Button, Input, Select, SelectItem } from '@nextui-org/react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { productSchema } from '@/validations/productSchema';
+import { useAuthContext } from '@/context/authContext';
+import { toast } from 'sonner';
+import { CategoriesService } from '@/services/categories.service';
+import { removeSubstringAndGetNumber } from '@/utils/utils';
+import { useRouter } from 'next/navigation';
+import { ProductsService } from '@/services/products.service';
 export default function Uploader({ className }) {
+	const {
+		register,
+		handleSubmit,
+		setValue,
+		formState: { errors, isSubmitting },
+	} = useForm({
+		resolver: yupResolver(productSchema),
+	});
+	const router = useRouter();
+	const { user } = useAuthContext();
 	const [files, setFiles] = useState([]);
 	const [rejectedFiles, setRejectedFiles] = useState([]);
+	const [categories, setCategories] = useState([]);
+	const [subcategories, setSubcategories] = useState([]);
+	const [selectedCategory, setSelectedCategory] = useState(0);
+	const [selectedSubCategory, setSelectedSubCategory] = useState(0);
 
 	const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
 		if (acceptedFiles?.length) {
-			setFiles((previousFiles) => [
-				...previousFiles,
-				...acceptedFiles.map((file) =>
-					Object.assign(file, { preview: URL.createObjectURL(file) })
-				),
-			]);
+			setFiles((previousFiles) => [...previousFiles, ...acceptedFiles]);
 		}
 
 		if (rejectedFiles?.length) {
@@ -35,9 +52,22 @@ export default function Uploader({ className }) {
 	});
 
 	useEffect(() => {
+		const fetchCategories = async () => {
+			try {
+				const { data } = await CategoriesService.getAllCategories();
+				if (data) {
+					setCategories(data.data);
+				}
+			} catch (error) {
+				toast.error('Error al obtener las categorias');
+			}
+		};
+
+		fetchCategories();
 		// revoke the data uris to avoid memory leaks
+		register('files');
 		return () => files.forEach((file) => URL.revokeObjectURL(file.preview));
-	}, [files, rejectedFiles]);
+	}, [files, rejectedFiles, register]);
 
 	const removeFile = (name) => {
 		setFiles(files.filter((file) => file.name !== name));
@@ -52,44 +82,102 @@ export default function Uploader({ className }) {
 		setRejectedFiles((files) => files.filter(({ file }) => file.name !== name));
 	};
 
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-
-		if (files.length === 0) return;
-		const formData = new FormData();
-		files.forEach((file) => {
-			formData.append('files', file);
-		});
-		formData.append('upload_preset', 'products');
-
-		// aqui mando el formulario para subir las imagenes
-
-		const res = await fetch(
-			'https://api.cloudinary.com/v1_1/dqf2smlu2/image/upload',
-			{
-				method: 'POST',
-				body: formData,
-			}
+	const handleChange = (e) => {
+		const subCategoryId = removeSubstringAndGetNumber(
+			e.target.value,
+			'ssbgrt-'
 		);
+		setSelectedCategory(subCategoryId);
+
+		setValue('subCategoryId', subCategoryId);
 	};
 
+	const handleCategoryChange = (e) => {
+		const substringToRemove = 'slgfr-';
+		const categoryId = removeSubstringAndGetNumber(
+			e.target.value,
+			substringToRemove
+		);
+		setValue('category', categoryId);
+		setSelectedCategory(categoryId);
+		fetchSubcategories(categoryId);
+	};
+
+	const fetchSubcategories = async (categoryId) => {
+		try {
+			const { data } = await CategoriesService.getSubcategoriesByCategory(
+				categoryId
+			);
+			if (data) {
+				setSubcategories(data.data);
+			}
+		} catch (error) {
+			toast.error('Error al obtener las subcategorias');
+		}
+	};
+
+	const onSubmit = async (data) => {
+		try {
+			const { category, ...formDataValues } = data; // Excluye 'category'
+			const formData = new FormData();
+			// Agregar los datos del formulario al FormData
+			for (const [key, value] of Object.entries(formDataValues)) {
+				console.log(key, value);
+				if (key !== 'files') {
+					formData.append(key, value);
+				}
+			}
+			// Agregar archivos al FormData
+			files.forEach((file) => formData.append('files', file));
+			const storeId = user.sellerProfile.store[0].id;
+			formData.append('storeId', storeId);
+
+			// Realizar solicitud a la API
+			const { data: response } = await ProductsService.createProduct(
+				user.token.token,
+				formData
+			);
+			console.log('response');
+			console.log(response);
+			if (response) {
+				toast.success('Producto creado exitosamente');
+				console.log('entre al if');
+				// Redireccionar a la pagina de productos
+				router.push('/dashboard/vendedor/products');
+			} else {
+				toast.error('Error al crear el producto');
+			}
+		} catch (error) {
+			// Manejo de excepciones
+			console.log(error);
+			toast.error('Error al crear el producto');
+		}
+	};
 	return (
-		<form onSubmit={handleSubmit} className="grid grid-cols-1 lg:grid-cols-2">
+		<form
+			onSubmit={handleSubmit(onSubmit)}
+			className="grid grid-cols-1 lg:grid-cols-2">
 			<div className="flex flex-col px-10">
 				<h2 className="title text-3xl font-semibold">
 					Información del producto
 				</h2>
 				<Input
 					variant="bordered"
-					color="success"
 					size="lg"
 					labelPlacement="outside"
 					label="Nombre"
+					{...register('name')}
+					color={errors.name ? 'danger' : 'success'}
+					isInvalid={errors.name}
+					errorMessage={errors.name?.message}
 					description="Nombre del producto"
 				/>
 				<Input
 					variant="bordered"
-					color="success"
+					{...register('description')}
+					color={errors.description ? 'danger' : 'success'}
+					isInvalid={errors.description}
+					errorMessage={errors.description?.message}
 					size="lg"
 					labelPlacement="outside"
 					label="Descripción"
@@ -99,8 +187,11 @@ export default function Uploader({ className }) {
 					<Input
 						type="number"
 						label="Precio"
+						{...register('price')}
 						variant="bordered"
-						color="success"
+						color={errors.price ? 'danger' : 'success'}
+						isInvalid={errors.price}
+						errorMessage={errors.price?.message}
 						size="lg"
 						placeholder="0.00"
 						labelPlacement="outside"
@@ -113,9 +204,12 @@ export default function Uploader({ className }) {
 					<Input
 						type="number"
 						variant="bordered"
+						{...register('stock')}
 						label="Stock"
 						size="lg"
-						color="success"
+						color={errors.stock ? 'danger' : 'success'}
+						isInvalid={errors.stock}
+						errorMessage={errors.stock?.message}
 						placeholder="0"
 						labelPlacement="outside"
 						startContent={
@@ -127,26 +221,44 @@ export default function Uploader({ className }) {
 				</div>
 				<div className="flex flex-col lg:flex-row gap-4 my-5">
 					<Select
+						{...register('category')}
+						color={errors.category ? 'danger' : 'success'}
+						isInvalid={errors.category}
+						errorMessage={errors.category?.message}
+						value={selectedCategory}
+						onChange={handleCategoryChange}
 						label="Categoria"
 						placeholder="Selecciona una categoria"
 						size="lg"
-						color="success"
 						variant="bordered"
 						className="">
-						<SelectItem value={1}>Accesorios</SelectItem>
-						<SelectItem value={1}>Belleza</SelectItem>
-						<SelectItem value={1}>Deportes</SelectItem>
+						{categories.map((category) => (
+							<SelectItem
+								key={`slgfr-${category.id}`}
+								value={`slgfr-${category.id}`}>
+								{category.name}
+							</SelectItem>
+						))}
 					</Select>
 					<Select
 						label="Subcategoria"
+						{...register('subCategoryId')}
+						color={errors.subCategoryId ? 'danger' : 'success'}
+						isInvalid={errors.subCategoryId}
+						errorMessage={errors.subCategoryId?.message}
 						placeholder="Selecciona una subcategoria"
+						value={selectedSubCategory}
+						onChange={handleChange}
 						size="lg"
-						color="success"
 						variant="bordered"
 						className="">
-						<SelectItem value={1}>Accesorios</SelectItem>
-						<SelectItem value={1}>Belleza</SelectItem>
-						<SelectItem value={1}>Deportes</SelectItem>
+						{subcategories.map((subcategory) => (
+							<SelectItem
+								key={`ssbgrt-${subcategory.id}`}
+								value={subcategory.id}>
+								{subcategory.name}
+							</SelectItem>
+						))}
 					</Select>
 				</div>
 				<Button
@@ -245,6 +357,7 @@ export default function Uploader({ className }) {
 									type="button"
 									color="danger"
 									isIconOnly
+									isLoading={isSubmitting}
 									onClick={() => removeRejected(file.name)}>
 									<TrashIcon className="w-5 h-5" />
 								</Button>

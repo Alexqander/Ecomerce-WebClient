@@ -11,9 +11,10 @@ import {
 	FaceSmileIcon,
 	UserGroupIcon,
 	HeartIcon,
-	ShieldCheckIcon
+	ShieldCheckIcon,
 } from '@heroicons/react/24/outline';
 import FooterComponent from '@/components/navigation/footer/FooterComponent';
+import Link from 'next/link';
 
 const features = [
 	{
@@ -80,16 +81,16 @@ export default function LandingPage() {
 							Conoce la plataforma de comercio electrónico que buscabas.
 						</p>
 						<div className="mt-10 flex items-center justify-center gap-x-6">
-							<a
+							<Link
 								href="#"
 								className="rounded-md bg-lightYellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 hover:bg-lightYellow-600">
 								Empieza a comprar
-							</a>
-							<a
+							</Link>
+							<Link
 								href="#"
 								className="text-sm font-semibold leading-6 text-gray-900 dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-300">
 								Acerca de nosotros <span aria-hidden="true">→</span>
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -130,9 +131,9 @@ export default function LandingPage() {
 					<div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
 						<div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
 							{links.map((link) => (
-								<a key={link.name} href={link.href}>
+								<Link key={link.name} href={link.href}>
 									{link.name} <span aria-hidden="true">&rarr;</span>
-								</a>
+								</Link>
 							))}
 						</div>
 						<dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
@@ -241,14 +242,12 @@ export default function LandingPage() {
 								/>
 								<button
 									type="submit"
-									className="flex-none rounded-md bg-yellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-								>
+									className="flex-none rounded-md bg-yellow-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-yellow-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">
 									Subscribete
 								</button>
 							</div>
 						</div>
 						<dl className=" gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2 ">
-							
 							<div className="flex flex-col items-center">
 								<div className="rounded-md bg-black/10 ring-black/10 dark:bg-white/5 p-2 ring-1 dark:ring-white/10">
 									<ShieldCheckIcon
@@ -256,16 +255,19 @@ export default function LandingPage() {
 										aria-hidden="true"
 									/>
 								</div>
-								<dt className="mt-4 font-semibold text-gray-900 dark:text-white">No spam</dt>
+								<dt className="mt-4 font-semibold text-gray-900 dark:text-white">
+									No spam
+								</dt>
 								<dd className="mt-2 leading-7 text-black dark:text-gray-400">
-								Al suscribirte, aceptas nuestra política de privacidad y el uso de tus datos para enviarte información relevante
+									Al suscribirte, aceptas nuestra política de privacidad y el
+									uso de tus datos para enviarte información relevante
 								</dd>
 							</div>
 						</dl>
 					</div>
 				</div>
 			</div>
-			<FooterComponent/>
+			{/* 	<FooterComponent /> */}
 		</div>
 	);
 }

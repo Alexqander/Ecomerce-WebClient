@@ -6,27 +6,12 @@ import { Button } from '@nextui-org/react';
 import { useDashboardOptions } from '../LinksDashboard';
 
 export default function SideBarEcomerce() {
-	const [isMenuOpen, setIsMenuOpen] = useState(true);
-	const changeIsMenuOpen = () => {
-		setIsMenuOpen(!isMenuOpen);
-	};
 	const { links } = useDashboardOptions();
 
 	return (
 		<>
-			<div className="fixed top-16 h-[calc(100vh-65px)] inset-y-0 left-0">
-				<div className="flex justify-end px-5 pt-5 sm:hidden">
-					<Button isIconOnly color="background" onClick={changeIsMenuOpen}>
-						<Bars3Icon className="h-8 w-8" />
-					</Button>
-				</div>
-				<aside
-					className={`
-					 md:flex
-					  h-[100%]
-					${
-						isMenuOpen ? 'hidden' : 'flex'
-					} flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700`}>
+			<div className="top-16 h-[calc(100vh-65px)] inset-y-0 left-0 hidden lg:block lg:fixed">
+				<aside className="md:flex h-[100%] flex-col w-64 px-5 py-8 overflow-y-auto bg-background border-r rtl:border-r-0 rtl:border-l dark:bg-background dark:border-slate-700">
 					<h2 className="font-montserrat font-semibold text-3xl">Mi cuenta</h2>
 
 					<div className="flex flex-col justify-between flex-1 mt-6">

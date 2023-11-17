@@ -23,12 +23,14 @@ export const ProductsService = {
 		return response;
 	},
 	createProduct: async (token, newProduct) => {
+		console.log('emtre a la peticion');
 		const response = await axios.post(
 			`${config.development.api.urlBase}${config.development.api.products.createProduct}`,
 			newProduct,
 			{
 				headers: {
 					Authorization: `Bearer ${token}`,
+					'Content-Type': 'multipart/form-data',
 				},
 			}
 		);

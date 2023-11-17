@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
 	Navbar,
 	NavbarBrand,
@@ -28,33 +28,17 @@ import { directRoles } from '@/config/rolesRoutes';
 import ShoppingCart from '../app/shop/ShoppingCart/ShoppingCart';
 import { getInitials } from '@/utils/utils';
 import { useDashboardOptions } from './LinksDashboard';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 export default function NavBarEcomerce() {
 	const { menuLinks } = useDashboardOptions();
-	const menuItemsUser = ['Mi perfil', 'Configuracion', 'Compras', 'Ventas'];
-
-	const menuItemsAdmin = [
-		'Dashboard',
-		'Usuarios',
-		'Productos',
-		'Ventas',
-		'Vendedores',
-	];
-
-	const menuItemsVendor = [
-		'Mi perfil',
-		'Configuracion',
-		'Ventas',
-		'Productos',
-		'Envios',
-	];
-
-	const menuItemsGuest = ['Inicio', 'Productos', 'Vender', 'Iniciar sesion'];
-
-	const [menuItems, setMenuItems] = useState(menuLinks);
+	const [menuItems, setMenuItems] = useState([]);
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const { isLogged, logout, user } = useAuthContext();
-	console.log(user);
 	const { roleId } = user;
+
+	useEffect(() => {
+		setMenuItems(menuLinks);
+	}, [isLogged]);
 	const router = useRouter();
 	const handleLogOut = async () => {
 		try {
@@ -104,16 +88,65 @@ export default function NavBarEcomerce() {
 							Inicio
 						</Link>
 					</NavbarItem>
-					<NavbarItem isActive>
-						<Link href="/shop" aria-current="page" className="text-refgold-600">
-							Tienda
-						</Link>
-					</NavbarItem>
-					<NavbarItem>
-						<Link color="foreground" href="/shop/categories">
-							Categorias
-						</Link>
-					</NavbarItem>
+
+					{isLogged & (roleId !== 4) ? (
+						<>
+							<Dropdown>
+								<NavbarItem>
+									<DropdownTrigger>
+										<Button
+											disableRipple
+											className="p-0 bg-transparent data-[hover=true]:bg-transparent"
+											radius="sm"
+											variant="light"
+											endContent={<ChevronDownIcon className="w-5 h-5" />}>
+											<span className="font-montserrat font-medium text-base">
+												Dashboard
+											</span>
+										</Button>
+									</DropdownTrigger>
+								</NavbarItem>
+								<DropdownMenu aria-label="Profile Actions" variant="flat">
+									{menuItems.map((link, index) => (
+										<DropdownItem
+											key={`${link}-${index}`}
+											className="h-14 gap-2">
+											<Link
+												className="w-full flex items-center gap-4"
+												color={
+													index === 2
+														? 'warning'
+														: index === menuItems.length - 1
+														? 'danger'
+														: 'foreground'
+												}
+												href={link.path}
+												size="lg">
+												{link.icon}
+												{link.label}
+											</Link>
+										</DropdownItem>
+									))}
+								</DropdownMenu>
+							</Dropdown>
+						</>
+					) : (
+						<>
+							<NavbarItem isActive>
+								<Link
+									href="/shop"
+									aria-current="page"
+									className="text-refgold-600">
+									Tienda
+								</Link>
+							</NavbarItem>
+							<NavbarItem>
+								<Link color="foreground" href="/shop/categories">
+									Categorias
+								</Link>
+							</NavbarItem>
+						</>
+					)}
 				</NavbarContent>
 			</NavbarContent>
 
@@ -173,10 +206,10 @@ export default function NavBarEcomerce() {
 				<ShoppingCart />
 			</NavbarContent>
 			<NavbarMenu>
-				{menuItems.map((item, index) => (
-					<NavbarMenuItem key={`${item}-${index}`}>
+				{menuItems.map((link, index) => (
+					<NavbarMenuItem key={`${link}-${index}`}>
 						<Link
-							className="w-full"
+							className="w-full flex items-center gap-4"
 							color={
 								index === 2
 									? 'warning'
@@ -184,9 +217,10 @@ export default function NavBarEcomerce() {
 									? 'danger'
 									: 'foreground'
 							}
-							href="#"
+							href={link.path}
 							size="lg">
-							{item}
+							{link.icon}
+							{link.label}
 						</Link>
 					</NavbarMenuItem>
 				))}

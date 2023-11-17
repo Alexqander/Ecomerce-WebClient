@@ -324,36 +324,6 @@ export const LinksNavBar = {
 	3: [
 		{
 			label: 'Dashboard',
-			path: '/dashboard/vendedor',
-			icon: <PresentationChartLineIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Perfil',
-			path: '/dashboard/vendedor/profile',
-			icon: <UserIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Productos',
-			path: '/dashboard/vendedor/products',
-			icon: <RectangleStackIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Inventario',
-			path: '/dashboard/inventario',
-			icon: <ArchiveBoxIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Pedidos',
-			path: '/dashboard/vendedor/orders',
-			icon: <UserCircleIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Configuracion',
-			path: '/dashboard/vendedor/settings',
-			icon: <AdjustmentsHorizontalIcon className="h-5 w-5" />,
-		},
-		{
-			label: 'Dashboard',
 			path: '/dashboard/repartidor',
 			icon: <PresentationChartLineIcon className="h-5 w-5" />,
 		},

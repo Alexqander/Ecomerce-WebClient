@@ -2,7 +2,7 @@ import { ProfileSellerService } from '@/services/profileSeller.service';
 import React from 'react';
 import { cookies } from 'next/headers';
 import TableProducts from '@/components/app/vendedor/TableProducts';
-import { toast } from 'sonner';
+import HeaderDashBoard from '@/components/app/Header/HeaderDashBoard';
 
 async function getProductsStore() {
 	const cookiesStore = cookies();
@@ -13,14 +13,16 @@ async function getProductsStore() {
 		? JSON.parse(cookiesStore.get('user').value)
 		: null;
 	const { sellerProfile } = userData;
+	const { store } = sellerProfile;
 	try {
 		const { data } = await ProfileSellerService.getProductsStore(
 			token.token,
-			sellerProfile.store.id
+			store[0].id
 		);
 		return data;
 	} catch (error) {
-		toast.error('Error al cargar los productos');
+		console.log('Error al obtener los productos');
+		/* console.error(error); */
 	}
 }
 
@@ -31,6 +33,9 @@ export default async function page() {
 		{ uid: 'description', name: 'Description' },
 		{ uid: 'storeId', name: 'Store ID' },
 		{ uid: 'subCategoryId', name: 'Sub Category ID' },
+		{ uid: 'SubCategory', name: 'SubCategory' },
+		{ uid: 'stock', name: 'Stock' },
+		{ uid: 'category', name: 'Category' },
 		{ uid: 'Images', name: 'Images' },
 	];
 
@@ -38,9 +43,9 @@ export default async function page() {
 
 	const products = await getProductsStore();
 	return (
-		<div className="container mx-auto">
-			<h4 className="my-5 font-montserrat font-semibold text-2xl">Productos</h4>
-			<div className=" h-screen ">
+		<div className="container mx-auto mt-10">
+			<HeaderDashBoard title=" 🧩 Productos" />
+			<div className="h-screen my-10">
 				<TableProducts
 					data={products.data}
 					statusOptions={statusOptions}

@@ -3,6 +3,7 @@
 import { Avatar, Button, Input } from '@nextui-org/react';
 import { useAuthContext } from '@/context/authContext';
 import { getInitials } from '@/utils/utils';
+import HeaderDashBoard from '../Header/HeaderDashBoard';
 
 export default function InfoProfile() {
 	const { user } = useAuthContext();
@@ -11,11 +12,10 @@ export default function InfoProfile() {
 		<form className="container mx-auto my-20">
 			<div className="space-y-12">
 				<div className="pb-12">
-					<h2 className="font-montserrat font-medium text-2xl">Perfil</h2>
+					<HeaderDashBoard title=" 👨 Perfil " />
 					<p className="mt-1 text-sm leading-6 text-gray-600 dark:text-gray-300">
 						Esta es la informacion de tu perfil
 					</p>
-
 					<div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
 						<div className="col-span-full">
 							<label
