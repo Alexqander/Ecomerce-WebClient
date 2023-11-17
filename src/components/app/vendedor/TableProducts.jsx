@@ -20,13 +20,13 @@ import {
 import { ChevronDownIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { useRouter, usePathname } from 'next/navigation';
 import { SearchIcon } from '@/components/icons/SearchIcon';
-import { columns, users, statusOptions } from './data';
 import { VerticalDotsIcon } from '@/components/icons/VerticalDotsIcon';
 import Image from 'next/image';
 
 export default function TableProducts({ data, columns, statusOptions }) {
 	const router = useRouter();
 	const pathname = usePathname();
+	console.log(data);
 	const statusColorMap = {
 		active: 'success',
 		paused: 'danger',
@@ -52,6 +52,28 @@ export default function TableProducts({ data, columns, statusOptions }) {
 				</span>
 			);
 		}
+		if (columnKey === 'subCategoryId') {
+			return (
+				<span className="text-default-900 font-semibold">
+					{item[columnKey]}
+				</span>
+			);
+		}
+		if (columnKey === 'SubCategory') {
+			return (
+				<span className="text-default-900 font-semibold">
+					{item[columnKey].name}
+				</span>
+			);
+		}
+		if (columnKey === 'category') {
+			console.log(item);
+			return (
+				<span className="text-default-900 font-semibold">
+					{item['SubCategory'].category.name}
+				</span>
+			);
+		}
 		if (columnKey === 'price') {
 			return (
 				<span className="text-default-900 font-semibold">
@@ -66,8 +88,15 @@ export default function TableProducts({ data, columns, statusOptions }) {
 				</span>
 			);
 		}
+		if (columnKey === 'stock') {
+			return (
+				<span className="text-default-900 font-semibold">
+					{item[columnKey]}
+				</span>
+			);
+		}
 	};
-	const INITIAL_VISIBLE_COLUMNS = ['name', 'role', 'status', 'actions'];
+	const INITIAL_VISIBLE_COLUMNS = ['name', 'price', 'actions'];
 	const [filterValue, setFilterValue] = React.useState('');
 	const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
 	const [visibleColumns, setVisibleColumns] = React.useState(

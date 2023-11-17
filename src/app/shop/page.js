@@ -5,19 +5,25 @@ import ShopPaginator from '@/components/app/shop/ShopPaginator';
 import SearchBarShop from '@/components/app/shop/searchBar/SearchBarShop';
 import { ProductsService } from '@/services/products.service';
 import React, { Suspense } from 'react';
+import { toast } from 'sonner';
 
 async function getProducts(page) {
-	const { data } = await ProductsService.getProducts(page);
-	const products = data.data;
-	console.log(products);
-	return products;
+	try {
+		const { data } = await ProductsService.getProducts(page);
+		const products = data.data;
+		return products;
+	} catch (error) {
+		toast.error('Error al cargar los productos');
+	}
 }
 async function findProducts(search, page) {
-	const { data } = await ProductsService.findProducts(search, page);
-	const products = data.data;
-	console.log('busqueda de productos');
-	console.log(products);
-	return products;
+	try {
+		const { data } = await ProductsService.findProducts(search, page);
+		const products = data.data;
+		return products;
+	} catch (error) {
+		toast.error('Error al cargar los productos');
+	}
 }
 
 export default async function ShopMainPage({ searchParams }) {

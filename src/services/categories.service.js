@@ -8,6 +8,12 @@ export const CategoriesService = {
 		);
 		return response;
 	},
+	getAllCategories: async () => {
+		const response = await axios.get(
+			`${config.development.api.urlBase}${config.development.api.categories.getAllCategories}`
+		);
+		return response;
+	},
 	getCategory: async (id) => {
 		const response = await axios.get(
 			`${
@@ -52,6 +58,17 @@ export const CategoriesService = {
 					Authorization: `Bearer ${token}`,
 				},
 			}
+		);
+		return response;
+	},
+	getSubcategoriesByCategory: async (id) => {
+		const response = await axios.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.categories.getSubcategoriesByCategory.replace(
+				':id',
+				id
+			)}`
 		);
 		return response;
 	},
