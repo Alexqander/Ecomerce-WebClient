@@ -8,6 +8,7 @@ import {
 	useState,
 } from 'react';
 import Cookies from 'js-cookie';
+import axiosInstance from '@/utils/axiosInstance';
 
 const AUTH_TOKENS_KEY = 'NEXT_JS_AUTH_TOKENS';
 export const AuthContext = createContext({
@@ -25,6 +26,7 @@ export default function AuthContextProvider({ children }) {
 	const login = useCallback(function ({ authTokens, user }) {
 		Cookies.set(AUTH_TOKENS_KEY, JSON.stringify(authTokens));
 		Cookies.set('user', JSON.stringify(user));
+		axiosInstance.defaults.headers['Authorization'] = `Bearer ${authTokens}`;
 		setUser(user);
 		setIsLogged(true);
 	}, []);
@@ -32,6 +34,7 @@ export default function AuthContextProvider({ children }) {
 	const logout = useCallback(function () {
 		Cookies.remove(AUTH_TOKENS_KEY);
 		Cookies.remove('user');
+		delete axiosInstance.defaults.headers['Authorization'];
 		setUser({});
 		setIsLogged(false);
 	}, []);

@@ -22,6 +22,14 @@ export const CategoriesService = {
 		);
 		return response;
 	},
+
+	getCategoryWithSubcategories: async () => {
+		const response = await axios.get(
+			`${config.development.api.urlBase}${config.development.api.categories.getCategoryWithSubcategories}`
+		);
+		return response;
+	},
+
 	createCategory: async (token, newCategory) => {
 		const response = await axios.post(
 			`${config.development.api.urlBase}${config.development.api.categories.createCategory}`,

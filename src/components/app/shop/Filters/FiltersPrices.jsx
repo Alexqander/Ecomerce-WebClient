@@ -10,14 +10,13 @@ export default function FiltersPrices() {
 	const [value, setValue] = useState(0);
 	console.log(pathName);
 	const handleChange = (e) => {
-		console.log(e);
 		setValue(e);
-		const current = new URLSearchParams(Array.from(searchParams.entries())); //
-		const search = current.toString();
-		const query = `${pathName}?${search}&minPrice=${e}`;
-		console.log(search);
-		console.log(query);
-		router.push(query);
+		const currentParams = new URLSearchParams(searchParams);
+		currentParams.set('minPrice', e); //
+		// Crea la nueva URL
+		const newUrl = `${pathName}?${currentParams.toString()}`;
+		// Navega a la nueva URL
+		router.push(newUrl);
 	};
 
 	return (

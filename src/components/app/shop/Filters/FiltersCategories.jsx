@@ -10,12 +10,13 @@ export default function FiltersCategories({ categories }) {
 	const pathName = usePathname();
 	const searchParams = useSearchParams();
 	const handleSelected = (e) => {
-		console.log(e);
 		setSelected(e);
-		const current = new URLSearchParams(Array.from(searchParams.entries())); //
-		const search = current.toString();
-		const query = `${pathName}?${search}&category=${e}`;
-		router.push(query);
+		const currentParams = new URLSearchParams(searchParams);
+		currentParams.set('category', e);
+		// * Crea la nueva URL
+		const newUrl = `${pathName}?${currentParams.toString()}`;
+		// * Navega a la nueva URL
+		router.push(newUrl);
 	};
 	return (
 		<ScrollShadow hideScrollBar className="max-h-[600px] overflow-y-auto py-10">

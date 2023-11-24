@@ -5,7 +5,6 @@ import ShopPaginator from '@/components/app/shop/ShopPaginator';
 import SearchBarShop from '@/components/app/shop/searchBar/SearchBarShop';
 import { ProductsService } from '@/services/products.service';
 import React, { Suspense } from 'react';
-import { toast } from 'sonner';
 
 async function getProducts(page) {
 	try {
@@ -13,16 +12,21 @@ async function getProducts(page) {
 		const products = data.data;
 		return products;
 	} catch (error) {
-		toast.error('Error al cargar los productos');
+		console.log(error);
 	}
 }
-async function findProducts(search, page) {
+async function findProducts(search, category, minPrice, page) {
 	try {
-		const { data } = await ProductsService.findProducts(search, page);
+		const { data } = await ProductsService.findProducts(
+			search,
+			category,
+			minPrice,
+			page
+		);
 		const products = data.data;
 		return products;
 	} catch (error) {
-		toast.error('Error al cargar los productos');
+		console.log(error);
 	}
 }
 
@@ -30,9 +34,13 @@ export default async function ShopMainPage({ searchParams }) {
 	const page = Number(searchParams.page || 1);
 	const limit = Number(searchParams.limit || 9);
 	const searchQuery = searchParams.search ?? '';
+	const category = searchParams.category ?? '';
+	const minPrice = searchParams.minPrice ?? '';
+
 	let products = [];
-	searchQuery.length > 0
-		? (products = await findProducts(searchQuery, page))
+
+	searchQuery.length > 0 || category.length > 0 || minPrice.length > 0
+		? (products = await findProducts(searchQuery, category, minPrice, page))
 		: (products = await getProducts(page));
 	return (
 		<div className="w-full">

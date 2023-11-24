@@ -1,7 +1,14 @@
+import { buyerProfileService } from '@/services/buyerProfile.service';
 import { create } from 'zustand';
+import { toast } from 'sonner';
+import { useAuthContext } from '@/context/authContext';
 
 const useCartStore = create((set) => ({
 	cart: [],
+
+	// Actualiza el carrito con los datos obtenidos desde la API
+	setCart: (newCart) => set({ cart: newCart }),
+
 	addToCart: (product) =>
 		set((state) => {
 			const cartProduct = state.cart.find((p) => p.id === product.id);
@@ -17,16 +24,19 @@ const useCartStore = create((set) => ({
 				return { cart: [...state.cart, { ...product, quantity: 1 }] };
 			}
 		}),
+
 	removeFromCart: (productId) =>
 		set((state) => ({
 			cart: state.cart.filter((p) => p.id !== productId),
 		})),
+
 	incrementQuantity: (productId) =>
 		set((state) => ({
 			cart: state.cart.map((p) =>
 				p.id === productId ? { ...p, quantity: p.quantity + 1 } : p
 			),
 		})),
+
 	decrementQuantity: (productId) =>
 		set((state) => ({
 			cart: state.cart
@@ -39,7 +49,7 @@ const useCartStore = create((set) => ({
 				})
 				.filter((p) => p.quantity > 0), // Eliminar el producto si la cantidad es 0
 		})),
+
 	clearCart: () => set({ cart: [] }),
 }));
-
 export default useCartStore;

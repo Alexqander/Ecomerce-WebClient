@@ -1,33 +1,54 @@
 'use client';
 import { HeartIcon } from '@/components/icons/cardProduct/HeartIcon';
 import useCartStore from '@/states/shoppingCartStore';
-import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/button';
 import { useRouter } from 'next/navigation';
+import { toast } from 'sonner';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import FooterDev from '../../dev/FooterDev';
+import { ProductsService } from '@/services/products.service';
 
 export default function CardProduct2({ product }) {
 	const { cart, addToCart, removeFromCart } = useCartStore();
+	const [selected, setSelected] = React.useState(false);
 	const router = useRouter();
-	const checkProductInCart = (product) => {
-		return cart.some((item) => item.id === product.id);
-	};
 	const truncateText = (text, length) => {
 		if (text.length <= length) return text;
 		return text.slice(0, length) + '...';
 	};
-	const isProductInCart = checkProductInCart(product);
+
+	const handleWishList = (id) => {
+		try {
+			//	const productInList = ProductsService.addToWishList(id);
+			const promise = () => new Promise((resolve) => setTimeout(resolve, 1500));
+			setSelected(!selected);
+			selected
+				? toast.promise(promise, {
+						loading: 'Eliminando de la lista de deseos',
+						success: 'Eliminado de la lista de deseos',
+						error: 'Error al eliminar de la lista de deseos',
+				  })
+				: toast.promise(promise, {
+						loading: 'Agregando a la lista de deseos',
+						success: 'Agregado a la lista de deseos',
+						error: 'Error al agregar a la lista de deseos',
+				  });
+		} catch (error) {
+			setSelected(!selected);
+		}
+	};
+
 	return (
 		<div className="max-w-sm rounded overflow-hidden relative block shadow-lg">
 			<Button
 				isIconOnly
-				variant="ghost"
+				variant={selected ? 'solid' : 'ghost'}
 				color="danger"
 				aria-label="Like"
+				onClick={handleWishList}
 				className="absolute end-4 top-4 z-10">
 				<span className="sr-only">Wishlist</span>
 				<HeartIcon />
@@ -72,7 +93,7 @@ export default function CardProduct2({ product }) {
 						Ver mas
 					</Button>
 				</div>
-				<FooterDev data={cart} />
+				{/* 		<FooterDev data={cart} /> */}
 			</div>
 		</div>
 	);

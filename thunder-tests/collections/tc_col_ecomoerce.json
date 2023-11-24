@@ -1,0 +1,2786 @@
+{
+    "_id": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+    "colName": "ecomoerce",
+    "created": "2023-11-24T17:31:02.815Z",
+    "sortNum": 10000,
+    "folders": [
+        {
+            "_id": "8c6b4a5d-549b-4250-b653-da8a2cecedee",
+            "name": "payments",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.829Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "name": "auth",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.830Z",
+            "sortNum": 130000
+        },
+        {
+            "_id": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "users",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.831Z",
+            "sortNum": 120000
+        },
+        {
+            "_id": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "orders",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.832Z",
+            "sortNum": 110000
+        },
+        {
+            "_id": "ee6b200f-3864-4892-8849-8551f6d2acf7",
+            "name": "roles",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.833Z",
+            "sortNum": 100000
+        },
+        {
+            "_id": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "products",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.834Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "profileSeller",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.835Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "profileBuyer",
+            "containerId": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "created": "2023-11-24T17:31:02.836Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "curierProfile",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.837Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "name": "transactions",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.838Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "6b027fbb-d6d3-4067-b16f-f4e15931433d",
+            "name": "recoveryPassword",
+            "containerId": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "created": "2023-11-24T17:31:02.839Z",
+            "sortNum": 130000
+        },
+        {
+            "_id": "665b4f08-0a7c-4c44-a646-42353f832ba2",
+            "name": "generalInfo",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.840Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "a0dad006-59c2-4178-8d20-b3ff8641d372",
+            "name": "stores",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.841Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "categories",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.842Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "dbdd09a1-f13f-4250-917d-7f69f8ffdd36",
+            "name": "userProfile",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.843Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "ed74c1fe-628e-41b3-a796-2bfc92b9588d",
+            "name": "wishList",
+            "containerId": "dbdd09a1-f13f-4250-917d-7f69f8ffdd36",
+            "created": "2023-11-24T17:31:02.844Z",
+            "sortNum": 180000
+        },
+        {
+            "_id": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "shoppingCart",
+            "containerId": "dbdd09a1-f13f-4250-917d-7f69f8ffdd36",
+            "created": "2023-11-24T17:31:02.845Z",
+            "sortNum": 190000
+        },
+        {
+            "_id": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "name": "production",
+            "containerId": "",
+            "created": "2023-11-24T17:31:02.846Z",
+            "sortNum": 200000
+        },
+        {
+            "_id": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "name": "development",
+            "containerId": "",
+            "created": "2023-11-24T17:31:02.847Z",
+            "sortNum": 210000
+        },
+        {
+            "_id": "dd01b941-ea13-46cc-b23f-c42473bb6e55",
+            "name": "payments",
+            "containerId": "bdfaf73e-73dd-41a8-8cba-a007bab642ba",
+            "created": "2023-11-24T17:31:02.848Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "eafa54ed-f5d0-4b8c-9ebe-b0da439f0d01",
+            "name": "userProfile Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.849Z",
+            "sortNum": 5000
+        },
+        {
+            "_id": "563baad2-a97d-4f13-9db8-9f401cb49b70",
+            "name": "wishList",
+            "containerId": "eafa54ed-f5d0-4b8c-9ebe-b0da439f0d01",
+            "created": "2023-11-24T17:31:02.850Z",
+            "sortNum": 180000
+        },
+        {
+            "_id": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "shoppingCart",
+            "containerId": "eafa54ed-f5d0-4b8c-9ebe-b0da439f0d01",
+            "created": "2023-11-24T17:31:02.851Z",
+            "sortNum": 190000
+        },
+        {
+            "_id": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "categories Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.852Z",
+            "sortNum": 7500
+        },
+        {
+            "_id": "e8a433d9-0107-4bb4-8f9c-05820b0c1e4b",
+            "name": "stores Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.853Z",
+            "sortNum": 8750
+        },
+        {
+            "_id": "988c723b-edaf-4b23-8259-b396045c6999",
+            "name": "generalInfo Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.854Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "name": "transactions Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.855Z",
+            "sortNum": 30000
+        },
+        {
+            "_id": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "profileBuyer",
+            "containerId": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "created": "2023-11-24T17:31:02.856Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "curierProfile Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.857Z",
+            "sortNum": 40000
+        },
+        {
+            "_id": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "profileSeller Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.858Z",
+            "sortNum": 50000
+        },
+        {
+            "_id": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "products Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.859Z",
+            "sortNum": 60000
+        },
+        {
+            "_id": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "name": "auth Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.860Z",
+            "sortNum": 90000
+        },
+        {
+            "_id": "16013abe-1351-490e-82b2-e7d3ec1a5b34",
+            "name": "recoveryPassword",
+            "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "created": "2023-11-24T17:31:02.861Z",
+            "sortNum": 130000
+        },
+        {
+            "_id": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "users Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.862Z",
+            "sortNum": 80000
+        },
+        {
+            "_id": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "orders Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.863Z",
+            "sortNum": 70000
+        },
+        {
+            "_id": "16346716-319c-4246-ad02-d61266d9b109",
+            "name": "roles Copy",
+            "containerId": "efe22bce-6fc5-42de-8a34-3bca9d6a14f5",
+            "created": "2023-11-24T17:31:02.864Z",
+            "sortNum": 55000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "8139ca5a-b94d-4964-9550-5e18542c32fb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "getOrders",
+            "url": "http://localhost:3000/apiEcomerce/1.0/orders",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.829Z",
+            "modified": "2023-11-24T17:31:02.829Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "925050f5-68c7-4cf5-97c5-675ddbb0701d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "getOrder",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.830Z",
+            "modified": "2023-11-24T17:31:02.830Z",
+            "headers": []
+        },
+        {
+            "_id": "4d5d1084-0453-41d3-becb-c7001350d39e",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "createOrder",
+            "url": "",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.831Z",
+            "modified": "2023-11-24T17:31:02.831Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3de2d098-04e1-4ea9-bf7a-2213b76d04b5",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "updateOrder",
+            "url": "",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-24T17:31:02.832Z",
+            "modified": "2023-11-24T17:31:02.832Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a2984d98-4fa5-4cab-9c08-81511c094d9f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "b012d21f-1a76-42e5-9c2a-bcf0359e5fbf",
+            "name": "deleteOrder",
+            "url": "",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-24T17:31:02.833Z",
+            "modified": "2023-11-24T17:31:02.833Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4faec3bb-893d-4a36-8205-aabfd466a699",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8c6b4a5d-549b-4250-b653-da8a2cecedee",
+            "name": "getPayUrl",
+            "url": "http://localhost:4000/apiEcomerce/1.0/payment/create-checkout-session",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-11-24T17:31:02.834Z",
+            "modified": "2023-11-24T17:31:02.834Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ab031111-94f2-4502-9333-0790c796d274",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "name": "login",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-11-24T17:31:02.835Z",
+            "modified": "2023-11-24T17:31:02.835Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"alexuandermacha@gmail.com\",\n  \"password\": \"alex1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f8185d07-92c5-4a7b-b0e1-e0b56c5c5f69",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "GetUsers",
+            "url": "http://localhost:4000/apiEcomerce/1.0/users",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-11-24T17:31:02.836Z",
+            "modified": "2023-11-24T17:31:02.836Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzM2I0ZDhlLTZjNzQtNDYxZi04YzIzLWM2NTQ5MWQyNmI2ZCIsImlhdCI6MTcwMDcxNDY4MSwiZXhwIjoxNzAxMDc0NjgxfQ.K2h6JoZ98ni4GloN_Q28d-ORRcRvpbWrZ0Lgoun-wGI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "89366f5c-6960-40b8-913f-7c4002f3e7f7",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "UpdateUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-11-24T17:31:02.837Z",
+            "modified": "2023-11-24T17:31:02.837Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"phoneNumber\": \"14512\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "24f805df-19a8-4885-bccf-6330f239fc7f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "name": "createUser",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/register",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-11-24T17:31:02.838Z",
+            "modified": "2023-11-24T17:31:02.838Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"user\": {\n      \"name\": \"Emmanuel Alexander\",\n      \"lastName\": \"Machado Ambrocio\",\n      \"password\": \"alex1234\",\n      \"email\": \"alexuandermacha@gmail.com\",\n      \"phoneNumber\": \"7775102928\"\n    },\n    \"role\": 1\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9192f025-5ae7-4b1a-a767-f73a388570fd",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "name": "logOutActualSession",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/logOutSession/",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-11-24T17:31:02.839Z",
+            "modified": "2023-11-24T17:31:02.839Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2ZTA4ODczLWVkM2MtNDY4Yy04ZjM5LTYyM2UwMDg3NWQwYSIsImlhdCI6MTY5ODkwMjQ5MiwiZXhwIjoxNjk5MjYyNDkyfQ.jRjn-sNFlORQxZp5uT9ulOYljPgWuWRLBR_Zxxk_-EA"
+            },
+            "tests": []
+        },
+        {
+            "_id": "5edb9316-915d-4395-a6c4-ee7854989b93",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f4d76410-67b4-4384-bc14-51951af5ea6a",
+            "name": "logOutAllSessions",
+            "url": "http://localhost:3000/apiEcomerce/1.0/auth/logOutAll/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2023-11-24T17:31:02.840Z",
+            "modified": "2023-11-24T17:31:02.840Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7dc00e14-cf2c-4c06-b647-d3cf0a63637a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "getUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-11-24T17:31:02.841Z",
+            "modified": "2023-11-24T17:31:02.841Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b54034c0-23fd-4c60-a2a4-cdb82b3ea039",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "deleteUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2023-11-24T17:31:02.842Z",
+            "modified": "2023-11-24T17:31:02.842Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b70bd55d-90a8-45b3-9782-bd236517491b",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ee6b200f-3864-4892-8849-8551f6d2acf7",
+            "name": "getRoles",
+            "url": "http://localhost:4000/apiEcomerce/1.0/roles/",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-11-24T17:31:02.843Z",
+            "modified": "2023-11-24T17:31:02.843Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwOTY4YmQzLTgxNGQtNDA2Zi1hMTNkLWY4OGM1MzhiY2ZhYiIsImlhdCI6MTY5OTAzMzk1NywiZXhwIjoxNjk5MzkzOTU3fQ.jZh9rp3-L2_coAK9zyTKMinbjAaU3kYVOKc57-Fy_qg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "aaa91b29-df1c-4977-b35d-f4fdeee8f6f6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ee6b200f-3864-4892-8849-8551f6d2acf7",
+            "name": "createRole",
+            "url": "http://localhost:3000/apiEcomerce/1.0/roles/",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-11-24T17:31:02.844Z",
+            "modified": "2023-11-24T17:31:02.844Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \"name\": \"ANONIMO\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmNzk0OWZmLTBlODMtNGZlMy04NjYwLTY3ZGNmYjIyZjRiMCIsImlhdCI6MTY5ODY5MzYxMiwiZXhwIjoxNjk5MDUzNjEyfQ.RauAf-AascqkNjigrikhmH-4tosfE2lONYH_Xo5Uo94"
+            },
+            "tests": []
+        },
+        {
+            "_id": "01596a41-f33c-4016-b5bf-93d4f239591d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ee6b200f-3864-4892-8849-8551f6d2acf7",
+            "name": "updateRole",
+            "url": "http://localhost:3000/apiEcomerce/1.0/roles/",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2023-11-24T17:31:02.846Z",
+            "modified": "2023-11-24T17:31:02.846Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1b08d10b-0a7e-4282-8f37-4326eab60326",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "uploadImage",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/upload",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2023-11-24T17:31:02.847Z",
+            "modified": "2023-11-24T17:31:02.847Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Nintendo Switch Light"
+                    },
+                    {
+                        "name": "price",
+                        "value": "5560"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Nintendo Switch es divertido para todos , usalo en donde mas prefieras y juega los grandes juegos de nintendo"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "30"
+                    },
+                    {
+                        "name": "subCategoryId",
+                        "value": "21"
+                    },
+                    {
+                        "name": "storeId",
+                        "value": "84192180-2ed3-4017-bffa-edf0668a3e6b"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\Mariokart.webp"
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\mariokart2.webp"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "ce880515-4c12-4327-bc00-d5d875575f50",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "getInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile/e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2023-11-24T17:31:02.848Z",
+            "modified": "2023-11-24T17:31:02.848Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"sellerProfile\": {\n    \"storeName\": \"Electronics Store\",\n    \"userId\": \"e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "4daa5dce-7641-4daa-ba56-3a66aa517628",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "UpdateInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 225000,
+            "created": "2023-11-24T17:31:02.849Z",
+            "modified": "2023-11-24T17:31:02.849Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6a6cb18d-ee21-49ee-9418-265b97d5c204",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "CreateProductInStore",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2023-11-24T17:31:02.850Z",
+            "modified": "2023-11-24T17:31:02.850Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9a31f19f-b1ab-4be9-8c9a-7d34ae58a2f8",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "UpdateProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 240000,
+            "created": "2023-11-24T17:31:02.851Z",
+            "modified": "2023-11-24T17:31:02.851Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "06f07423-820d-441b-b1bf-34ea0cdb9fd0",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "DeleteProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2023-11-24T17:31:02.852Z",
+            "modified": "2023-11-24T17:31:02.852Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9dc3fb90-f4fc-4613-8873-14e945f573eb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "GetProductsSeller",
+            "url": "",
+            "method": "GET",
+            "sortNum": 215000,
+            "created": "2023-11-24T17:31:02.853Z",
+            "modified": "2023-11-24T17:31:02.853Z",
+            "headers": []
+        },
+        {
+            "_id": "8e83767d-b7d7-4bec-9ce5-5d606737c6af",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "getInfoBuyer",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.854Z",
+            "modified": "2023-11-24T17:31:02.854Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f68921de-ddf2-4847-9695-8644ff5876c8",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "getWishLists",
+            "url": "",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2023-11-24T17:31:02.855Z",
+            "modified": "2023-11-24T17:31:02.855Z",
+            "headers": []
+        },
+        {
+            "_id": "d858ee46-4187-4073-9050-7b3d505766fb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "getOrders",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 290000,
+            "created": "2023-11-24T17:31:02.856Z",
+            "modified": "2023-11-24T17:31:02.856Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "632f64e4-3a9a-4f82-b039-762ff3c91d13",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "getShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart",
+            "method": "GET",
+            "sortNum": 300000,
+            "created": "2023-11-24T17:31:02.857Z",
+            "modified": "2023-11-24T17:31:02.857Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "838e57e8-ef87-47ca-bad5-0de6a6b034e6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "updateInfoBuyerProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 310000,
+            "created": "2023-11-24T17:31:02.858Z",
+            "modified": "2023-11-24T17:31:02.858Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "603320ee-9ca0-474c-8a0e-8e6a3c56fb51",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "updateShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 320000,
+            "created": "2023-11-24T17:31:02.859Z",
+            "modified": "2023-11-24T17:31:02.859Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc9695f4-f745-47d2-a97c-a11c5d8757dc",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "createShippingAddress",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 330000,
+            "created": "2023-11-24T17:31:02.860Z",
+            "modified": "2023-11-24T17:31:02.860Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "686427ff-54c6-4918-bf55-7597fcdd121e",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "createBillingAddresses",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 350000,
+            "created": "2023-11-24T17:31:02.861Z",
+            "modified": "2023-11-24T17:31:02.861Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5690bf5f-c5e2-4b5f-9a01-3edc66065de4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "createShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 360000,
+            "created": "2023-11-24T17:31:02.862Z",
+            "modified": "2023-11-24T17:31:02.862Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ccbe29b5-5839-4022-b6e3-ba375e6edfec",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "createWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 370000,
+            "created": "2023-11-24T17:31:02.863Z",
+            "modified": "2023-11-24T17:31:02.863Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "5897a9b3-5269-4445-a679-1937cf4022ed",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f6e15297-970e-4a2b-9297-09f762198c6a",
+            "name": "updateWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 325000,
+            "created": "2023-11-24T17:31:02.864Z",
+            "modified": "2023-11-24T17:31:02.864Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9db4d163-557d-467f-992e-7f78e2e55045",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "getInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 390000,
+            "created": "2023-11-24T17:31:02.865Z",
+            "modified": "2023-11-24T17:31:02.865Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "663b6585-5740-48dd-9df7-e149b7e1f729",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "createProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 400000,
+            "created": "2023-11-24T17:31:02.866Z",
+            "modified": "2023-11-24T17:31:02.866Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "258d0882-f5d8-4170-9221-c5f455b55e3a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "updateProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 410000,
+            "created": "2023-11-24T17:31:02.867Z",
+            "modified": "2023-11-24T17:31:02.867Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6a389c9e-33a3-41f3-84f3-d2926113ce81",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "getOrdersAsigned",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 420000,
+            "created": "2023-11-24T17:31:02.868Z",
+            "modified": "2023-11-24T17:31:02.868Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "23efa2d6-c728-4159-8f9e-13099a0c2af6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "29092c48-c62d-4c84-ba28-c98fda80bc16",
+            "name": "updateOrderStatus",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 430000,
+            "created": "2023-11-24T17:31:02.869Z",
+            "modified": "2023-11-24T17:31:02.869Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3c6dfea6-ceea-4643-bf38-77cfeffc1456",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "createProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 440000,
+            "created": "2023-11-24T17:31:02.870Z",
+            "modified": "2023-11-24T17:31:02.870Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "adfac68f-7f75-4f13-8d36-5f25abf21452",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "getProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/?page=1&limit=9",
+            "method": "GET",
+            "sortNum": 450000,
+            "created": "2023-11-24T17:31:02.871Z",
+            "modified": "2023-11-24T17:31:02.871Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "345e1294-1dc5-4d18-a1be-6f08aec7cd9b",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "getProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/8e335dae-1c39-46a9-a7ac-64de6301ffbe",
+            "method": "GET",
+            "sortNum": 460000,
+            "created": "2023-11-24T17:31:02.872Z",
+            "modified": "2023-11-24T17:31:02.872Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aa695ce2-1115-4875-b89e-901cbdd3721d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "name": "getTransactions",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 470000,
+            "created": "2023-11-24T17:31:02.873Z",
+            "modified": "2023-11-24T17:31:02.873Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "075049dd-48e4-4ae4-b137-976bbba49496",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "name": "getTransactionDetails",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 480000,
+            "created": "2023-11-24T17:31:02.874Z",
+            "modified": "2023-11-24T17:31:02.874Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4cd9e76e-df8e-4304-a7b8-9f0d1eb898d1",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "name": "createTransaction",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 490000,
+            "created": "2023-11-24T17:31:02.875Z",
+            "modified": "2023-11-24T17:31:02.875Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "76315858-b686-4f2d-96aa-e2dde1ce5007",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "fb0339cb-43fb-4f96-823e-909ef11f2989",
+            "name": "updateTransaction",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 500000,
+            "created": "2023-11-24T17:31:02.876Z",
+            "modified": "2023-11-24T17:31:02.876Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2cc8bd0a-a88b-4cb3-a3cb-d7719ae03c11",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "6b027fbb-d6d3-4067-b16f-f4e15931433d",
+            "name": "sendCodeRecoveryPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 520000,
+            "created": "2023-11-24T17:31:02.877Z",
+            "modified": "2023-11-24T17:31:02.877Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1b4fcce8-1d95-422f-9bc3-f22aa28dbce1",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "6b027fbb-d6d3-4067-b16f-f4e15931433d",
+            "name": "confirmCodeRecoveryPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 530000,
+            "created": "2023-11-24T17:31:02.878Z",
+            "modified": "2023-11-24T17:31:02.878Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "84cc28c6-d047-4b0c-bc69-76e36c4f8973",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "6b027fbb-d6d3-4067-b16f-f4e15931433d",
+            "name": "updateUserPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 540000,
+            "created": "2023-11-24T17:31:02.879Z",
+            "modified": "2023-11-24T17:31:02.879Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fd8ea602-63cf-4ff1-b622-3e798cf5324c",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f33cf331-9e4b-4626-8af0-4c07a84b67fb",
+            "name": "createSellerProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile",
+            "method": "POST",
+            "sortNum": 560000,
+            "created": "2023-11-24T17:31:02.880Z",
+            "modified": "2023-11-24T17:31:02.880Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"storeName\": \"Electronics Store\",\n    \"userId\": \"e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef\"\n  }\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "9cee5eb5-330e-4d38-8f02-c7382d6278cf",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "665b4f08-0a7c-4c44-a646-42353f832ba2",
+            "name": "getCategories",
+            "url": "",
+            "method": "GET",
+            "sortNum": 570000,
+            "created": "2023-11-24T17:31:02.881Z",
+            "modified": "2023-11-24T17:31:02.881Z",
+            "headers": []
+        },
+        {
+            "_id": "e54dc2db-cfae-465c-8892-3a9de8c6fe43",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "665b4f08-0a7c-4c44-a646-42353f832ba2",
+            "name": "GetSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 580000,
+            "created": "2023-11-24T17:31:02.882Z",
+            "modified": "2023-11-24T17:31:02.882Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "440e5259-dafe-4eeb-bf32-962dc6ed9254",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "665b4f08-0a7c-4c44-a646-42353f832ba2",
+            "name": "getAllProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 590000,
+            "created": "2023-11-24T17:31:02.883Z",
+            "modified": "2023-11-24T17:31:02.883Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "dc0ee2a4-43a8-49cd-8f91-83834775ff37",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "665b4f08-0a7c-4c44-a646-42353f832ba2",
+            "name": "getAllStores",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 600000,
+            "created": "2023-11-24T17:31:02.884Z",
+            "modified": "2023-11-24T17:31:02.884Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "bf45f7b5-7d91-4c02-a278-c099a89faffc",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0dad006-59c2-4178-8d20-b3ff8641d372",
+            "name": "getStores",
+            "url": "http://localhost:4000/apiEcomerce/1.0/stores/",
+            "method": "GET",
+            "sortNum": 610000,
+            "created": "2023-11-24T17:31:02.885Z",
+            "modified": "2023-11-24T17:31:02.885Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ebce4b7e-3429-4a67-afe3-f471d3b9195b",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0dad006-59c2-4178-8d20-b3ff8641d372",
+            "name": "getStoreInfo",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile/products/365a62ba-65f7-4225-b670-688f630ee7a9",
+            "method": "GET",
+            "sortNum": 620000,
+            "created": "2023-11-24T17:31:02.886Z",
+            "modified": "2023-11-24T17:31:02.886Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fa70d816-e145-4964-99aa-7c032b3e50cb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getCategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/?page=1&limit=9",
+            "method": "GET",
+            "sortNum": 630000,
+            "created": "2023-11-24T17:31:02.887Z",
+            "modified": "2023-11-24T17:31:02.887Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "1dbbe710-7a57-44c3-875c-4cd870cd6183",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/?page=3",
+            "method": "GET",
+            "sortNum": 640000,
+            "created": "2023-11-24T17:31:02.888Z",
+            "modified": "2023-11-24T17:31:02.888Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "5a18f816-e8c3-43c4-9111-97a6f18c34d1",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "createCategorie",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/",
+            "method": "POST",
+            "sortNum": 650000,
+            "created": "2023-11-24T17:31:02.889Z",
+            "modified": "2023-11-24T17:31:02.889Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Cuidado y belleza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2355d310-57d0-4f65-b5c7-58ea66dbbf3d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "createSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/",
+            "method": "POST",
+            "sortNum": 660000,
+            "created": "2023-11-24T17:31:02.890Z",
+            "modified": "2023-11-24T17:31:02.890Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Dermatologia\",\n  \"categoryId\":19,\n  \"description\":\"Limpiadores faciales , skin care\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e558b9bd-56c7-4453-9c73-81a6b299fdae",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "4daa505b-4454-4b1f-a0a4-736c6e27235b",
+            "name": "findProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/search?search=&category=&minPrice=44000&page=1&limit=9",
+            "method": "GET",
+            "sortNum": 670000,
+            "created": "2023-11-24T17:31:02.891Z",
+            "modified": "2023-11-24T17:31:02.891Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "category",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "search",
+                    "value": "",
+                    "isPath": false
+                },
+                {
+                    "name": "category",
+                    "value": "",
+                    "isPath": false
+                },
+                {
+                    "name": "minPrice",
+                    "value": "44000",
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "8f5ffa80-f332-4d65-84e4-2f7a04b2cc1c",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "82d69385-853e-4f56-bb50-7e74e50395c0",
+            "name": "UpdateProfilePhoto",
+            "url": "http://localhost:4000/apiEcomerce/1.0/users/image/623026e4-a6bd-4f90-98e3-df8a06210436",
+            "method": "PATCH",
+            "sortNum": 680000,
+            "created": "2023-11-24T17:31:02.892Z",
+            "modified": "2023-11-24T17:31:02.892Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "imageFile",
+                        "value": "c:\\Users\\servi\\OneDrive\\Imágenes\\alexf1.png"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "4408be69-8650-4173-8b7f-387a7e7173bd",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getAllCategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/all",
+            "method": "GET",
+            "sortNum": 690000,
+            "created": "2023-11-24T17:31:02.893Z",
+            "modified": "2023-11-24T17:31:02.893Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "c4e67995-16e8-475b-b485-bf708b4c2a1e",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getAllSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/all",
+            "method": "GET",
+            "sortNum": 700000,
+            "created": "2023-11-24T17:31:02.894Z",
+            "modified": "2023-11-24T17:31:02.894Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6ae7e457-ae12-4a5f-8f60-c0bfb8ef492f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getSubcategoriesByCategory",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/2",
+            "method": "GET",
+            "sortNum": 710000,
+            "created": "2023-11-24T17:31:02.895Z",
+            "modified": "2023-11-24T17:31:02.895Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9c1ca32f-4bd1-4770-8dec-53c616cd4892",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "51d525a4-2f43-4627-bc72-424e62c238a2",
+            "name": "getCategoriesWithSubcategory",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/with/all",
+            "method": "GET",
+            "sortNum": 720000,
+            "created": "2023-11-24T17:31:02.896Z",
+            "modified": "2023-11-24T17:31:02.896Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "2a3a064d-8fe3-4b1b-92e4-a6eb15ee5af3",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ed74c1fe-628e-41b3-a796-2bfc92b9588d",
+            "name": "addWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/wishList/",
+            "method": "PATCH",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.897Z",
+            "modified": "2023-11-24T17:31:02.897Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c42e06d4-0a28-47ab-8b5e-3a5c313c2963",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ed74c1fe-628e-41b3-a796-2bfc92b9588d",
+            "name": "deleteWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/wishList/",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.898Z",
+            "modified": "2023-11-24T17:31:02.898Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a7d432e7-0c43-4ea0-938f-cf0ea6fba969",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ed74c1fe-628e-41b3-a796-2bfc92b9588d",
+            "name": "createWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/wishLists",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.899Z",
+            "modified": "2023-11-24T17:31:02.899Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d1fe1b24-f23e-4ee5-8c8c-0f69f8f1481f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "getLastShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/5c61d3da-f348-4564-a95b-242a50df0b60",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.900Z",
+            "modified": "2023-11-24T17:31:02.900Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ba780614-9abb-4aa6-9bb2-9c7398304b0c",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "createShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.901Z",
+            "modified": "2023-11-24T17:31:02.901Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"quantity\":0,\n  \"orderStatus\":\"created\",\n  \"buyerId\":\"5c61d3da-f348-4564-a95b-242a50df0b60\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "7e81e92b-1c3f-420c-a9f2-98631816b5a6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "addProductToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.902Z",
+            "modified": "2023-11-24T17:31:02.902Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"products\":[\n    {\n      \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\",\n      \"quantity\":3\n    },{\n      \"productId\":\"268168e5-fefb-457f-8353-12a545db09df\",\n      \"quantity\":4\n    },\n    {\n      \"productId\":\"31b8d940-c5cc-41e0-ba38-04a379af428c\",\n      \"quantity\":1\n    }\n    ]\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "01cc8f5b-46dd-47a8-bf69-cd0950ba6116",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "createAndAddProductsToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/add",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-24T17:31:02.903Z",
+            "modified": "2023-11-24T17:31:02.903Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"orderStatus\":\"created\",\n  \"buyerId\":\"5c61d3da-f348-4564-a95b-242a50df0b60\",\n  \"products\":[\n    {\n      \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\",\n      \"quantity\":3\n    },{\n      \"productId\":\"268168e5-fefb-457f-8353-12a545db09df\",\n      \"quantity\":4\n    },\n    {\n      \"productId\":\"31b8d940-c5cc-41e0-ba38-04a379af428c\",\n      \"quantity\":1\n    }\n    ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "220ce1cd-4e9f-453d-b83d-f9d2b4c71fa7",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "deleteShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "DELETE",
+            "sortNum": 800000,
+            "created": "2023-11-24T17:31:02.904Z",
+            "modified": "2023-11-24T17:31:02.904Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "c7e5286b-c662-4edc-8569-81f7dfc566b6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7aea9e95-1cf6-4ba0-8f4a-e721f36fc74f",
+            "name": "deleteProductToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/remove/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "PATCH",
+            "sortNum": 810000,
+            "created": "2023-11-24T17:31:02.905Z",
+            "modified": "2023-11-24T17:31:02.905Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "d74a328b-436f-47fd-9bd3-24d69d77c78f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "dd01b941-ea13-46cc-b23f-c42473bb6e55",
+            "name": "getPayUrl",
+            "url": "http://localhost:4000/apiEcomerce/1.0/payment/create-checkout-session",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-11-24T17:31:02.906Z",
+            "modified": "2023-11-24T17:31:02.906Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "62f947ce-dd85-4ab4-a3cf-9ccf8c88ad68",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "563baad2-a97d-4f13-9db8-9f401cb49b70",
+            "name": "addWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/wishList/",
+            "method": "PATCH",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.907Z",
+            "modified": "2023-11-24T17:31:02.907Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e0add3a7-2d16-4532-8114-b3bfad060e83",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "563baad2-a97d-4f13-9db8-9f401cb49b70",
+            "name": "deleteWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/wishList/",
+            "method": "PATCH",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.908Z",
+            "modified": "2023-11-24T17:31:02.908Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d490c64d-60d7-4d46-9b7f-86d9c781c0b4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "563baad2-a97d-4f13-9db8-9f401cb49b70",
+            "name": "createWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/wishLists",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.909Z",
+            "modified": "2023-11-24T17:31:02.909Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7cacb9a6-9535-408c-b206-702cfa8a4284",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "getLastShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/5c61d3da-f348-4564-a95b-242a50df0b60",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.910Z",
+            "modified": "2023-11-24T17:31:02.910Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "84fa86c3-89ed-419e-90ba-2b8f35841de4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "createShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.911Z",
+            "modified": "2023-11-24T17:31:02.911Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"quantity\":0,\n  \"orderStatus\":\"created\",\n  \"buyerId\":\"5c61d3da-f348-4564-a95b-242a50df0b60\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1f8108b7-1a72-4aed-bfdd-05f532e401e5",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "addProductToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "PATCH",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.912Z",
+            "modified": "2023-11-24T17:31:02.912Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"products\":[\n    {\n      \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\",\n      \"quantity\":3\n    },{\n      \"productId\":\"268168e5-fefb-457f-8353-12a545db09df\",\n      \"quantity\":4\n    },\n    {\n      \"productId\":\"31b8d940-c5cc-41e0-ba38-04a379af428c\",\n      \"quantity\":1\n    }\n    ]\n  \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "a0912588-8cc2-44e0-b68c-81de885ccbd5",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "createAndAddProductsToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/add",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-11-24T17:31:02.913Z",
+            "modified": "2023-11-24T17:31:02.913Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"orderStatus\":\"created\",\n  \"buyerId\":\"5c61d3da-f348-4564-a95b-242a50df0b60\",\n  \"products\":[\n    {\n      \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\",\n      \"quantity\":3\n    },{\n      \"productId\":\"268168e5-fefb-457f-8353-12a545db09df\",\n      \"quantity\":4\n    },\n    {\n      \"productId\":\"31b8d940-c5cc-41e0-ba38-04a379af428c\",\n      \"quantity\":1\n    }\n    ]\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "021cd4a0-577a-44d5-a418-df1991b3e044",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "deleteShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "DELETE",
+            "sortNum": 800000,
+            "created": "2023-11-24T17:31:02.914Z",
+            "modified": "2023-11-24T17:31:02.914Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "38ec6d78-b361-4ab1-a983-f87cc37a0367",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "a0ecbd23-311a-42bb-8482-2f6f1084ae74",
+            "name": "deleteProductToShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart/remove/9553d6c1-7a52-49ad-b676-c484651ac44c",
+            "method": "PATCH",
+            "sortNum": 810000,
+            "created": "2023-11-24T17:31:02.915Z",
+            "modified": "2023-11-24T17:31:02.915Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"productId\":\"180e8495-4a6f-4cc0-a0c7-895e56c5c430\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0f1871ba-8039-4696-819c-f1c13b04a10c",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getCategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/?page=1&limit=9",
+            "method": "GET",
+            "sortNum": 630000,
+            "created": "2023-11-24T17:31:02.916Z",
+            "modified": "2023-11-24T17:31:02.916Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "7f193c19-7a81-44b7-bf6b-920fb47e2a1e",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/?page=3",
+            "method": "GET",
+            "sortNum": 640000,
+            "created": "2023-11-24T17:31:02.917Z",
+            "modified": "2023-11-24T17:31:02.917Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "3",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "5aec75e2-293b-4812-b386-3beb5a7238eb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "createCategorie",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/",
+            "method": "POST",
+            "sortNum": 650000,
+            "created": "2023-11-24T17:31:02.918Z",
+            "modified": "2023-11-24T17:31:02.918Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Cuidado y belleza\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1a3c8161-a3b1-4752-aa5e-a6a08bb59f3e",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "createSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/",
+            "method": "POST",
+            "sortNum": 660000,
+            "created": "2023-11-24T17:31:02.919Z",
+            "modified": "2023-11-24T17:31:02.919Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\":\"Dermatologia\",\n  \"categoryId\":19,\n  \"description\":\"Limpiadores faciales , skin care\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2ffbe7d2-4717-4eb8-90fb-7ac521258aa4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getAllCategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/all",
+            "method": "GET",
+            "sortNum": 690000,
+            "created": "2023-11-24T17:31:02.920Z",
+            "modified": "2023-11-24T17:31:02.920Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isDisabled": true,
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "65bdcd54-0a4c-431c-9f34-ba993ba09de9",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getAllSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/all",
+            "method": "GET",
+            "sortNum": 700000,
+            "created": "2023-11-24T17:31:02.921Z",
+            "modified": "2023-11-24T17:31:02.921Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4f260235-eca5-4b5f-bd86-5b5ef1bcf2c1",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getSubcategoriesByCategory",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/2",
+            "method": "GET",
+            "sortNum": 710000,
+            "created": "2023-11-24T17:31:02.922Z",
+            "modified": "2023-11-24T17:31:02.922Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "38575fce-a27f-4f2c-af36-bfe256b1ed12",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
+            "name": "getCategoriesWithSubcategory",
+            "url": "http://localhost:4000/apiEcomerce/1.0/categories/with/all",
+            "method": "GET",
+            "sortNum": 720000,
+            "created": "2023-11-24T17:31:02.923Z",
+            "modified": "2023-11-24T17:31:02.923Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ddac4e61-86bb-4fe2-b176-85c772bfc187",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e8a433d9-0107-4bb4-8f9c-05820b0c1e4b",
+            "name": "getStores",
+            "url": "http://localhost:4000/apiEcomerce/1.0/stores/",
+            "method": "GET",
+            "sortNum": 610000,
+            "created": "2023-11-24T17:31:02.924Z",
+            "modified": "2023-11-24T17:31:02.924Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a8ff0290-3318-4d4e-a324-0eba60c3c774",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e8a433d9-0107-4bb4-8f9c-05820b0c1e4b",
+            "name": "getStoreInfo",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile/products/365a62ba-65f7-4225-b670-688f630ee7a9",
+            "method": "GET",
+            "sortNum": 620000,
+            "created": "2023-11-24T17:31:02.925Z",
+            "modified": "2023-11-24T17:31:02.925Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ae546b3e-247e-4aa7-b80e-07a3359d4d29",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "988c723b-edaf-4b23-8259-b396045c6999",
+            "name": "getCategories",
+            "url": "",
+            "method": "GET",
+            "sortNum": 570000,
+            "created": "2023-11-24T17:31:02.926Z",
+            "modified": "2023-11-24T17:31:02.926Z",
+            "headers": []
+        },
+        {
+            "_id": "58b2d589-36b7-4572-8875-64166ac70959",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "988c723b-edaf-4b23-8259-b396045c6999",
+            "name": "GetSubcategories",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 580000,
+            "created": "2023-11-24T17:31:02.927Z",
+            "modified": "2023-11-24T17:31:02.927Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fe642153-790d-4b7e-8bf0-95c44df36410",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "988c723b-edaf-4b23-8259-b396045c6999",
+            "name": "getAllProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 590000,
+            "created": "2023-11-24T17:31:02.928Z",
+            "modified": "2023-11-24T17:31:02.928Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a77587c3-6f56-4c19-9e76-d7f8e59e1000",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "988c723b-edaf-4b23-8259-b396045c6999",
+            "name": "getAllStores",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 600000,
+            "created": "2023-11-24T17:31:02.929Z",
+            "modified": "2023-11-24T17:31:02.929Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1720cfd1-4f54-4671-b574-fc7c6749537a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "name": "getTransactions",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 470000,
+            "created": "2023-11-24T17:31:02.930Z",
+            "modified": "2023-11-24T17:31:02.930Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7ad05889-658f-4fbb-923b-700b42123566",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "name": "getTransactionDetails",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 480000,
+            "created": "2023-11-24T17:31:02.931Z",
+            "modified": "2023-11-24T17:31:02.931Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8f4655cf-4ec0-4664-b88b-c12b0d65a412",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "name": "createTransaction",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 490000,
+            "created": "2023-11-24T17:31:02.932Z",
+            "modified": "2023-11-24T17:31:02.932Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e4c39645-2dab-4f98-8c54-da56e94078ca",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "f17c39fd-b0c7-47b2-8953-0a5c0779a72b",
+            "name": "updateTransaction",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 500000,
+            "created": "2023-11-24T17:31:02.933Z",
+            "modified": "2023-11-24T17:31:02.933Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "3aed9f2f-0360-41a0-9070-3ba6211bc1e3",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "getInfoBuyer",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.934Z",
+            "modified": "2023-11-24T17:31:02.934Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "171c1b10-e912-4e4e-bfe3-8f8d4dda4794",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "getWishLists",
+            "url": "",
+            "method": "GET",
+            "sortNum": 280000,
+            "created": "2023-11-24T17:31:02.935Z",
+            "modified": "2023-11-24T17:31:02.935Z",
+            "headers": []
+        },
+        {
+            "_id": "45b7f12c-7516-4a43-b912-42f71acd3aff",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "getOrders",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 290000,
+            "created": "2023-11-24T17:31:02.936Z",
+            "modified": "2023-11-24T17:31:02.936Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "187ac479-f450-453e-b0ac-3fb8d947deb4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "getShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileBuyer/profile/shoppingCart",
+            "method": "GET",
+            "sortNum": 300000,
+            "created": "2023-11-24T17:31:02.937Z",
+            "modified": "2023-11-24T17:31:02.937Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ea494c85-3ea2-41f5-bbfb-182025f9ffa4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "updateInfoBuyerProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 310000,
+            "created": "2023-11-24T17:31:02.938Z",
+            "modified": "2023-11-24T17:31:02.938Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74b9023b-19a4-4c28-bc91-b350c8455920",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "updateShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 320000,
+            "created": "2023-11-24T17:31:02.939Z",
+            "modified": "2023-11-24T17:31:02.939Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "af6eb375-47d8-4bb4-b5ba-1ac0dc45100d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "updateWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 325000,
+            "created": "2023-11-24T17:31:02.940Z",
+            "modified": "2023-11-24T17:31:02.940Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "a6ad456f-1b0e-4ef5-a9e1-57f72277e724",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "createShippingAddress",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 330000,
+            "created": "2023-11-24T17:31:02.941Z",
+            "modified": "2023-11-24T17:31:02.941Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f5e62844-2b53-452f-98ef-fb07b8949fa4",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "createBillingAddresses",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 350000,
+            "created": "2023-11-24T17:31:02.942Z",
+            "modified": "2023-11-24T17:31:02.942Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "8b7f35ca-3d6c-4d02-9c92-bd907abccf3a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "createShoppingCart",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 360000,
+            "created": "2023-11-24T17:31:02.943Z",
+            "modified": "2023-11-24T17:31:02.943Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4b7d489d-5d96-45cb-b7bb-cb26e478758a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "e0150d97-5a6e-4625-bada-eba671235151",
+            "name": "createWishList",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 370000,
+            "created": "2023-11-24T17:31:02.944Z",
+            "modified": "2023-11-24T17:31:02.944Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "74234106-1aa9-4f72-ac01-316ed1190696",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "getInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 390000,
+            "created": "2023-11-24T17:31:02.945Z",
+            "modified": "2023-11-24T17:31:02.945Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e3c43b17-8fb9-4d3a-bd5f-a95542ec7750",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "createProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 400000,
+            "created": "2023-11-24T17:31:02.946Z",
+            "modified": "2023-11-24T17:31:02.946Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7eb19796-6b57-4d4f-961d-936df7007ad8",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "updateProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 410000,
+            "created": "2023-11-24T17:31:02.947Z",
+            "modified": "2023-11-24T17:31:02.947Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "61c6de17-e5f1-480c-8897-43fbc74c6d74",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "getOrdersAsigned",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "GET",
+            "sortNum": 420000,
+            "created": "2023-11-24T17:31:02.948Z",
+            "modified": "2023-11-24T17:31:02.948Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7fc17f46-011e-41e2-b513-cea718bf19e2",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "ffa266c6-f7b1-415f-a825-b4b00076cdee",
+            "name": "updateOrderStatus",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 430000,
+            "created": "2023-11-24T17:31:02.950Z",
+            "modified": "2023-11-24T17:31:02.950Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "6729a1cf-9675-46a2-8315-689cf9266f1f",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "getInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile/e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef",
+            "method": "GET",
+            "sortNum": 210000,
+            "created": "2023-11-24T17:31:02.951Z",
+            "modified": "2023-11-24T17:31:02.951Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"sellerProfile\": {\n    \"storeName\": \"Electronics Store\",\n    \"userId\": \"e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef\"\n  }\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2fd43e21-ead2-444c-91ce-3172ef4bbdc5",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "GetProductsSeller",
+            "url": "",
+            "method": "GET",
+            "sortNum": 215000,
+            "created": "2023-11-24T17:31:02.952Z",
+            "modified": "2023-11-24T17:31:02.952Z",
+            "headers": []
+        },
+        {
+            "_id": "97c64b0d-693c-4970-ae02-15fba3f8341d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "CreateProductInStore",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 220000,
+            "created": "2023-11-24T17:31:02.953Z",
+            "modified": "2023-11-24T17:31:02.953Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "15900d31-9dcd-47b2-a53a-18fd65ea3d88",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "UpdateInfoProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 225000,
+            "created": "2023-11-24T17:31:02.954Z",
+            "modified": "2023-11-24T17:31:02.954Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "31659006-6af8-47df-ad38-6949b949328a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "UpdateProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 240000,
+            "created": "2023-11-24T17:31:02.955Z",
+            "modified": "2023-11-24T17:31:02.955Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9f1f718f-f128-41a2-b40e-238da692cc0c",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "DeleteProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "DELETE",
+            "sortNum": 250000,
+            "created": "2023-11-24T17:31:02.956Z",
+            "modified": "2023-11-24T17:31:02.956Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ab2cf962-abe7-4f66-9236-2c812d56dbbb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
+            "name": "createSellerProfile",
+            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile",
+            "method": "POST",
+            "sortNum": 560000,
+            "created": "2023-11-24T17:31:02.957Z",
+            "modified": "2023-11-24T17:31:02.957Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"storeName\": \"Electronics Store\",\n    \"userId\": \"e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef\"\n  }\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "1c0cccc4-5e49-4dc4-96c8-1080d6e5d52a",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "uploadImage",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/upload",
+            "method": "POST",
+            "sortNum": 200000,
+            "created": "2023-11-24T17:31:02.958Z",
+            "modified": "2023-11-24T17:31:02.958Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [
+                    {
+                        "name": "name",
+                        "value": "Nintendo Switch Light"
+                    },
+                    {
+                        "name": "price",
+                        "value": "5560"
+                    },
+                    {
+                        "name": "description",
+                        "value": "Nintendo Switch es divertido para todos , usalo en donde mas prefieras y juega los grandes juegos de nintendo"
+                    },
+                    {
+                        "name": "stock",
+                        "value": "30"
+                    },
+                    {
+                        "name": "subCategoryId",
+                        "value": "21"
+                    },
+                    {
+                        "name": "storeId",
+                        "value": "84192180-2ed3-4017-bffa-edf0668a3e6b"
+                    }
+                ],
+                "files": [
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\Mariokart.webp"
+                    },
+                    {
+                        "name": "files",
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\mariokart2.webp"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "e5545834-2c53-4bb1-93bf-4e395335f2fe",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "createProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 440000,
+            "created": "2023-11-24T17:31:02.959Z",
+            "modified": "2023-11-24T17:31:02.959Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9880df9b-c838-4595-8973-70a18cab87f7",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "getProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/?page=1&limit=9",
+            "method": "GET",
+            "sortNum": 450000,
+            "created": "2023-11-24T17:31:02.960Z",
+            "modified": "2023-11-24T17:31:02.960Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "07e0800a-cbad-44f8-84a1-fe59deac75ba",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "getProduct",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/8e335dae-1c39-46a9-a7ac-64de6301ffbe",
+            "method": "GET",
+            "sortNum": 460000,
+            "created": "2023-11-24T17:31:02.961Z",
+            "modified": "2023-11-24T17:31:02.961Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f237b6af-7e4a-47a5-87ee-4bc28c361d6d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
+            "name": "findProducts",
+            "url": "http://localhost:4000/apiEcomerce/1.0/products/search?search=&category=&minPrice=44000&page=1&limit=9",
+            "method": "GET",
+            "sortNum": 670000,
+            "created": "2023-11-24T17:31:02.962Z",
+            "modified": "2023-11-24T17:31:02.962Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "category",
+                    "value": "1",
+                    "isDisabled": true,
+                    "isPath": false
+                },
+                {
+                    "name": "search",
+                    "value": "",
+                    "isPath": false
+                },
+                {
+                    "name": "category",
+                    "value": "",
+                    "isPath": false
+                },
+                {
+                    "name": "minPrice",
+                    "value": "44000",
+                    "isPath": false
+                },
+                {
+                    "name": "page",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "limit",
+                    "value": "9",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "54ce6a6a-7aef-463f-b566-3ae0942c2fdb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "name": "login",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/login",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-11-24T17:31:02.963Z",
+            "modified": "2023-11-24T17:31:02.963Z",
+            "headers": [
+                {
+                    "name": "Accept",
+                    "value": "*/*",
+                    "isDisabled": true
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"alexuandermacha@gmail.com\",\n  \"password\": \"alex1234\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e10e4ea0-716e-488e-bed6-a2c17a135f23",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "name": "createUser",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/register",
+            "method": "POST",
+            "sortNum": 100000,
+            "created": "2023-11-24T17:31:02.964Z",
+            "modified": "2023-11-24T17:31:02.964Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"user\": {\n      \"name\": \"Emmanuel Alexander\",\n      \"lastName\": \"Machado Ambrocio\",\n      \"password\": \"alex1234\",\n      \"email\": \"alexuandermacha@gmail.com\",\n      \"phoneNumber\": \"7775102928\"\n    },\n    \"role\": 1\n  }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "aa979647-ec66-40d8-86cf-04bfe1e1e5c0",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "name": "logOutActualSession",
+            "url": "http://localhost:4000/apiEcomerce/1.0/auth/logOutSession/",
+            "method": "GET",
+            "sortNum": 110000,
+            "created": "2023-11-24T17:31:02.965Z",
+            "modified": "2023-11-24T17:31:02.965Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijg2ZTA4ODczLWVkM2MtNDY4Yy04ZjM5LTYyM2UwMDg3NWQwYSIsImlhdCI6MTY5ODkwMjQ5MiwiZXhwIjoxNjk5MjYyNDkyfQ.jRjn-sNFlORQxZp5uT9ulOYljPgWuWRLBR_Zxxk_-EA"
+            },
+            "tests": []
+        },
+        {
+            "_id": "66cf4826-cd00-42d7-beca-c12de5042c61",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
+            "name": "logOutAllSessions",
+            "url": "http://localhost:3000/apiEcomerce/1.0/auth/logOutAll/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "DELETE",
+            "sortNum": 120000,
+            "created": "2023-11-24T17:31:02.966Z",
+            "modified": "2023-11-24T17:31:02.966Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "1405085d-41d3-4b10-a45a-de578d16863d",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16013abe-1351-490e-82b2-e7d3ec1a5b34",
+            "name": "sendCodeRecoveryPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 520000,
+            "created": "2023-11-24T17:31:02.967Z",
+            "modified": "2023-11-24T17:31:02.967Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "aad210cc-e7cb-484d-9edd-74a0c9b61cca",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16013abe-1351-490e-82b2-e7d3ec1a5b34",
+            "name": "confirmCodeRecoveryPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "POST",
+            "sortNum": 530000,
+            "created": "2023-11-24T17:31:02.968Z",
+            "modified": "2023-11-24T17:31:02.968Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "ac5cb019-cd51-40e7-be70-49182672e422",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16013abe-1351-490e-82b2-e7d3ec1a5b34",
+            "name": "updateUserPassword",
+            "url": "http://localhost:4000/apiEcomerce/1.0/",
+            "method": "PUT",
+            "sortNum": 540000,
+            "created": "2023-11-24T17:31:02.969Z",
+            "modified": "2023-11-24T17:31:02.969Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "83e850ab-81e1-4310-8e13-2d10e4a3eb19",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "GetUsers",
+            "url": "http://localhost:4000/apiEcomerce/1.0/users",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-11-24T17:31:02.970Z",
+            "modified": "2023-11-24T17:31:02.970Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImMzM2I0ZDhlLTZjNzQtNDYxZi04YzIzLWM2NTQ5MWQyNmI2ZCIsImlhdCI6MTcwMDcxNDY4MSwiZXhwIjoxNzAxMDc0NjgxfQ.K2h6JoZ98ni4GloN_Q28d-ORRcRvpbWrZ0Lgoun-wGI"
+            },
+            "tests": []
+        },
+        {
+            "_id": "cfab38bd-74d2-4ce7-b4a3-97afd05a7038",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "UpdateUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "PUT",
+            "sortNum": 90000,
+            "created": "2023-11-24T17:31:02.971Z",
+            "modified": "2023-11-24T17:31:02.971Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n    \"phoneNumber\": \"14512\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "909ce82d-df24-410c-aec4-c749aa12f1cb",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "getUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/cf7949ff-0e83-4fe3-8660-67dcfb22f4b0",
+            "method": "GET",
+            "sortNum": 130000,
+            "created": "2023-11-24T17:31:02.972Z",
+            "modified": "2023-11-24T17:31:02.972Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e9f2c453-9885-47be-8ab7-23341998b1f9",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "deleteUser",
+            "url": "http://localhost:3000/apiEcomerce/1.0/users/",
+            "method": "DELETE",
+            "sortNum": 140000,
+            "created": "2023-11-24T17:31:02.973Z",
+            "modified": "2023-11-24T17:31:02.973Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "4cc38d52-efab-4a8f-91e1-7bc2e8fdac74",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "7e73e36b-3607-4722-8300-32e89838cbb2",
+            "name": "UpdateProfilePhoto",
+            "url": "http://localhost:4000/apiEcomerce/1.0/users/image/623026e4-a6bd-4f90-98e3-df8a06210436",
+            "method": "PATCH",
+            "sortNum": 680000,
+            "created": "2023-11-24T17:31:02.974Z",
+            "modified": "2023-11-24T17:31:02.974Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "formdata",
+                "raw": "",
+                "form": [],
+                "files": [
+                    {
+                        "name": "imageFile",
+                        "value": "c:\\Users\\servi\\OneDrive\\Imágenes\\alexf1.png"
+                    }
+                ]
+            },
+            "tests": []
+        },
+        {
+            "_id": "6f6edf42-51cd-49ad-b393-2bc7709e8882",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "getOrders",
+            "url": "http://localhost:3000/apiEcomerce/1.0/orders",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-11-24T17:31:02.975Z",
+            "modified": "2023-11-24T17:31:02.975Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e93587c4-86b9-4332-94bb-11e140944e67",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "getOrder",
+            "url": "",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-11-24T17:31:02.976Z",
+            "modified": "2023-11-24T17:31:02.976Z",
+            "headers": []
+        },
+        {
+            "_id": "8a14b2cd-ef7a-491d-9a12-a0546a2d6712",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "createOrder",
+            "url": "",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2023-11-24T17:31:02.977Z",
+            "modified": "2023-11-24T17:31:02.977Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "748b6df8-8924-4e65-b9c2-d807ca1d42a0",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "updateOrder",
+            "url": "",
+            "method": "PUT",
+            "sortNum": 40000,
+            "created": "2023-11-24T17:31:02.978Z",
+            "modified": "2023-11-24T17:31:02.978Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "60468d5e-3037-4e19-b94a-2d1207cce4a2",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "d8807c5e-a0ef-4bb1-a543-2ff6e59a3d8d",
+            "name": "deleteOrder",
+            "url": "",
+            "method": "DELETE",
+            "sortNum": 50000,
+            "created": "2023-11-24T17:31:02.979Z",
+            "modified": "2023-11-24T17:31:02.979Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "854538d6-7739-4a3d-a241-ff6ab0b161e6",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16346716-319c-4246-ad02-d61266d9b109",
+            "name": "getRoles",
+            "url": "http://localhost:4000/apiEcomerce/1.0/roles/",
+            "method": "GET",
+            "sortNum": 160000,
+            "created": "2023-11-24T17:31:02.980Z",
+            "modified": "2023-11-24T17:31:02.980Z",
+            "headers": [],
+            "params": [],
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjcwOTY4YmQzLTgxNGQtNDA2Zi1hMTNkLWY4OGM1MzhiY2ZhYiIsImlhdCI6MTY5OTAzMzk1NywiZXhwIjoxNjk5MzkzOTU3fQ.jZh9rp3-L2_coAK9zyTKMinbjAaU3kYVOKc57-Fy_qg"
+            },
+            "tests": []
+        },
+        {
+            "_id": "2f5e67aa-e603-430f-9f2e-22db1f10d24b",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16346716-319c-4246-ad02-d61266d9b109",
+            "name": "createRole",
+            "url": "http://localhost:3000/apiEcomerce/1.0/roles/",
+            "method": "POST",
+            "sortNum": 170000,
+            "created": "2023-11-24T17:31:02.981Z",
+            "modified": "2023-11-24T17:31:02.981Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \"name\": \"ANONIMO\"\n}",
+                "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNmNzk0OWZmLTBlODMtNGZlMy04NjYwLTY3ZGNmYjIyZjRiMCIsImlhdCI6MTY5ODY5MzYxMiwiZXhwIjoxNjk5MDUzNjEyfQ.RauAf-AascqkNjigrikhmH-4tosfE2lONYH_Xo5Uo94"
+            },
+            "tests": []
+        },
+        {
+            "_id": "1bae1c66-a9fc-4490-8c25-28eda5dfb023",
+            "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
+            "containerId": "16346716-319c-4246-ad02-d61266d9b109",
+            "name": "updateRole",
+            "url": "http://localhost:3000/apiEcomerce/1.0/roles/",
+            "method": "PUT",
+            "sortNum": 180000,
+            "created": "2023-11-24T17:31:02.982Z",
+            "modified": "2023-11-24T17:31:02.982Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

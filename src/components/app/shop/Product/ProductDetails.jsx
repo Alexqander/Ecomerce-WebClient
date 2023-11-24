@@ -2,10 +2,67 @@
 import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/button';
 import useCartStore from '@/states/shoppingCartStore';
-import React from 'react';
+import { useAuthContext } from '@/context/authContext';
+import React, { useEffect } from 'react';
+import { toast } from 'sonner';
+import { buyerProfileService } from '@/services/buyerProfile.service';
 
 export default function ProductDetails({ product }) {
 	const { cart, addToCart, removeFromCart } = useCartStore();
+	useCartStore();
+	const { user } = useAuthContext();
+	const { buyerProfile } = user;
+
+	const handleAddToCart = async (product) => {
+		try {
+			if (!buyerProfile || !buyerProfile.id) {
+				throw new Error('No se ha iniciado sesión');
+			}
+			const cartId = localStorage.getItem('cartId');
+			const productSendToApi = {
+				products: [
+					{
+						productId: product.id,
+						quantity: 1,
+					},
+				],
+			};
+			const savedProduct = await buyerProfileService.saveCart(
+				cartId,
+				productSendToApi
+			);
+			console.log('Producto guardado', savedProduct);
+			toast.success('Producto agregado al carrito');
+
+			addToCart(product);
+		} catch (error) {
+			toast.error('No se pudo agregar el producto al carrito');
+		}
+	};
+
+	const handleRemoveFromCart = async (productId) => {
+		try {
+			if (!buyerProfile || !buyerProfile.id) {
+				throw new Error('No se ha iniciado sesión');
+			}
+			console.log('se elimino del carrito');
+			const cartId = localStorage.getItem('cartId');
+			const productSendToApi = {
+				productId: productId,
+			};
+			const savedProduct = await buyerProfileService.deleteProductCart(
+				cartId,
+				productSendToApi
+			);
+			const { data } = savedProduct.data;
+			console.log('Producto eliminado', data);
+			toast.success('Producto eliminado del carrito');
+			removeFromCart(productId);
+		} catch (error) {
+			toast.error('No se pudo eliminar el producto del carrito');
+		}
+	};
+
 	const checkProductInCart = (product) => {
 		return cart.some((item) => item.id === product.id);
 	};
@@ -49,8 +106,14 @@ export default function ProductDetails({ product }) {
 				color={isProductInCart ? 'danger' : 'primary'}
 				onClick={
 					isProductInCart
-						? () => removeFromCart(product.id)
-						: () => addToCart(product)
+						? () => handleRemoveFromCart(product.id)
+						: () =>
+								handleAddToCart({
+									id: product.id,
+									price: product.price,
+									name: product.name,
+									Images: product.Images,
+								})
 				}>
 				{isProductInCart ? 'Eliminar del carrito' : 'Agregar al carrito'}
 			</Button>

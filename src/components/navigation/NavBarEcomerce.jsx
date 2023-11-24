@@ -42,8 +42,7 @@ export default function NavBarEcomerce() {
 	const router = useRouter();
 	const handleLogOut = async () => {
 		try {
-			const authtoken = JSON.parse(Cookies.get('NEXT_JS_AUTH_TOKENS'));
-			const data = await AuthService.logOut(authtoken.token);
+			const data = await AuthService.logOut();
 			console.log(data);
 			logout();
 			toast.success('Sesion cerrada correctamente');
@@ -138,11 +137,6 @@ export default function NavBarEcomerce() {
 									aria-current="page"
 									className="text-refgold-600">
 									Tienda
-								</Link>
-							</NavbarItem>
-							<NavbarItem>
-								<Link color="foreground" href="/shop/categories">
-									Categorias
 								</Link>
 							</NavbarItem>
 						</>

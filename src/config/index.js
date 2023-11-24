@@ -18,6 +18,7 @@ export default {
 			categories: {
 				getCategories: '/categories/',
 				getAllCategories: '/categories/all',
+				getCategoryWithSubcategories: '/categories/with/all',
 				createCategory: '/categories',
 				updateCategory: '/categories/:id',
 				deleteCategory: '/categories/:id',
@@ -31,7 +32,15 @@ export default {
 			},
 			users: {
 				getUsers: '/users',
-				getUser: '/users/:id',
+				getUserInfo: '/users/:id',
+				updateProfilePhoto: '/users/image/:id',
+			},
+			admin: {
+				getUsers: '/users',
+				getUserInfo: '/users/:id',
+				products: '/admin/products',
+				orders: '/admin/orders',
+				analytics: '/admin/analytics',
 			},
 			profileSeller: {
 				getProfileSeller: '/profileSeller',
@@ -39,9 +48,12 @@ export default {
 				updateProfileSeller: '/profileSeller',
 				deleteProfileSeller: '/profileSeller',
 			},
-			carts: {
-				getCarts: '/carts',
-				getCart: '/carts/:id',
+			profileBuyer: {
+				createCart: '/profileBuyer/profile/shoppingCart',
+				getCart: '/profileBuyer/profile/shoppingCart/:id',
+				saveCart: '/profileBuyer/profile/shoppingCart/:id',
+				deleteProductCart: '/profileBuyer/profile/shoppingCart/remove/:id',
+				deleteCart: '/profileBuyer/profile/shoppingCart/:id',
 			},
 			reviews: {
 				getReviews: '/reviews',

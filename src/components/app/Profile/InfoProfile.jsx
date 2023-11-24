@@ -1,13 +1,44 @@
 'use client';
-
 import { Avatar, Button, Input } from '@nextui-org/react';
-import { useAuthContext } from '@/context/authContext';
 import { getInitials } from '@/utils/utils';
 import HeaderDashBoard from '../Header/HeaderDashBoard';
+import { useState } from 'react';
+import { toast } from 'sonner';
+import { UserService } from '@/services/user.service';
+import { useRouter } from 'next/navigation';
+export default function InfoProfile({ userInfo }) {
+	const router = useRouter();
+	const [fileInput, setFileInput] = useState();
 
-export default function InfoProfile() {
-	const { user } = useAuthContext();
-	console.log(user);
+	const changeProfilePhoto = async (userId, formData) => {
+		try {
+			const { data } = await UserService.changeProfilePhoto(userId, formData);
+			return data;
+		} catch (error) {
+			throw new Error('Error al subir la imagen');
+		}
+	};
+
+	const handleFileChange = async (event) => {
+		const file = event.target.files[0];
+		if (!file) return;
+		// Aquí puedes añadir la lógica para enviar la imagen a tu API
+		// Por ejemplo, utilizando FormData y una petición HTTP
+		const formData = new FormData();
+		formData.append('imageFile', file);
+
+		const uploadPromise = changeProfilePhoto(userInfo.id, formData);
+		toast.promise(uploadPromise, {
+			loading: 'Subiendo imagen...',
+			success: (data) => `Foto de perfil actualizada`,
+			error: 'Error al subir la imagen',
+		});
+		router.refresh();
+	};
+
+	const handleClick = () => {
+		fileInput.click();
+	};
 	return (
 		<form className="container mx-auto my-20">
 			<div className="space-y-12">
@@ -27,13 +58,23 @@ export default function InfoProfile() {
 								<Avatar
 									color="success"
 									isBordered
-									src={user?.profilePicture}
-									name={user.name && getInitials(user?.name, user?.lastName)}
+									src={userInfo?.profilePicture}
+									name={
+										userInfo.name &&
+										getInitials(userInfo?.name, userInfo?.lastName)
+									}
 									className="transition-transform w-20 h-20 text-large"
 								/>
-								<Button variant="solid" color="primary">
+								<Button variant="solid" color="primary" onClick={handleClick}>
 									Cambiar
 								</Button>
+								<input
+									type="file"
+									onChange={handleFileChange}
+									ref={(input) => setFileInput(input)}
+									className="hidden"
+									accept="image/*"
+								/>
 							</div>
 						</div>
 
@@ -89,7 +130,7 @@ export default function InfoProfile() {
 								labelPlacement="outside"
 								placeholder="name"
 								readOnly
-								defaultValue={user?.name}
+								defaultValue={userInfo?.name}
 							/>
 						</div>
 
@@ -101,7 +142,7 @@ export default function InfoProfile() {
 								labelPlacement="outside"
 								placeholder="lastname"
 								readOnly
-								defaultValue={user?.lastName}
+								defaultValue={userInfo?.lastName}
 							/>
 						</div>
 
@@ -113,7 +154,7 @@ export default function InfoProfile() {
 								labelPlacement="outside"
 								placeholder="email"
 								readOnly
-								defaultValue={user?.email}
+								defaultValue={userInfo?.email}
 							/>
 						</div>
 						<div className="sm:col-span-4 mt-6">
@@ -124,7 +165,7 @@ export default function InfoProfile() {
 								labelPlacement="outside"
 								placeholder="phone"
 								readOnly
-								defaultValue={user?.phoneNumber}
+								defaultValue={userInfo?.phoneNumber}
 							/>
 						</div>
 
