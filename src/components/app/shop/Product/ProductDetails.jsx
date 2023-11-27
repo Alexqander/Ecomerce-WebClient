@@ -16,7 +16,10 @@ export default function ProductDetails({ product }) {
 	const handleAddToCart = async (product) => {
 		try {
 			if (!buyerProfile || !buyerProfile.id) {
-				throw new Error('No se ha iniciado sesión');
+				// Si el usuario no ha iniciado sesión, agregamos el producto al carrito local
+				addToCart(product);
+				toast.success('Producto agregado al carrito');
+				return;
 			}
 			const cartId = localStorage.getItem('cartId');
 			const productSendToApi = {
@@ -43,9 +46,11 @@ export default function ProductDetails({ product }) {
 	const handleRemoveFromCart = async (productId) => {
 		try {
 			if (!buyerProfile || !buyerProfile.id) {
-				throw new Error('No se ha iniciado sesión');
+				// Si el usuario no ha iniciado sesión, eliminamos el producto del carrito local
+				removeFromCart(productId);
+				toast.success('Producto eliminado del carrito');
+				return;
 			}
-			console.log('se elimino del carrito');
 			const cartId = localStorage.getItem('cartId');
 			const productSendToApi = {
 				productId: productId,

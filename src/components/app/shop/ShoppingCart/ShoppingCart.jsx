@@ -22,6 +22,7 @@ export default function ShoppingCart() {
 	const { buyerProfile } = user;
 	const { cart, addToCart, removeFromCart, clearCart, setCart } =
 		useCartStore();
+	const [shopCartId, setCartId] = React.useState(null);
 
 	useEffect(() => {
 		// Verificar si buyerProfile existe y tiene un id antes de cargar el carrito
@@ -41,7 +42,7 @@ export default function ShoppingCart() {
 				}));
 				setCart(cartItemWithQuantity);
 				localStorage.setItem('cartId', cartId);
-				console.log('items', cartItemWithQuantity);
+				setCartId(cartId);
 				toast.success('Carrito cargado');
 			} catch (error) {
 				toast.error(error.message);
@@ -88,7 +89,7 @@ export default function ShoppingCart() {
 									variant="solid"
 									size="lg"
 									color="primary"
-									onClick={() => router.push(`/shop/checkout/${1454}`)}
+									onClick={() => router.push(`/shop/checkout/${shopCartId}`)}
 									className="w-full mt-5">
 									CheckOut
 								</Button>

@@ -15,7 +15,10 @@ export default function ItemShoppingCart({ product }) {
 	const handleRemoveFromCart = async (productId) => {
 		try {
 			if (!buyerProfile || !buyerProfile.id) {
-				throw new Error('No se ha iniciado sesión');
+				// Si el usuario no ha iniciado sesión, eliminamos el producto del carrito local
+				removeFromCart(productId);
+				toast.success('Producto eliminado del carrito');
+				return;
 			}
 			const cartId = localStorage.getItem('cartId');
 			const productSendToApi = {
@@ -32,6 +35,62 @@ export default function ItemShoppingCart({ product }) {
 		} catch (error) {
 			console.log(error);
 			toast.error('No se pudo eliminar el producto del carrito');
+		}
+	};
+	const handleIncrementQuantity = async (product) => {
+		try {
+			if (!buyerProfile || !buyerProfile.id) {
+				// Si el usuario no ha iniciado sesión, agregamos el producto al carrito local
+				incrementQuantity(product.id);
+				toast.success('Cantidad actualizada');
+				return;
+			}
+			const cartId = localStorage.getItem('cartId');
+			const productSendToApi = {
+				products: [
+					{
+						productId: product.id,
+						quantity: product.quantity + 1,
+					},
+				],
+			};
+			const savedProduct = await buyerProfileService.saveCart(
+				cartId,
+				productSendToApi
+			);
+			console.log('Producto Actualizado', savedProduct);
+			toast.success('Cantidad actualizada');
+			incrementQuantity(product.id);
+		} catch (error) {
+			toast.error('Error al actualizar la cantidad');
+		}
+	};
+	const handleDecrementQuantity = async (product) => {
+		try {
+			if (!buyerProfile || !buyerProfile.id) {
+				// Si el usuario no ha iniciado sesión, agregamos el producto al carrito local
+				decrementQuantity(product.id);
+				toast.success('Cantidad actualizada');
+				return;
+			}
+			const cartId = localStorage.getItem('cartId');
+			const productSendToApi = {
+				products: [
+					{
+						productId: product.id,
+						quantity: product.quantity - 1,
+					},
+				],
+			};
+			const savedProduct = await buyerProfileService.saveCart(
+				cartId,
+				productSendToApi
+			);
+			console.log('Producto Actualizado', savedProduct);
+			toast.success('Cantidad actualizada');
+			decrementQuantity(product.id);
+		} catch (error) {
+			toast.error('Error al actualizar la cantidad');
 		}
 	};
 
@@ -57,7 +116,7 @@ export default function ItemShoppingCart({ product }) {
 							variant="flat"
 							color="primary"
 							size="sm"
-							onClick={() => decrementQuantity(product.id)}>
+							onClick={() => handleDecrementQuantity(product)}>
 							<MinusIcon className="w-5 h-5" />
 						</Button>
 						<p>{product.quantity}</p>
@@ -66,7 +125,7 @@ export default function ItemShoppingCart({ product }) {
 							variant="flat"
 							color="primary"
 							size="sm"
-							onClick={() => incrementQuantity(product.id)}>
+							onClick={() => handleIncrementQuantity(product)}>
 							<PlusIcon className="w-5 h-5" />
 						</Button>
 					</div>

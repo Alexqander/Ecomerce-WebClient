@@ -47,7 +47,23 @@ export const buyerProfileService = {
 		const response = await axiosInstance.delete(
 			`${
 				config.development.api.urlBase
-			}${config.development.api.buyerProfile.deleteCart.replace(':id', idCart)}`
+			}${config.development.api.profileBuyer.deleteCart.replace(':id', idCart)}`
+		);
+		return response;
+	},
+	getCartDetail: async (idCart, token) => {
+		const response = await axiosInstance.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.getCartDetail.replace(
+				':id',
+				idCart
+			)}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
 		);
 		return response;
 	},

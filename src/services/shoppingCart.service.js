@@ -13,6 +13,17 @@ export const ShoppingCartService = {
 		);
 		return response;
 	},
+	getShoppingCartDetail: async (token) => {
+		const response = await axios.get(
+			`${config.development.api.urlBase}${config.development.api.shoppingCart.getShoppingCartDetail}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		return response;
+	},
 	addProductToShoppingCart: async (token, newProduct) => {
 		const response = await axios.post(
 			`${config.development.api.urlBase}${config.development.api.shoppingCart.addProductToShoppingCart}`,

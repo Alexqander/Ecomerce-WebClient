@@ -9,9 +9,6 @@ export const ProductsService = {
 		return response;
 	},
 	findProducts: async (search, category, minPrice, page = 1, limit = 9) => {
-		console.log(
-			`esta es la query : ${config.development.api.urlBase}${config.development.api.products.findProducts}?search=${search}&category=${category}&minPrice=${minPrice}&page=${page}&limit=${limit}`
-		);
 		const response = await axios.get(
 			`${config.development.api.urlBase}${config.development.api.products.findProducts}?search=${search}&category=${category}&minPrice=${minPrice}&page=${page}&limit=${limit}`
 		);
@@ -26,7 +23,6 @@ export const ProductsService = {
 		return response;
 	},
 	createProduct: async (token, newProduct) => {
-		console.log('emtre a la peticion');
 		const response = await axios.post(
 			`${config.development.api.urlBase}${config.development.api.products.createProduct}`,
 			newProduct,

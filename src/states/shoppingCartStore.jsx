@@ -1,7 +1,5 @@
 import { buyerProfileService } from '@/services/buyerProfile.service';
 import { create } from 'zustand';
-import { toast } from 'sonner';
-import { useAuthContext } from '@/context/authContext';
 
 const useCartStore = create((set) => ({
 	cart: [],

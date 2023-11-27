@@ -54,6 +54,7 @@ export default {
 				saveCart: '/profileBuyer/profile/shoppingCart/:id',
 				deleteProductCart: '/profileBuyer/profile/shoppingCart/remove/:id',
 				deleteCart: '/profileBuyer/profile/shoppingCart/:id',
+				getCartDetail: '/profileBuyer/profile/shoppingCart/detail/:id',
 			},
 			reviews: {
 				getReviews: '/reviews',

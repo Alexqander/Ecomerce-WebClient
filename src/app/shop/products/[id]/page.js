@@ -12,7 +12,6 @@ async function getProductInfo(id) {
 
 export default async function ProductDetailPage({ params }) {
 	const product = await getProductInfo(params.id);
-	console.log(product);
 	return (
 		<div className="w-full h-[100vh-65px]">
 			<div className="container mx-auto">
