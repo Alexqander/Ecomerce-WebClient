@@ -27,7 +27,7 @@ export default async function CheckOutPage({ params }) {
 	const isLogged = cookiesStore.get('NEXT_JS_AUTH_TOKENS') ? true : false;
 	const cart = await getInfoCart(params.id);
 	return (
-		<div className="px-10 mt-10 md:px-0">
+		<div className="container mx-auto px-10 mt-10 md:px-0">
 			{isLogged ? <DetailsCheckOut cart={cart.data} /> : <NotUserPage />}
 		</div>
 	);

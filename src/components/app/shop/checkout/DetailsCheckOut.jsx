@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Button } from '@nextui-org/react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import { useRouter } from 'next/navigation';
+import { paymentService } from '@/services/payment.service';
+import { toast } from 'sonner';
 
 export default function DetailsCheckOut({ cart }) {
 	const total = cart.cartItems.reduce(
@@ -12,7 +14,26 @@ export default function DetailsCheckOut({ cart }) {
 	);
 	const router = useRouter();
 
-	console.log(cart.cartItems);
+	const createSessionPayment = async (cartId) => {
+		try {
+			const response = await paymentService.createSessionPayment(cartId);
+			const { data } = response;
+			console.log('session pago de stripe');
+			console.log(data);
+			router.push(data.data);
+		} catch (error) {
+			throw new Error('No se pudo crear la sesión de pago');
+		}
+	};
+	const handleCreateSessionPayment = async (cartId) => {
+		const createSessionPromise = createSessionPayment(cartId);
+		toast.promise(createSessionPromise, {
+			loading: 'Creando sesión de pago',
+			success: 'Sesión de pago creada',
+			error: 'No se pudo crear la sesión de pago',
+		});
+	};
+
 	return (
 		<div className="w-full">
 			<div className="flex flex-col gap-2 w-full">
@@ -70,7 +91,8 @@ export default function DetailsCheckOut({ cart }) {
 						endContent={<ArrowRightIcon className="w-5 h-5" />}
 						variant="flat"
 						color="success"
-						size="lg">
+						size="lg"
+						onClick={() => handleCreateSessionPayment(cart.id)}>
 						Continuar
 					</Button>
 				</div>

@@ -64,6 +64,9 @@ export default {
 				getWishList: '/wishList',
 				getWishListByUser: '/wishList/:id',
 			},
+			payments: {
+				createSessionPay: '/payment/create-checkout-session',
+			},
 		},
 	},
 	production: {
