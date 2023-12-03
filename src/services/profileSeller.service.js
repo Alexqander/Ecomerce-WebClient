@@ -28,6 +28,22 @@ export const ProfileSellerService = {
 		);
 		return response;
 	},
+	getStatsSeller: async (token, id) => {
+		const response = await axios.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileSeller.getStatsSeller.replace(
+				':id',
+				id
+			)}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		return response;
+	},
 	updateProfileSeller: async (token, newProfileSeller) => {
 		const response = await axios.put(
 			`${config.development.api.urlBase}${config.development.api.profileSeller.updateProfileSeller}`,

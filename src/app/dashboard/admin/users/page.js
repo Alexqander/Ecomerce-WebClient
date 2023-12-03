@@ -20,13 +20,14 @@ async function getUsers() {
 
 export default async function UsersAdminPage() {
 	const users = await getUsers();
+	console.log(users);
 	const columns = [
 		{ uid: 'name', name: 'Nombre' },
 		{ uid: 'email', name: 'Email' },
 		{ uid: 'lastName', name: 'Apellidos' },
 		{ uid: 'phoneNumber', name: 'Telefono' },
 		{ uid: 'profilePicture', name: 'Foto de Perfil' },
-		{ uid: 'roleId', name: 'Role' },
+		{ uid: 'role', name: 'Role' },
 	];
 
 	const statusOptions = [];

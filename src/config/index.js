@@ -44,6 +44,7 @@ export default {
 			},
 			profileSeller: {
 				getProfileSeller: '/profileSeller',
+				getStatsSeller: '/profileSeller/profile/stats/:id',
 				getProductsStore: '/profileSeller/profile/products/:id',
 				updateProfileSeller: '/profileSeller',
 				deleteProfileSeller: '/profileSeller',
@@ -55,6 +56,8 @@ export default {
 				deleteProductCart: '/profileBuyer/profile/shoppingCart/remove/:id',
 				deleteCart: '/profileBuyer/profile/shoppingCart/:id',
 				getCartDetail: '/profileBuyer/profile/shoppingCart/detail/:id',
+				getOrders: '/profileBuyer/profile/orders/:id',
+				getOrder: '/profileBuyer/profile/orders/detail/:id',
 			},
 			reviews: {
 				getReviews: '/reviews',

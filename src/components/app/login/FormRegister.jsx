@@ -42,6 +42,11 @@ export default function FormRegister() {
 
 	const onSubmit = async (data) => {
 		console.log(data);
+		// * Si el tipo de cuenta es diferente de 2 (empresa), se le quita el campo de storeName
+		if (tipoCuenta !== 2) {
+			delete data.storeName;
+		}
+
 		const newUser = {
 			user: {
 				...data,

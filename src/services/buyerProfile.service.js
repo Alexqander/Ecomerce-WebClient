@@ -67,4 +67,33 @@ export const buyerProfileService = {
 		);
 		return response;
 	},
+	getOrders: async (buyerId, token) => {
+		const response = await axiosInstance.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.getOrders.replace(
+				':id',
+				buyerId
+			)}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		return response;
+	},
+	getOrder: async (orderId, token) => {
+		const response = await axiosInstance.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.getOrder.replace(':id', orderId)}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		return response;
+	},
 };

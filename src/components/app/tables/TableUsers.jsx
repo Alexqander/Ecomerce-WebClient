@@ -53,8 +53,8 @@ export default function TableUsers({ data, statusOptions, columns }) {
 		);
 
 		const renderRoleIdCell = () => (
-			<Chip className="capitalize" color={RoleColorMap[item.roleId]}>
-				{RoleValue[cellValue]}
+			<Chip className="capitalize" color={RoleColorMap[item.role.id]}>
+				{RoleValue[cellValue.id]}
 			</Chip>
 		);
 
@@ -65,13 +65,13 @@ export default function TableUsers({ data, statusOptions, columns }) {
 			case 'email':
 			case 'phoneNumber':
 				return renderTextCell();
-			case 'roleId':
+			case 'role':
 				return renderRoleIdCell();
 			default:
 				return null;
 		}
 	};
-	const INITIAL_VISIBLE_COLUMNS = ['name', 'email', 'phoneNumber', 'roleId'];
+	const INITIAL_VISIBLE_COLUMNS = ['name', 'email', 'phoneNumber', 'role'];
 	const [filterValue, setFilterValue] = React.useState('');
 	const [selectedKeys, setSelectedKeys] = React.useState(new Set([]));
 	const [visibleColumns, setVisibleColumns] = React.useState(
@@ -80,7 +80,7 @@ export default function TableUsers({ data, statusOptions, columns }) {
 	const [statusFilter, setStatusFilter] = React.useState('all');
 	const [rowsPerPage, setRowsPerPage] = React.useState(5);
 	const [sortDescriptor, setSortDescriptor] = React.useState({
-		column: 'age',
+		column: 'name',
 		direction: 'ascending',
 	});
 	const [page, setPage] = React.useState(1);

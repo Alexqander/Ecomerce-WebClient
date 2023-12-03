@@ -34,8 +34,48 @@ export default function ShoppingCart() {
 		const loadCart = async () => {
 			try {
 				const cart = await buyerProfileService.getCart(buyerProfile.id);
-				const { cartItems, id: cartId } = cart.data.data;
+				// ? Si el carrito no existe, crear uno nuevo
+				if (!cart.data.data) {
+					console.log('🛒 Entre aqui por que no encontro el carrito');
 
+					const newCart = await buyerProfileService.createCart(buyerProfile.id);
+					if (newCart.status !== 200) {
+						toast.error('Error al crear el carrito');
+						return;
+					}
+					const cart = await buyerProfileService.getCart(buyerProfile.id);
+					const { cartItems, id: cartId } = cart.data.data;
+					const cartItemWithQuantity = cartItems.map((item) => ({
+						...item.Product,
+						quantity: item.quantity,
+					}));
+					setCart(cartItemWithQuantity);
+					localStorage.setItem('cartId', cartId);
+					setCartId(cartId);
+					toast.success('Carrito cargado');
+					return;
+				}
+				// ! Si el ultimo carrito tiene un status de "paid" crear uno nuevo
+				if (cart.data.data.orderStatus === 'paid') {
+					const newCart = await buyerProfileService.createCart(buyerProfile.id);
+					if (newCart.status !== 200) {
+						toast.error('Error al crear el carrito');
+						return;
+					}
+					const cart = await buyerProfileService.getCart(buyerProfile.id);
+					const { cartItems, id: cartId } = cart.data.data;
+					const cartItemWithQuantity = cartItems.map((item) => ({
+						...item.Product,
+						quantity: item.quantity,
+					}));
+					setCart(cartItemWithQuantity);
+					localStorage.setItem('cartId', cartId);
+					setCartId(cartId);
+					toast.success('Carrito cargado');
+					return;
+				}
+				console.log('🛒 Carrito de compras', cart);
+				const { cartItems, id: cartId } = cart.data.data;
 				const cartItemWithQuantity = cartItems.map((item) => ({
 					...item.Product,
 					quantity: item.quantity,

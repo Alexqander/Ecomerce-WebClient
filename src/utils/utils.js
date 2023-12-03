@@ -1,3 +1,5 @@
+import { format } from 'date-fns';
+import { es } from 'date-fns/locale';
 export function getInitials(name) {
 	// Dividimos el nombre en partes usando el espacio como separador
 	const parts = name.split(' ');
@@ -13,4 +15,8 @@ export function removeSubstringAndGetNumber(value, substring) {
 
 	// Convertir el resultado en número
 	return Number(cleanedValue);
+}
+export function formatDate(dateString) {
+	const date = new Date(dateString);
+	return format(date, "EEEE dd 'de' MMMM 'del' yyyy", { locale: es });
 }

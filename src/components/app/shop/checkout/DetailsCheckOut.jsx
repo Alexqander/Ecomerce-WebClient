@@ -8,6 +8,7 @@ import { paymentService } from '@/services/payment.service';
 import { toast } from 'sonner';
 
 export default function DetailsCheckOut({ cart }) {
+	const buyerId = cart.buyerId;
 	const total = cart.cartItems.reduce(
 		(acc, item) => acc + item.Product.price * item.quantity,
 		0
@@ -16,7 +17,10 @@ export default function DetailsCheckOut({ cart }) {
 
 	const createSessionPayment = async (cartId) => {
 		try {
-			const response = await paymentService.createSessionPayment(cartId);
+			const response = await paymentService.createSessionPayment(
+				cartId,
+				buyerId
+			);
 			const { data } = response;
 			console.log('session pago de stripe');
 			console.log(data);

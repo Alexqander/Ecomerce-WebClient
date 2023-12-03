@@ -1,46 +1,41 @@
 import HeaderDashBoard from '@/components/app/Header/HeaderDashBoard';
 import React from 'react';
+import {
+	HeartIcon,
+	TruckIcon,
+	BuildingLibraryIcon,
+} from '@heroicons/react/24/outline';
+import SectionsDashboard from '@/components/app/user/SectionsDashboard';
 
 export default function UserPage() {
+	const options = [
+		{
+			title: 'Ultimos Pedidos',
+			label: 'Revisa el estado de tus pedidos',
+			color: 'green-500',
+			icon: <TruckIcon className="w-10 h-10 text-green-700" />,
+			url: '/dashboard/user/orders',
+		},
+		{
+			title: 'Transacciones',
+			label: 'Revisa tu historial de transacciones',
+			color: 'blue-500',
+			icon: <BuildingLibraryIcon className="w-10 h-10 text-blue-700" />,
+			url: '/dashboard/user/transactions',
+		},
+		{
+			title: 'Lista de Deseos',
+			label: 'Revisa tu lista de deseos',
+			color: 'purple-500',
+			icon: <HeartIcon className="w-10 h-10 text-purple-700" />,
+			url: '/dashboard/user/wishlists',
+		},
+	];
+
 	return (
 		<div className="container mx-auto mt-10">
 			<HeaderDashBoard />
-			<div className="w-full my-5 flex justify-start items-center gap-10 hover:bg-slate-200 transition-all dark:hover:bg-slate-800">
-				<div className="w-20 h-20 rounded-md bg-blue-500 dark:to-blue-600 "></div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-montserrat font-bold">Ultimos Pedidos</h1>
-					<p className="text-gray-600 dark:text-gray-400 font-montserrat">
-						Revisa el estado de tus pedidos
-					</p>
-				</div>
-			</div>
-			<div className="w-full my-5 flex justify-start items-center gap-10 hover:bg-slate-200 transition-all dark:hover:bg-slate-800">
-				<div className="w-20 h-20 rounded-md bg-green-500 dark:bg-green-600"></div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-montserrat font-bold">Ultimos Pedidos</h1>
-					<p className="text-gray-600 dark:text-gray-400 font-montserrat">
-						Revisa el estado de tus pedidos
-					</p>
-				</div>
-			</div>
-			<div className="w-full my-5 flex justify-start items-center gap-10 hover:bg-slate-200 transition-all dark:hover:bg-slate-800">
-				<div className="w-20 h-20 rounded-md bg-purple-500 dark:bg-purple-600"></div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-montserrat font-bold">Ultimos Pedidos</h1>
-					<p className="text-gray-600 dark:text-gray-400 font-montserrat">
-						Revisa el estado de tus pedidos
-					</p>
-				</div>
-			</div>
-			<div className="w-full my-5 flex justify-start items-center gap-10 hover:bg-slate-200 transition-all dark:hover:bg-slate-800">
-				<div className="w-20 h-20 rounded-md bg-gray-300 dark:bg-gray-600"></div>
-				<div className="flex flex-col">
-					<h1 className="text-xl font-montserrat font-bold">Ultimos Pedidos</h1>
-					<p className="text-gray-600 dark:text-gray-400 font-montserrat">
-						Revisa el estado de tus pedidos
-					</p>
-				</div>
-			</div>
+			<SectionsDashboard options={options} />
 		</div>
 	);
 }
