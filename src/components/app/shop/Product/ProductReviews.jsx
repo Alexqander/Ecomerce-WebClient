@@ -10,7 +10,6 @@ export default function ProductReviews({ Reviews, productId }) {
 	const [review, setReview] = useState(false);
 	const { user } = useAuthContext();
 	const router = useRouter();
-	console.log(Reviews);
 	return (
 		<div className="flex flex-col ">
 			<h4 className="font-montserrat font-medium text-lg text-gray-400">

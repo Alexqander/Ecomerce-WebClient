@@ -34,7 +34,6 @@ export default function ProductDetails({ product }) {
 				cartId,
 				productSendToApi
 			);
-			console.log('Producto guardado', savedProduct);
 			toast.success('Producto agregado al carrito');
 
 			addToCart(product);
@@ -60,7 +59,6 @@ export default function ProductDetails({ product }) {
 				productSendToApi
 			);
 			const { data } = savedProduct.data;
-			console.log('Producto eliminado', data);
 			toast.success('Producto eliminado del carrito');
 			removeFromCart(productId);
 		} catch (error) {

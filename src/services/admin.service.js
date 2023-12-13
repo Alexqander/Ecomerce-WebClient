@@ -80,4 +80,36 @@ export const AdminService = {
 			// toast.error('Ocurrio un error al obtener las ordenes');
 		}
 	},
+	getStats: async (token) => {
+		try {
+			const response = await axiosInstance.get(
+				`${config.development.api.urlBase}${config.development.api.admin.stats}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return { isError: true, error };
+		}
+	},
+	getTransactions: async (token) => {
+		try {
+			const response = await axiosInstance.get(
+				`${config.development.api.urlBase}${config.development.api.admin.transactions}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return { isError: true, error };
+		}
+	},
 };

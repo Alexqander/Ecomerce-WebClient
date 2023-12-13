@@ -15,7 +15,6 @@ async function getInfoUser() {
 	try {
 		const response = await AdminService.getUserInfo(token.token, userData.id);
 		const { data } = response;
-		console.log(data);
 		return data;
 	} catch (error) {
 		console.log(error);

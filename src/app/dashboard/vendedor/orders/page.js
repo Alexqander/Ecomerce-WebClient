@@ -18,7 +18,6 @@ async function getSellerOrders() {
 			user.sellerProfile.id
 		);
 		const { data } = response;
-		console.log(data);
 		return data;
 	} catch (error) {
 		console.log(error);

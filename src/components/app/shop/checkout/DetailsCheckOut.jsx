@@ -22,8 +22,6 @@ export default function DetailsCheckOut({ cart }) {
 				buyerId
 			);
 			const { data } = response;
-			console.log('session pago de stripe');
-			console.log(data);
 			router.push(data.data);
 		} catch (error) {
 			throw new Error('No se pudo crear la sesión de pago');

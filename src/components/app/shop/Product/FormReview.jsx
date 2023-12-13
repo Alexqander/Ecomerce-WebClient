@@ -3,6 +3,8 @@ import { Textarea, Button } from '@nextui-org/react';
 import StarRating from './StarRating';
 import { useForm } from 'react-hook-form';
 import { useAuthContext } from '@/context/authContext';
+import { buyerProfileService } from '@/services/buyerProfile.service';
+import { toast } from 'sonner';
 
 export default function FormReview({ productId }) {
 	const [rating, setRating] = useState(0);
@@ -13,14 +15,24 @@ export default function FormReview({ productId }) {
 		formState: { errors, isSubmitting },
 	} = useForm({});
 
-	const onSubmit = (data) => {
-		const newReview = {
-			...data,
-			rating,
-			productId,
-			userId: user.id,
-		};
-		console.log(newReview);
+	const onSubmit = async (data) => {
+		try {
+			const newReview = {
+				...data,
+				rating,
+				productId,
+				userId: user.id,
+			};
+
+			const response = await buyerProfileService.createReviewToProduct(
+				newReview
+			);
+			toast.success('Review creada con exito');
+			console.log('✅Review creada con exito', response);
+		} catch (error) {
+			toast.error('No se pudo crear la review');
+			console.log('❌Error', error);
+		}
 	};
 
 	// Manejar el envío del formulario

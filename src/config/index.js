@@ -44,6 +44,7 @@ export default {
 				products: '/admin/products',
 				orders: '/admin/orders',
 				analytics: '/admin/analytics',
+				stats: '/profileAdmin/stats/overview',
 			},
 			repartidorProfile: {
 				getOrdersToDeliver: '/profileCourier/profile/repartidor/deliver/:id',
