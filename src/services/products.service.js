@@ -37,14 +37,13 @@ export const ProductsService = {
 			return error;
 		}
 	},
-	createProduct: async (token, newProduct) => {
+	createProduct: async (newProduct) => {
 		try {
 			const response = await axiosInstance.post(
 				`${config.development.api.urlBase}${config.development.api.products.createProduct}`,
 				newProduct,
 				{
 					headers: {
-						Authorization: `Bearer ${token}`,
 						'Content-Type': 'multipart/form-data',
 					},
 				}

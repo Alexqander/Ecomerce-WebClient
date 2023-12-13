@@ -133,10 +133,7 @@ export default function Uploader({ className }) {
 			formData.append('storeId', storeId);
 
 			// Realizar solicitud a la API
-			const { data: response } = await ProductsService.createProduct(
-				user.token.token,
-				formData
-			);
+			const { data: response } = await ProductsService.createProduct(formData);
 			console.log('response');
 			console.log(response);
 			if (response) {
