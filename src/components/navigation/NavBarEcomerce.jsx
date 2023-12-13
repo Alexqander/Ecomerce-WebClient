@@ -188,7 +188,7 @@ export default function NavBarEcomerce() {
 				) : (
 					<>
 						<Button
-							variant="bordered"
+							variant="solid"
 							color="secondary"
 							onClick={() => router.push('/auth')}>
 							Iniciar sesion
