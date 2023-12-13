@@ -3,7 +3,7 @@ import { ShoppingCartIcon, TrashIcon } from '@heroicons/react/24/outline';
 import { Button } from '@nextui-org/button';
 import useCartStore from '@/states/shoppingCartStore';
 import { useAuthContext } from '@/context/authContext';
-import React, { useEffect } from 'react';
+import React from 'react';
 import { toast } from 'sonner';
 import { buyerProfileService } from '@/services/buyerProfile.service';
 
@@ -16,7 +16,7 @@ export default function ProductDetails({ product }) {
 	const handleAddToCart = async (product) => {
 		try {
 			if (!buyerProfile || !buyerProfile.id) {
-				// Si el usuario no ha iniciado sesión, agregamos el producto al carrito local
+				// * Si el usuario no ha iniciado sesión, agregamos el producto al carrito local
 				addToCart(product);
 				toast.success('Producto agregado al carrito');
 				return;

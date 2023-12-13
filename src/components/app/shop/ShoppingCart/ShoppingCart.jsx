@@ -25,7 +25,7 @@ export default function ShoppingCart() {
 	const [shopCartId, setCartId] = React.useState(null);
 
 	useEffect(() => {
-		// Verificar si buyerProfile existe y tiene un id antes de cargar el carrito
+		// * Verificar si buyerProfile existe y tiene un id antes de cargar el carrito
 		if (!buyerProfile || !buyerProfile.id) {
 			console.log('Usuario no ha iniciado sesión o no tiene perfil');
 			return;
@@ -37,7 +37,6 @@ export default function ShoppingCart() {
 				// ? Si el carrito no existe, crear uno nuevo
 				if (!cart.data.data) {
 					console.log('🛒 Entre aqui por que no encontro el carrito');
-
 					const newCart = await buyerProfileService.createCart(buyerProfile.id);
 					if (newCart.status !== 200) {
 						toast.error('Error al crear el carrito');
@@ -52,7 +51,7 @@ export default function ShoppingCart() {
 					setCart(cartItemWithQuantity);
 					localStorage.setItem('cartId', cartId);
 					setCartId(cartId);
-					toast.success('Carrito cargado');
+					toast.success('Informacion cargada');
 					return;
 				}
 				// ! Si el ultimo carrito tiene un status de "paid" crear uno nuevo
@@ -74,7 +73,6 @@ export default function ShoppingCart() {
 					toast.success('Carrito cargado');
 					return;
 				}
-				console.log('🛒 Carrito de compras', cart);
 				const { cartItems, id: cartId } = cart.data.data;
 				const cartItemWithQuantity = cartItems.map((item) => ({
 					...item.Product,
@@ -88,7 +86,6 @@ export default function ShoppingCart() {
 				toast.error(error.message);
 			}
 		};
-
 		loadCart();
 	}, [buyerProfile]);
 

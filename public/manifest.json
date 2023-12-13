@@ -1,0 +1,26 @@
+{
+    "name": "FastShop Ecomerce",
+    "short_name": "FastShop",
+    "icons": [
+        {
+            "src": "/icons/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "icons/Square150x150Logo.scale-200.png",
+            "sizes": "300x300"
+        },
+        {
+            "src": "/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#f2b705",
+    "background_color": "#f8f8f8",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait"
+}

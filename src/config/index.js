@@ -29,6 +29,9 @@ export default {
 			orders: {
 				getOrders: '/orders',
 				getOrder: '/orders/:id',
+				getOrderItem: '/orders/profile/orderItem/:id',
+				getRepartidores: '/orders/profile/repartidores',
+				asignRepartidor: '/orders/profile/repartidor/deliver/:id',
 			},
 			users: {
 				getUsers: '/users',
@@ -42,12 +45,17 @@ export default {
 				orders: '/admin/orders',
 				analytics: '/admin/analytics',
 			},
+			repartidorProfile: {
+				getOrdersToDeliver: '/profileCourier/profile/repartidor/deliver/:id',
+				changeDeliverStatus: '/profileCourier/profile/repartidor/deliver/:id',
+			},
 			profileSeller: {
 				getProfileSeller: '/profileSeller',
 				getStatsSeller: '/profileSeller/profile/stats/:id',
 				getProductsStore: '/profileSeller/profile/products/:id',
 				updateProfileSeller: '/profileSeller',
 				deleteProfileSeller: '/profileSeller',
+				getOrdersPending: '/profileSeller/profile/orders/:id',
 			},
 			profileBuyer: {
 				createCart: '/profileBuyer/profile/shoppingCart',
@@ -58,10 +66,14 @@ export default {
 				getCartDetail: '/profileBuyer/profile/shoppingCart/detail/:id',
 				getOrders: '/profileBuyer/profile/orders/:id',
 				getOrder: '/profileBuyer/profile/orders/detail/:id',
+				getWishList: '/profileBuyer/profile/wishLists/:id',
+				saveWishList: '/profileBuyer/profile/wishLists/:id',
+				deleteProductWishList: '/profileBuyer/profile/wishLists/remove/:id',
 			},
 			reviews: {
 				getReviews: '/reviews',
 				getReview: '/reviews/:id',
+				createReview: '/profileBuyer/profile/reviews/new',
 			},
 			wishList: {
 				getWishList: '/wishList',

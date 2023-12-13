@@ -32,7 +32,8 @@ export default async function OrderDetailsPage({ params }) {
 		return acc + item.price * item.quantity;
 	}, 0);
 	const address = order.data.buyer.shippingAddresses[0];
-	console.log(order.data.orderItems);
+	console.log('🏠 Direccion de envio');
+	console.log(address);
 	return (
 		<div className="container mx-auto mt-10">
 			<Link

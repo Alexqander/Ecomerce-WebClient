@@ -1,21 +1,21 @@
-import axios from 'axios';
+import axiosInstance from '@/utils/axiosInstance';
 import config from '@/config/index.js';
 
 export const ProductsService = {
 	getProducts: async (page = 1, limit = 9) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${config.development.api.urlBase}${config.development.api.products.getProducts}?page=${page}&limit=${limit}`
 		);
 		return response;
 	},
 	findProducts: async (search, category, minPrice, page = 1, limit = 9) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${config.development.api.urlBase}${config.development.api.products.findProducts}?search=${search}&category=${category}&minPrice=${minPrice}&page=${page}&limit=${limit}`
 		);
 		return response;
 	},
 	getProduct: async (id) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${
 				config.development.api.urlBase
 			}${config.development.api.products.getProduct.replace(':id', id)}`
@@ -23,7 +23,7 @@ export const ProductsService = {
 		return response;
 	},
 	createProduct: async (token, newProduct) => {
-		const response = await axios.post(
+		const response = await axiosInstance.post(
 			`${config.development.api.urlBase}${config.development.api.products.createProduct}`,
 			newProduct,
 			{
@@ -36,7 +36,7 @@ export const ProductsService = {
 		return response;
 	},
 	updateProduct: async (token, id, newProduct) => {
-		const response = await axios.put(
+		const response = await axiosInstance.put(
 			`${
 				config.development.api.urlBase
 			}${config.development.api.products.updateProduct.replace(':id', id)}`,
@@ -50,7 +50,7 @@ export const ProductsService = {
 		return response;
 	},
 	deleteProduct: async (token, id) => {
-		const response = await axios.delete(
+		const response = await axiosInstance.delete(
 			`${
 				config.development.api.urlBase
 			}${config.development.api.products.deleteProduct.replace(':id', id)}`,

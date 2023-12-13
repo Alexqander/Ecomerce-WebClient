@@ -1,4 +1,3 @@
-import { buyerProfileService } from '@/services/buyerProfile.service';
 import { create } from 'zustand';
 
 const useCartStore = create((set) => ({

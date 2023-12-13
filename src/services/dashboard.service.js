@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axiosInstance from '@/utils/axiosInstance';
 import config from '@/config/index.js';
 
 export const DashboardService = {
 	getSales: async (token) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${config.development.api.urlBase}${config.development.api.dashboard.sales}`,
 			{
 				headers: {
@@ -14,6 +14,6 @@ export const DashboardService = {
 		return response;
 	},
 	getSalesByDate: async (token, date) => {
-		const response = await axios.get();
+		const response = await axiosInstance.get();
 	},
 };

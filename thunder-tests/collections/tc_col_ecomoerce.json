@@ -1685,11 +1685,11 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
             "name": "getCategories",
-            "url": "http://localhost:4000/apiEcomerce/1.0/categories/?page=1&limit=9",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/categories/?page=1&limit=9",
             "method": "GET",
             "sortNum": 630000,
             "created": "2023-11-24T17:31:02.916Z",
-            "modified": "2023-11-24T17:31:02.916Z",
+            "modified": "2023-12-07T04:09:53.305Z",
             "headers": [],
             "params": [
                 {
@@ -1710,16 +1710,16 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "39f24e5c-caa2-4994-b61f-c96dd5dea909",
             "name": "getSubcategories",
-            "url": "http://localhost:4000/apiEcomerce/1.0/categories/sub/?page=3",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/categories/sub/?page=1",
             "method": "GET",
             "sortNum": 640000,
             "created": "2023-11-24T17:31:02.917Z",
-            "modified": "2023-11-24T17:31:02.917Z",
+            "modified": "2023-12-07T04:10:09.407Z",
             "headers": [],
             "params": [
                 {
                     "name": "page",
-                    "value": "3",
+                    "value": "1",
                     "isPath": false
                 }
             ],
@@ -2197,17 +2197,21 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "8afdd295-b7e1-40a6-851d-9a92c4a5c0d2",
             "name": "getInfoProfile",
-            "url": "http://localhost:4000/apiEcomerce/1.0/profileSeller/profile/e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/profileSeller/profile/13e7b09f-b2ce-4830-b2ea-889ea4f69105",
             "method": "GET",
             "sortNum": 210000,
             "created": "2023-11-24T17:31:02.951Z",
-            "modified": "2023-11-24T17:31:02.951Z",
+            "modified": "2023-12-06T19:35:16.785Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
                 "raw": "{\n  \"sellerProfile\": {\n    \"storeName\": \"Electronics Store\",\n    \"userId\": \"e5080d9c-1f3c-4b33-b62d-b3b5fcf7c0ef\"\n  }\n}",
                 "form": []
+            },
+            "auth": {
+                "type": "bearer",
+                "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEzZTdiMDlmLWIyY2UtNDgzMC1iMmVhLTg4OWVhNGY2OTEwNSIsImlhdCI6MTcwMTg5MTE0OCwiZXhwIjoxNzAyMjUxMTQ4fQ.KdY6-OUwqoaq7y7QzLTGLjQzWbIu57gyWHgSv3j_O_Y"
             },
             "tests": []
         },
@@ -2303,11 +2307,11 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
             "name": "uploadImage",
-            "url": "http://localhost:4000/apiEcomerce/1.0/products/upload",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/products/upload",
             "method": "POST",
             "sortNum": 200000,
             "created": "2023-11-24T17:31:02.958Z",
-            "modified": "2023-11-24T17:31:02.958Z",
+            "modified": "2023-12-07T04:12:52.394Z",
             "headers": [],
             "params": [],
             "body": {
@@ -2316,15 +2320,15 @@
                 "form": [
                     {
                         "name": "name",
-                        "value": "Nintendo Switch Light"
+                        "value": "Samsun S30 ultra"
                     },
                     {
                         "name": "price",
-                        "value": "5560"
+                        "value": "29960"
                     },
                     {
                         "name": "description",
-                        "value": "Nintendo Switch es divertido para todos , usalo en donde mas prefieras y juega los grandes juegos de nintendo"
+                        "value": "El mas poderoso de samsung listo para impresionar , desde su camara , potencia"
                     },
                     {
                         "name": "stock",
@@ -2332,21 +2336,21 @@
                     },
                     {
                         "name": "subCategoryId",
-                        "value": "21"
+                        "value": "1"
                     },
                     {
                         "name": "storeId",
-                        "value": "84192180-2ed3-4017-bffa-edf0668a3e6b"
+                        "value": "1a65d9df-7a83-4113-901c-3b1a1f3326ef"
                     }
                 ],
                 "files": [
                     {
                         "name": "files",
-                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\Mariokart.webp"
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\cel1.jpg"
                     },
                     {
                         "name": "files",
-                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\mariokart2.webp"
+                        "value": "c:\\Users\\servi\\OneDrive\\UTEZ_TI\\INGENIERIA\\10MO-CUATRIMESTRE\\E-commerce\\Images\\test\\cel2.jpg"
                     }
                 ]
             },
@@ -2371,11 +2375,11 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "379a5686-57e2-4539-98c7-fb311128fce5",
             "name": "getProducts",
-            "url": "http://localhost:4000/apiEcomerce/1.0/products/?page=1&limit=9",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/products/?page=1&limit=9",
             "method": "GET",
             "sortNum": 450000,
             "created": "2023-11-24T17:31:02.960Z",
-            "modified": "2023-11-24T17:31:02.960Z",
+            "modified": "2023-12-06T19:30:04.892Z",
             "headers": [],
             "params": [
                 {
@@ -2481,16 +2485,16 @@
             "colId": "9e0ee56d-9f4f-41dc-9ca0-ee7cb78e6c76",
             "containerId": "3a3c1eeb-cacc-43f9-9066-504c6148b984",
             "name": "createUser",
-            "url": "http://localhost:4000/apiEcomerce/1.0/auth/register",
+            "url": "http://44.209.72.62:4000/apiEcomerce/1.0/auth/register",
             "method": "POST",
             "sortNum": 100000,
             "created": "2023-11-24T17:31:02.964Z",
-            "modified": "2023-11-24T17:31:02.964Z",
+            "modified": "2023-12-06T19:32:28.482Z",
             "headers": [],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n    \"user\": {\n      \"name\": \"Emmanuel Alexander\",\n      \"lastName\": \"Machado Ambrocio\",\n      \"password\": \"alex1234\",\n      \"email\": \"alexuandermacha@gmail.com\",\n      \"phoneNumber\": \"7775102928\"\n    },\n    \"role\": 1\n  }",
+                "raw": "{\n    \"user\": {\n      \"name\": \"Emmanuel Alexander\",\n      \"lastName\": \"Machado Ambrocio\",\n      \"password\": \"alex1234\",\n      \"email\": \"alexuandermacha@gmail.com\",\n      \"phoneNumber\": \"7775102928\",\n      \"storeName\":\"Alexander Shop\"\n    },\n    \"role\": 2\n  }",
                 "form": []
             },
             "tests": []

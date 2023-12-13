@@ -8,6 +8,7 @@ import { Toaster } from 'sonner';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
+	manifest: '/manifest.json',
 	title: 'Fast Shop Ecomerce',
 	description: 'Ecomerce de venta de productos',
 };

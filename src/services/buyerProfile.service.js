@@ -96,4 +96,56 @@ export const buyerProfileService = {
 		);
 		return response;
 	},
+	saveWishList: async (wishListId, wishList) => {
+		const response = await axiosInstance.patch(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.saveWishList.replace(
+				':id',
+				wishListId
+			)}`,
+			wishList
+		);
+		return response;
+	},
+	deleteProductToWishList: async (wishListId, product) => {
+		const response = await axiosInstance.patch(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.deleteProductToWishList.replace(
+				':id',
+				wishListId
+			)}`,
+			product
+		);
+		return response;
+	},
+	getWishList: async (buyerId, token) => {
+		const response = await axiosInstance.get(
+			`${
+				config.development.api.urlBase
+			}${config.development.api.profileBuyer.getWishList.replace(
+				':id',
+				buyerId
+			)}`,
+			{
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			}
+		);
+		return response;
+	},
+	createReviewToProduct: async (review) => {
+		try {
+			const response = await axiosInstance.post(
+				`${config.development.api.urlBase}${config.development.api.reviews.createReview}`,
+				review
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
+	},
 };

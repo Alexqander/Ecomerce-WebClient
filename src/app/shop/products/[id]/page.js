@@ -1,5 +1,6 @@
 import ImageGridCarrusel from '@/components/app/shop/Product/ImageGridCarrusel';
 import ProductDetails from '@/components/app/shop/Product/ProductDetails';
+import ProductReviews from '@/components/app/shop/Product/ProductReviews';
 import { ProductsService } from '@/services/products.service';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
@@ -12,6 +13,7 @@ async function getProductInfo(id) {
 
 export default async function ProductDetailPage({ params }) {
 	const product = await getProductInfo(params.id);
+	console.log('✅ Producto', product);
 	return (
 		<div className="w-full h-[100vh-65px]">
 			<div className="container mx-auto">
@@ -27,6 +29,9 @@ export default async function ProductDetailPage({ params }) {
 					</div>
 					<div className="col-span-2 lg:col-span-1 px-12">
 						<ProductDetails product={product} />
+					</div>
+					<div className="col-span-2 px-12 mt-5 border-t-1 border-gray-600 py-5">
+						<ProductReviews Reviews={product.Reviews} productId={product.id} />
 					</div>
 				</div>
 			</div>

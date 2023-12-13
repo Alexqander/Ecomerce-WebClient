@@ -11,6 +11,7 @@ export default function ImageGridCarrusel({ images }) {
 				<Image
 					width={300}
 					height={300}
+					priority={true} // {false} | {true}
 					src={currentImage}
 					alt="image product"
 					className="mx-auto"
@@ -29,6 +30,7 @@ export default function ImageGridCarrusel({ images }) {
 								<Image
 									width={250}
 									height={250}
+									priority={false} // {false} | {true}
 									src={image.url}
 									alt="image product"
 									style={{ objectFit: 'contain' }}

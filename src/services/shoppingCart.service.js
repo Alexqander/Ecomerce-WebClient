@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axiosInstance from '@/utils/axiosInstance';
 import config from '@/config/index.js';
 
 export const ShoppingCartService = {
 	getShoppingCart: async (token) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${config.development.api.urlBase}${config.development.api.shoppingCart.getShoppingCart}`,
 			{
 				headers: {
@@ -14,7 +14,7 @@ export const ShoppingCartService = {
 		return response;
 	},
 	getShoppingCartDetail: async (token) => {
-		const response = await axios.get(
+		const response = await axiosInstance.get(
 			`${config.development.api.urlBase}${config.development.api.shoppingCart.getShoppingCartDetail}`,
 			{
 				headers: {
@@ -25,7 +25,7 @@ export const ShoppingCartService = {
 		return response;
 	},
 	addProductToShoppingCart: async (token, newProduct) => {
-		const response = await axios.post(
+		const response = await axiosInstance.post(
 			`${config.development.api.urlBase}${config.development.api.shoppingCart.addProductToShoppingCart}`,
 			newProduct,
 			{
@@ -37,7 +37,7 @@ export const ShoppingCartService = {
 		return response;
 	},
 	updateProductInShoppingCart: async (token, id, newProduct) => {
-		const response = await axios.put(
+		const response = await axiosInstance.put(
 			`${
 				config.development.api.urlBase
 			}${config.development.api.shoppingCart.updateProductInShoppingCart.replace(
@@ -54,7 +54,7 @@ export const ShoppingCartService = {
 		return response;
 	},
 	deleteProductInShoppingCart: async (token, id) => {
-		const response = await axios.delete(
+		const response = await axiosInstance.delete(
 			`${
 				config.development.api.urlBase
 			}${config.development.api.shoppingCart.deleteProductInShoppingCart.replace(
