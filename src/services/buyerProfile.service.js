@@ -3,138 +3,201 @@ import config from '@/config/index.js';
 
 export const buyerProfileService = {
 	createCart: async (buyerId) => {
-		const response = await axiosInstance.post(
-			`${config.development.api.urlBase}${config.development.api.profileBuyer.createCart}`,
-			{
-				quantity: 0,
-				orderStatus: 'created',
-				buyerId: buyerId,
-			}
-		);
-		return response;
+		try {
+			const response = await axiosInstance.post(
+				`${config.development.api.urlBase}${config.development.api.profileBuyer.createCart}`,
+				{
+					quantity: 0,
+					orderStatus: 'created',
+					buyerId: buyerId,
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	saveCart: async (idCart, cart) => {
-		console.log('entre al servicio');
-		const response = await axiosInstance.patch(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.saveCart.replace(':id', idCart)}`,
-			cart
-		);
-		return response;
+		try {
+			const response = await axiosInstance.patch(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.saveCart.replace(
+					':id',
+					idCart
+				)}`,
+				cart
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	getCart: async (buyerId) => {
-		const response = await axiosInstance.get(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.getCart.replace(':id', buyerId)}`
-		);
-		return response;
+		try {
+			const response = await axiosInstance.get(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.getCart.replace(':id', buyerId)}`
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	deleteProductCart: async (idCart, product) => {
-		const response = await axiosInstance.patch(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.deleteProductCart.replace(
-				':id',
-				idCart
-			)}`,
-			product
-		);
-		return response;
+		try {
+			const response = await axiosInstance.patch(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.deleteProductCart.replace(
+					':id',
+					idCart
+				)}`,
+				product
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	deleteCart: async (idCart) => {
-		const response = await axiosInstance.delete(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.deleteCart.replace(':id', idCart)}`
-		);
-		return response;
+		try {
+			const response = await axiosInstance.delete(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.deleteCart.replace(
+					':id',
+					idCart
+				)}`
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	getCartDetail: async (idCart, token) => {
-		const response = await axiosInstance.get(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.getCartDetail.replace(
-				':id',
-				idCart
-			)}`,
-			{
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			}
-		);
-		return response;
+		try {
+			const response = await axiosInstance.get(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.getCartDetail.replace(
+					':id',
+					idCart
+				)}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	getOrders: async (buyerId, token) => {
-		const response = await axiosInstance.get(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.getOrders.replace(
-				':id',
-				buyerId
-			)}`,
-			{
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			}
-		);
-		return response;
+		try {
+			const response = await axiosInstance.get(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.getOrders.replace(
+					':id',
+					buyerId
+				)}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	getOrder: async (orderId, token) => {
-		const response = await axiosInstance.get(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.getOrder.replace(':id', orderId)}`,
-			{
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			}
-		);
-		return response;
+		try {
+			const response = await axiosInstance.get(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.getOrder.replace(
+					':id',
+					orderId
+				)}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	saveWishList: async (wishListId, wishList) => {
-		const response = await axiosInstance.patch(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.saveWishList.replace(
-				':id',
-				wishListId
-			)}`,
-			wishList
-		);
-		return response;
+		try {
+			const response = await axiosInstance.patch(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.saveWishList.replace(
+					':id',
+					wishListId
+				)}`,
+				wishList
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	deleteProductToWishList: async (wishListId, product) => {
-		const response = await axiosInstance.patch(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.deleteProductToWishList.replace(
-				':id',
-				wishListId
-			)}`,
-			product
-		);
-		return response;
+		try {
+			const response = await axiosInstance.patch(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.deleteProductToWishList.replace(
+					':id',
+					wishListId
+				)}`,
+				product
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	getWishList: async (buyerId, token) => {
-		const response = await axiosInstance.get(
-			`${
-				config.development.api.urlBase
-			}${config.development.api.profileBuyer.getWishList.replace(
-				':id',
-				buyerId
-			)}`,
-			{
-				headers: {
-					Authorization: `Bearer ${token}`,
-				},
-			}
-		);
-		return response;
+		try {
+			const response = await axiosInstance.get(
+				`${
+					config.development.api.urlBase
+				}${config.development.api.profileBuyer.getWishList.replace(
+					':id',
+					buyerId
+				)}`,
+				{
+					headers: {
+						Authorization: `Bearer ${token}`,
+					},
+				}
+			);
+			return response;
+		} catch (error) {
+			console.log(error);
+			return error;
+		}
 	},
 	createReviewToProduct: async (review) => {
 		try {
