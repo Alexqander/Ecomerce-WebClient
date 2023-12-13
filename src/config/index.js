@@ -2,7 +2,7 @@
 export default {
 	development: {
 		api: {
-			urlBase: 'http://localhost:4000/apiEcomerce/1.0',
+			urlBase: process.env.NEXT_PUBLIC_API_URL,
 			auth: {
 				login: '/auth/login',
 				register: '/auth/register',

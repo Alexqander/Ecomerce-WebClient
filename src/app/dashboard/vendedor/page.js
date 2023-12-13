@@ -23,7 +23,6 @@ async function getStats() {
 			userData.sellerProfile.id
 		);
 		const stats = data.data;
-		console.log(stats);
 		return stats;
 	} catch (error) {
 		console.log(error);
